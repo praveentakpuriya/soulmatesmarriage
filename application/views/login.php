@@ -115,12 +115,24 @@
                                 <div class="row">
 
                                      <h4  class="titlelg text-center mb-4">Welcome back! <br /> Please Login </h4>
+                                     <?php $error = $this->session->flashdata('error');
+                                    if(isset($error)) {?>
+                                    <div class="alert alert-warning" role="alert">
+                                    <p>Invalid Credentials!</p>
+                                    </div>
+                                    <?php } ?>
+                                    <?php $msg = $this->session->flashdata('msg');
+                                    if(isset($msg)) {?>
+                                    <div class="alert alert-success" role="alert">
+                                    <p>Registration Successfull!</p>
+                                    </div>
+                                    <?php } ?>
                                      <!-- <p class="mb-4">Please login below to contact and message members.</p> -->
                                     <div class="col-md-12">
-                                        <form id="form-login1"  class="form-horizontal" method="post">
+                                        <form id="form-login1"  action="<?php echo base_url('Login/checkLogin')  ?>" class="form-horizontal" method="post">
 
                                            <div class="form-floating mb-3">
-                                              <input type="email" class="form-control" name="" id="floatingInput" placeholder="name@example.com">
+                                              <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
                                               <label for="floatingInput">Email address</label>
                                             </div>
                                             <div class="form-floating">

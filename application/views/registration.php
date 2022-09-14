@@ -5,10 +5,9 @@
     <title>Soulmates Marraige</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <style>
@@ -57,18 +56,16 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 
         <div class="container">
-             <h5 class="logotext">Soulmates Marraige</h5>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <h5 class="logotext">Soulmates Marraige</h5>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span>
             </button>
-          <div class="collapse navbar-collapse" id="ftco-nav">
+            <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 
-                    <li class="nav-item"><a href="#" class="nav-link dropdown-toggle"
-                            data-toggle="dropdown">Search</a>
+                    <li class="nav-item"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Search</a>
                         <ul class="dropdown-menu">
                             <li><a href="search.html">Quick Search</a></li>
                             <li><a href="search.html">Advance Search</a></li>
@@ -76,15 +73,15 @@
                             <li><a href="search.html">Search by ID</a></li>
                         </ul>
                     </li>
-                    
+
                     <li class="nav-item"><a href="membership.html" class="nav-link">Membership</a></li>
-                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
             </div>
-             <div style="position: relative; width: 208px;">
-            <a href="registration.html" id="registration" class="button" style="margin-right: 10px;">Register</a>
-            <a href="login.html" id="registration" class="button">Login</a>
-        </div>
+            <div style="position: relative; width: 208px;">
+                <a href="registration.html" id="registration" class="button" style="margin-right: 10px;">Register</a>
+                <a href="login.html" id="registration" class="button">Login</a>
+            </div>
 
         </div>
     </nav> <!-- END nav -->
@@ -170,10 +167,8 @@
     left: 64px;
 */
         }
-
     </style>
-    <div class="hero-wrap"
-        style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
+    <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
         <div class="container">
             <div class="row no-gutters slider-text justify-content-start align-items-center">
@@ -194,261 +189,416 @@
             <div class="row no-gutters ">
                 <div class="col-md-12 mb-5">
                     <div class="row justify-content-center align-items-center">
-                       
+
                         <div class="col-md- offset-md-1">
                             <div class="login_sec ">
                                 <div class="row">
                                     <div class="text-center mb-3">
-                                     <h3 class="titlelg">Register Now</h3>
-                                     <h5 class="mb-2 titlelg">JOIN FOR FREE AND FIND YOUR LIFE PARTNER </h5>
-                                     <p class="mb-4">You are just two steps away from contacting and messaging 1000's of profiles for FREE!!</p>
-                                     </div>
+                                        <h3 class="titlelg">Register Now</h3>
+                                        <h5 class="mb-2 titlelg">JOIN FOR FREE AND FIND YOUR LIFE PARTNER </h5>
+                                        <p class="mb-4">You are just two steps away from contacting and messaging 1000's of profiles for FREE!!</p>
+                                    </div>
+                                    <?php $error = $this->session->flashdata('error');
+                                    if(isset($error)) {?>
+                                    <div class="alert alert-warning" role="alert">
+                                    <p>Password not matched</p>
+                                    </div>
+                                    <?php } ?>
                                     <div class="col-md-12">
-                                        <form id="basic-form" action="<?php echo base_url('Signup/SubmitUserData'); ?>"  class="form-horizontal" method="post">
-                                         
-                                         <div class="row">
+                                        <form id="basic-form" action="<?php echo base_url('Registration/submitUserData'); ?>" class="form-horizontal" method="post">
 
-                                            <div class="col-lg-6">
-                                               <div class="form-floating mb-3">
-                                              <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" required="">
-                                              <label for="floatingInput">Email address</label>
-                                            </div>  
-                                            </div>
+                                            <div class="row">
 
-                                            <div class="col-lg-6">
-                                                <div class="row">
-
-
-                                          <div class="col-lg-6">
-                                              <div class="form-floating">
-                                              <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required="">
-                                              <label for="floatingPassword">Password</label>
-                                            </div>
-                                          </div>
-
-                                            <div class="col-lg-6">
-                                              <div class="form-floating">
-                                              <input type="password" name="confrimpassword" class="form-control" id="floatingcPassword" placeholder="Password" required="">
-                                              <label for="floatingcPassword">Confirm Password</label>
-                                            </div>
-
-                                          </div>
-                                           </div>
-
-                                        </div>
-
-
-
-                                          <div class="col-lg-6">
-                                               <div class="form-floating mb-3">
-                                              <input type="text" class="form-control" name="" id="error1" 
-                                              placeholder="name@example.com" required="">
-                                              <label for="error1">Name of Bride / Groom*</label>
-                                            </div>  
-                                            </div>
-
-                                             <div class="col-lg-6 d-flex">
-                                            <label class="w-30">Gender : </label>
-                                            <div class="form-check w-30">
-                                              <input class="form-check-input" checked=""  type="radio" name="gender" id="flexRadioDefault1">
-                                              <label class="form-check-label" for="flexRadioDefault1">
-                                               Male  
-                                              </label>
-                                            </div>
-                                            <div class="form-check w-30">
-                                              <input class="form-check-input"   type="radio" name="gender" id="flexRadioDefault2">
-                                              <label class="form-check-label" for="flexRadioDefault2">
-                                               Female
-                                              </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6">
-                                            <label id="heigt" class="p-0">Select Height</label>
-                                            <select required="required" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                              <option value="0">Please Select</option>
-                                <option value='1'>3ft.5in-105cm</option><option value='2'>3ft.6in-107cm</option><option value='3'>3ft.7in-110cm</option><option value='4'>3ft.8in-112cm</option><option value='5'>3ft.9in-115cm</option><option value='6'>3ft.10in-117cm</option><option value='7'>3ft.11in-120cm</option><option value='8'>4ft-122cm</option><option value='9'>4ft.1in-125cm</option><option value='10'>4ft.2in-127cm</option><option value='11'>4ft.3in-130cm</option><option value='12'>4ft.4in-132cm</option><option value='13'>4ft.5in-135cm</option><option value='14'>4ft.6in-137cm</option><option value='15'>4ft.7in-140cm</option><option value='16'>4ft.8in-142cm</option><option value='17'>4ft.9in-145cm</option><option value='18'>4ft.10in-147cm</option><option value='19'>4ft.11in-150cm</option><option value='20'>5ft-152cm</option><option value='21'>5ft.1in-155cm</option><option value='22'>5ft.2in-157cm</option><option value='23'>5ft.3in-160cm</option><option value='24'>5ft.4in-162cm</option><option value='25'>5ft.5in-165cm</option><option value='26'>5ft.6in-167cm</option><option value='27'>5ft.7in-170cm</option><option value='28'>5ft.8in-172cm</option><option value='29'>5ft.9in-175cm</option><option value='30'>5ft.10in-177cm</option><option value='31'>5ft.11in-180cm</option><option value='32'>6ft-182cm</option><option value='33'>6ft.1in-185cm</option><option value='34'>6ft.2in-187cm</option><option value='35'>6ft.3in-190cm</option><option value='36'>6ft.4in-192cm</option><option value='37'>6ft.5in-195cm</option><option value='38'>6ft.6in-197cm</option><option value='39'>6ft.7in-200cm</option><option value='40'>6ft.8in-202cm</option><option value='41'>6ft.9in-205cm</option><option value='42'>6ft.10in-207cm</option><option value='43'>6ft.11in-210cm</option>                            </select>
-                          
-                                           
-                                        </div> 
-
-
-                                        <div class="col-lg-6">
-                                            <label id="heigt" class="p-0">No. of Children</label>
-                                            <select required="required" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                             <option value='0' selected='selected'>Select Mother Tongue </option><option value='Arabic'>Arabic</option><option value='Assamese'>Assamese</option><option value='Awadhi'>Awadhi</option><option value='Bengali'>Bengali</option><option value='Bhojpuri'>Bhojpuri</option><option value='Bhutia'>Bhutia</option><option value='Bihari'>Bihari</option><option value='Chattisgarhi'>Chattisgarhi</option><option value='Chinese'>Chinese</option><option value='Dogri'>Dogri</option><option value='English'>English</option><option value='French'>French</option><option value='Garhwali'>Garhwali</option><option value='Garo'>Garo</option><option value='Gujarati'>Gujarati</option><option value='Haryanvi'>Haryanvi</option><option value='Hindi' >Hindi</option><option value='Kakbarak'>Kakbarak</option><option value='Kanauji'>Kanauji</option><option value='Kannada'>Kannada</option><option value='Kashmiri'>Kashmiri</option><option value='Khandesi'>Khandesi</option><option value='Khasi'>Khasi</option><option value='Konkani'>Konkani</option><option value='Koshali'>Koshali</option><option value='Kumoani'>Kumoani</option><option value='Kutchi'>Kutchi</option><option value='Lepcha'>Lepcha</option><option value='Magahi'>Magahi</option><option value='Maithili'>Maithili</option><option value='Malay'>Malay</option><option value='Malayalam'>Malayalam</option><option value='Manipuri'>Manipuri</option><option value='Marathi'>Marathi</option><option value='Marwari'>Marwari</option><option value='Miji'>Miji</option><option value='Mizo'>Mizo</option><option value='Monpa'>Monpa</option><option value='Nepali'>Nepali</option><option value='Oriya'>Oriya</option><option value='Other'>Other</option><option value='Persian'>Persian</option><option value='Punjabi'>Punjabi</option><option value='Rajasthani'>Rajasthani</option><option value='Russian'>Russian</option><option value='Sanskrit'>Sanskrit</option><option value='Santhali'>Santhali</option><option value='Sindhi'>Sindhi</option><option value='Spanish'>Spanish</option><option value='Swedish'>Swedish</option><option value='Tagalog'>Tagalog</option><option value='Tamil'>Tamil</option><option value='Telugu'>Telugu</option><option value='Tulu'>Tulu</option><option value='Urdu'>Urdu</option></select>                            <span class="err_msg" id="errddlmothertongue"></span>   
-                              </select>
-
-                             
-                          
-                                           
-                                        </div>
-
-                                         <div class="col-lg-12 text-start">
-                                <div class="form-check ml-1 mb-2">
-                          <input class="form-check-input" required="" name="" required="" type="checkbox" value="" id="flexCheckDefault">
-                          <label class="form-check-label" for="flexCheckDefault">
-                           Caste No Bar
-                          </label>
-                        </div>
-                              </div>
-
-                              <div class="col-lg-6 mb-3">
-                                              <div class="form-floating">
-                                              <input type="text" name="" class="form-control" id="subcuste" placeholder="Password">
-                                              <label for="subcuste">Sub Caste</label>
-                                            </div>
-
-
-                                          </div>   
-
-                                          <div class="col-lg-10 d-flex">
-                                            <label class="w-30 pl-0">Marital Status : </label>
-                                            <div class="form-check w-25">
-                                              <input class="form-check-input" checked=""  type="radio" name="marital" id="Married">
-                                              <label class="form-check-label" for="Married">
-                                               Never Married   
-                                              </label>
-                                            </div>
-                                            <div class="form-check w-25">
-                                              <input class="form-check-input"   type="radio" name="marital" id="Divorced">
-                                              <label class="form-check-label" for="Divorced">
-                                               Divorced
-                                              </label>
-                                            </div> <div class="form-check w-25">
-                                              <input class="form-check-input"   type="radio" name="marital" id="Widowed">
-                                              <label class="form-check-label" for="Widowed">
-                                               Widowed
-                                              </label>
-                                            </div> <div class="form-check w-25">
-                                              <input class="form-check-input"   type="radio" name="marital" id="Separated">
-                                              <label class="form-check-label" for="Separated">
-                                               Separated
-                                              </label>
-                                            </div>
-                                        </div>
-
-                                         <div class="col-lg-6">
-                                            <label id="heigt" class="p-0">No. of Children</label>
-                                            <select required="required" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                            <option value="None" selected="selected">No Children</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                                <option value="More Than 5">More Than 5</option>   
-                                          </select>
-                                           <div class="d-flex mt-0">
-                                       
-                                            <div class="form-check w-50">
-                                              <input class="form-check-input" checked=""  type="radio" name="relestionship" id="Living">
-                                              <label class="form-check-label" for="Living">
-                                               Living with me  
-                                              </label>
-                                            </div>
-                                            <div class="form-check w-50">
-                                              <input class="form-check-input"   type="radio" name="relestionship" id="notliving">
-                                              <label class="form-check-label" for="notliving">
-                                               Not living with me
-                                              </label>
-                                            </div>
-                                        </div>
-                                        </div>
-                                         <div class="col-lg-6"></div>
-
-                                        <div class="col-lg-6">
-                                            <label id="heigt" class="p-0">Select Country</label>
-                                            <select required="required" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                            <option value='0' selected='selected'>Select Country</option>
-                                            <?php foreach($data as $list){ ?>
-                                            <option value="<?php echo $list->id;?>"><?php echo $list->name;?></option>
-                                            <?php } ?>
-                                            
-                                        </select>                   
-                                          
-                                        </div>
-
-                                         <div class="col-lg-6 mb-3">
-                                            <label id="heigt" class="p-0">Select State</label>
-                                            <select required="required" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                                
-                                                <select class="form-control form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="state-dropdown" required="required"></select>
-                                        </select>                   
-                                          
-                                        </div>
-
-                                         <div class="col-lg-6">
-                                              <div class="form-floating">
-                                              <input type="text" name="address" class="form-control" id="address" placeholder="Password" required="">
-                                              <label for="address">Contact Address</label>
-                                            </div>
-
-
-                                          </div>
-
-
-
-                                         <div class="col-lg-6 mb-4">
-                                              <div class="form-floating">
-                                              <input type="number" name="" class="form-control" id="phone" placeholder="Password" required="">
-                                              <label for="phone">Phone No.</label>
-                                            </div>
-
-
-                                          </div>
-
-
-                                        <div class="col-lg-6">
-                                            <label id="heigt" class="p-0">Citizenship</label>
-                                            <select required="required" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                               <option value='0' selected='selected'>--- Select Country ---</option><option value='Afghanistan'>Afghanistan</option><option value='Albania'>Albania</option><option value='Algeria'>Algeria</option><option value='American Samoa'>American Samoa</option><option value='Andorra'>Andorra</option><option value='Angola'>Angola</option><option value='Anguilla'>Anguilla</option><option value='Antarctica'>Antarctica</option><option value='Antigua And Barbuda'>Antigua And Barbuda</option><option value='Argentina'>Argentina</option><option value='Armenia'>Armenia</option><option value='Aruba'>Aruba</option><option value='Australia'>Australia</option><option value='Austria'>Austria</option><option value='Azerbaijan'>Azerbaijan</option><option value='Bahamas The'>Bahamas The</option><option value='Bahrain'>Bahrain</option><option value='Bangladesh'>Bangladesh</option><option value='Barbados'>Barbados</option><option value='Belarus'>Belarus</option><option value='Belgium'>Belgium</option><option value='Belize'>Belize</option><option value='Benin'>Benin</option><option value='Bermuda'>Bermuda</option><option value='Bhutan'>Bhutan</option><option value='Bolivia'>Bolivia</option><option value='Bosnia and Herzegovina'>Bosnia and Herzegovina</option><option value='Botswana'>Botswana</option>
-            
-                                        </select>                   
-                                          
-                                        </div>
-                                      <div class="col-lg-6 d-flex"></div>
-                                        <div class="col-lg-6 d-flex">
-                                            <label class="w-25">NRI : </label>
-                                            <div class="form-check w-30">
-                                              <input class="form-check-input" checked=""  type="radio" name="nri" id="nriyes">
-                                              <label class="form-check-label" for="nriyes">
-                                               Yes    
-                                              </label>
-                                            </div>
-                                            <div class="form-check w-30">
-                                              <input class="form-check-input"   type="radio" name="nri" id="nrino">
-                                              <label class="form-check-label" for="nrino">
-                                                Not
-                                              </label>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-lg-12 text-start">
-                                <div class="form-check ml-1 mb-2">
-                          <input class="form-check-input" required="" name=""  type="checkbox" value="" id="privacy">
-                          <label class="form-check-label" for="privacy">
-                          Please tick this box to indicate that you have read and agree to the Terms & Conditions of Service
-                          </label>
-                        </div>
-                              </div>
-
-
-
-
-
-
-                                      
-                                    
-                                         
-                                            <div class="col-md-12 p-0 mt-4 mb-3">
-                                                <div class="container-login100-form-btn mt-4">
-                                                   <button type="submit" class="btn btn-primary btn-pdd ">Register Now</button>
+                                                <div class="col-lg-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" required="">
+                                                        <label for="floatingInput">Email address</label>
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                           <!--  <div class="col-md-12">
+                                                <div class="col-lg-6">
+                                                    <div class="row">
+
+
+                                                        <div class="col-lg-6">
+                                                            <div class="form-floating">
+                                                                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required="">
+                                                                <label for="floatingPassword">Password</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-6">
+                                                            <div class="form-floating">
+                                                                <input type="password" name="re_password" class="form-control" id="floatingcPassword" placeholder="Password" required="">
+                                                                <label for="floatingcPassword">Confirm Password</label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+
+
+                                                <div class="col-lg-6">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="text" class="form-control" name="name" id="error1" placeholder="name@example.com" required="">
+                                                        <label for="error1">Name of Bride / Groom*</label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 d-flex">
+                                                    <label class="w-30">Gender : </label>
+                                                    <div class="form-check w-30">
+                                                        <input class="form-check-input" value="male" checked="" type="radio" name="gender" id="flexRadioDefault1">
+                                                        <label class="form-check-label"  for="flexRadioDefault1">
+                                                            Male
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check w-30">
+                                                        <input class="form-check-input" value="female" type="radio" name="gender" id="flexRadioDefault2">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            Female
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    <label id="heigt" class="p-0">Select Height</label>
+                                                    <select required="required" class="form-select form-select-lg mb-3" name="height" aria-label=".form-select-lg example">
+                                                        <option value="0">Please Select</option>
+                                                        <option value='1'>3ft.5in-105cm</option>
+                                                        <option value='2'>3ft.6in-107cm</option>
+                                                        <option value='3'>3ft.7in-110cm</option>
+                                                        <option value='4'>3ft.8in-112cm</option>
+                                                        <option value='5'>3ft.9in-115cm</option>
+                                                        <option value='6'>3ft.10in-117cm</option>
+                                                        <option value='7'>3ft.11in-120cm</option>
+                                                        <option value='8'>4ft-122cm</option>
+                                                        <option value='9'>4ft.1in-125cm</option>
+                                                        <option value='10'>4ft.2in-127cm</option>
+                                                        <option value='11'>4ft.3in-130cm</option>
+                                                        <option value='12'>4ft.4in-132cm</option>
+                                                        <option value='13'>4ft.5in-135cm</option>
+                                                        <option value='14'>4ft.6in-137cm</option>
+                                                        <option value='15'>4ft.7in-140cm</option>
+                                                        <option value='16'>4ft.8in-142cm</option>
+                                                        <option value='17'>4ft.9in-145cm</option>
+                                                        <option value='18'>4ft.10in-147cm</option>
+                                                        <option value='19'>4ft.11in-150cm</option>
+                                                        <option value='20'>5ft-152cm</option>
+                                                        <option value='21'>5ft.1in-155cm</option>
+                                                        <option value='22'>5ft.2in-157cm</option>
+                                                        <option value='23'>5ft.3in-160cm</option>
+                                                        <option value='24'>5ft.4in-162cm</option>
+                                                        <option value='25'>5ft.5in-165cm</option>
+                                                        <option value='26'>5ft.6in-167cm</option>
+                                                        <option value='27'>5ft.7in-170cm</option>
+                                                        <option value='28'>5ft.8in-172cm</option>
+                                                        <option value='29'>5ft.9in-175cm</option>
+                                                        <option value='30'>5ft.10in-177cm</option>
+                                                        <option value='31'>5ft.11in-180cm</option>
+                                                        <option value='32'>6ft-182cm</option>
+                                                        <option value='33'>6ft.1in-185cm</option>
+                                                        <option value='34'>6ft.2in-187cm</option>
+                                                        <option value='35'>6ft.3in-190cm</option>
+                                                        <option value='36'>6ft.4in-192cm</option>
+                                                        <option value='37'>6ft.5in-195cm</option>
+                                                        <option value='38'>6ft.6in-197cm</option>
+                                                        <option value='39'>6ft.7in-200cm</option>
+                                                        <option value='40'>6ft.8in-202cm</option>
+                                                        <option value='41'>6ft.9in-205cm</option>
+                                                        <option value='42'>6ft.10in-207cm</option>
+                                                        <option value='43'>6ft.11in-210cm</option>
+                                                    </select>
+
+
+                                                </div>
+
+
+                                                <div class="col-lg-6">
+                                                    <label id="heigt" class="p-0">Select Motehr Tongue</label>
+                                                    <select required="required" class="form-select form-select-lg mb-3" name="mother_tongue" aria-label=".form-select-lg example">
+                                                        <option value='0' selected='selected'>Select Mother Tongue </option>
+                                                        <option value='Arabic'>Arabic</option>
+                                                        <option value='Assamese'>Assamese</option>
+                                                        <option value='Awadhi'>Awadhi</option>
+                                                        <option value='Bengali'>Bengali</option>
+                                                        <option value='Bhojpuri'>Bhojpuri</option>
+                                                        <option value='Bhutia'>Bhutia</option>
+                                                        <option value='Bihari'>Bihari</option>
+                                                        <option value='Chattisgarhi'>Chattisgarhi</option>
+                                                        <option value='Chinese'>Chinese</option>
+                                                        <option value='Dogri'>Dogri</option>
+                                                        <option value='English'>English</option>
+                                                        <option value='French'>French</option>
+                                                        <option value='Garhwali'>Garhwali</option>
+                                                        <option value='Garo'>Garo</option>
+                                                        <option value='Gujarati'>Gujarati</option>
+                                                        <option value='Haryanvi'>Haryanvi</option>
+                                                        <option value='Hindi'>Hindi</option>
+                                                        <option value='Kakbarak'>Kakbarak</option>
+                                                        <option value='Kanauji'>Kanauji</option>
+                                                        <option value='Kannada'>Kannada</option>
+                                                        <option value='Kashmiri'>Kashmiri</option>
+                                                        <option value='Khandesi'>Khandesi</option>
+                                                        <option value='Khasi'>Khasi</option>
+                                                        <option value='Konkani'>Konkani</option>
+                                                        <option value='Koshali'>Koshali</option>
+                                                        <option value='Kumoani'>Kumoani</option>
+                                                        <option value='Kutchi'>Kutchi</option>
+                                                        <option value='Lepcha'>Lepcha</option>
+                                                        <option value='Magahi'>Magahi</option>
+                                                        <option value='Maithili'>Maithili</option>
+                                                        <option value='Malay'>Malay</option>
+                                                        <option value='Malayalam'>Malayalam</option>
+                                                        <option value='Manipuri'>Manipuri</option>
+                                                        <option value='Marathi'>Marathi</option>
+                                                        <option value='Marwari'>Marwari</option>
+                                                        <option value='Miji'>Miji</option>
+                                                        <option value='Mizo'>Mizo</option>
+                                                        <option value='Monpa'>Monpa</option>
+                                                        <option value='Nepali'>Nepali</option>
+                                                        <option value='Oriya'>Oriya</option>
+                                                        <option value='Other'>Other</option>
+                                                        <option value='Persian'>Persian</option>
+                                                        <option value='Punjabi'>Punjabi</option>
+                                                        <option value='Rajasthani'>Rajasthani</option>
+                                                        <option value='Russian'>Russian</option>
+                                                        <option value='Sanskrit'>Sanskrit</option>
+                                                        <option value='Santhali'>Santhali</option>
+                                                        <option value='Sindhi'>Sindhi</option>
+                                                        <option value='Spanish'>Spanish</option>
+                                                        <option value='Swedish'>Swedish</option>
+                                                        <option value='Tagalog'>Tagalog</option>
+                                                        <option value='Tamil'>Tamil</option>
+                                                        <option value='Telugu'>Telugu</option>
+                                                        <option value='Tulu'>Tulu</option>
+                                                        <option value='Urdu'>Urdu</option>
+                                                    </select> <span class="err_msg" id="errddlmothertongue"></span>
+                                                    </select>
+
+
+
+
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <label id="heigt" class="p-0">Select Religion</label>
+                                                    <select required="required" id="religion-dropdown" name="religion_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                        <option value='0' selected='selected'>Select Religion</option>
+                                                        <?php foreach ($religion as $list) { ?>
+                                                            <option value="<?php echo $list->id; ?>"><?php echo $list->name; ?></option>
+                                                        <?php } ?>
+
+                                                    </select>
+
+                                                </div>
+
+                                                <div class="col-lg-6 mb-3">
+                                                    <label id="heigt" class="p-0">Select Caste</label>
+                                                    <select class="form-control form-select form-select-lg mb-3" name="caste_id" aria-label=".form-select-lg example" id="caste-dropdown" required="required">
+                                                        <option value="">Select Caste</option>
+                                                    </select>
+
+
+                                                </div>
+
+                                                <div class="col-lg-12 text-start">
+                                                    <div class="form-check ml-1 mb-2">
+                                                        <input class="form-check-input" required="" name="cast_barrier" required="" type="checkbox" value="1" id="flexCheckDefault">
+                                                        <label class="form-check-label" for="flexCheckDefault">
+                                                            Caste No Bar
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6 mb-3">
+                                                    <div class="form-floating">
+                                                        <input type="text" name="sub_cast" class="form-control" id="subcuste" placeholder="Password">
+                                                        <label for="subcuste">Sub Caste</label>
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="col-lg-10 d-flex">
+                                                    <label class="w-30 pl-0">Marital Status : </label>
+                                                    <div class="form-check w-25">
+                                                        <input class="form-check-input" checked="" value="never married" type="radio" name="marital_status" id="Married">
+                                                        <label class="form-check-label" for="Married">
+                                                            Never Married
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check w-25">
+                                                        <input class="form-check-input" value="divorced" type="radio" name="marital" id="Divorced">
+                                                        <label class="form-check-label" for="Divorced">
+                                                            Divorced
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check w-25">
+                                                        <input class="form-check-input" value="widowed" type="radio" name="marital" id="Widowed">
+                                                        <label class="form-check-label" for="Widowed">
+                                                            Widowed
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check w-25">
+                                                        <input class="form-check-input" value="separated" type="radio" name="marital" id="Separated">
+                                                        <label class="form-check-label" for="Separated">
+                                                            Separated
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-6">
+                                                    <label id="heigt" class="p-0">No. of Children</label>
+                                                    <select required="required" name="no_of_children" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                        <option value="None" selected="selected">No Children</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="More Than 5">More Than 5</option>
+                                                    </select>
+                                                    <div class="d-flex mt-0">
+
+                                                        <div class="form-check w-50">
+                                                            <input class="form-check-input" checked="" type="radio" value="Living with me" name="relationship" id="Living">
+                                                            <label class="form-check-label" for="Living">
+                                                                Living with me
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check w-50">
+                                                            <input class="form-check-input" type="radio" value="Not living with me" name="relestionship" id="notliving">
+                                                            <label class="form-check-label" for="notliving">
+                                                                Not living with me
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6"></div>
+
+                                                <div class="col-lg-6">
+                                                    <label id="heigt" class="p-0">Select Country</label>
+                                                    <select required="required" id="country-dropdown" name="country_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                        <option value='0' selected='selected'>Select Country</option>
+                                                        <?php foreach ($data as $list) { ?>
+                                                            <option value="<?php echo $list->id; ?>"><?php echo $list->name; ?></option>
+                                                        <?php } ?>
+
+                                                    </select>
+
+                                                </div>
+
+                                                <div class="col-lg-6 mb-3">
+                                                    <label id="heigt" class="p-0">Select State</label>
+                                                    <select class="form-control form-select form-select-lg mb-3" name="state_id" aria-label=".form-select-lg example" id="state-dropdown" required="required">
+                                                        <option value="">Select State</option>
+                                                    </select>
+
+
+                                                </div>
+                                                <div class="col-lg-6 mb-3">
+                                                    <label id="heigt" class="p-0">Select City</label>
+                                                    <select class="form-control form-select form-select-lg mb-3" name="city_id" aria-label=".form-select-lg example" id="city-dropdown" required="required">
+                                                        <option value="">Select City</option>
+                                                    </select>
+
+
+                                                </div>
+
+                                                <div class="col-lg-6 mt-3">
+                                                    <div class="form-floating">
+                                                        <input type="text" name="address" class="form-control" id="address" placeholder="Password" required="">
+                                                        <label for="address">Contact Address</label>
+                                                    </div>
+
+
+                                                </div>
+
+
+
+                                                <div class="col-lg-6 mb-4">
+                                                    <div class="form-floating">
+                                                        <input type="number" name="number" class="form-control" id="phone" placeholder="Number" required="">
+                                                        <label for="phone">Phone No.</label>
+                                                    </div>
+
+
+                                                </div>
+
+
+                                                <div class="col-lg-6">
+                                                    <label id="heigt" class="p-0">Citizenship</label>
+                                                    <select required="required" name="citizenship" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                        <option value='0' selected='selected'>--- Select Country ---</option>
+                                                        <option value='Afghanistan'>Afghanistan</option>
+                                                        <option value='Albania'>Albania</option>
+                                                        <option value='Algeria'>Algeria</option>
+                                                        <option value='American Samoa'>American Samoa</option>
+                                                        <option value='Andorra'>Andorra</option>
+                                                        <option value='Angola'>Angola</option>
+                                                        <option value='Anguilla'>Anguilla</option>
+                                                        <option value='Antarctica'>Antarctica</option>
+                                                        <option value='Antigua And Barbuda'>Antigua And Barbuda</option>
+                                                        <option value='Argentina'>Argentina</option>
+                                                        <option value='Armenia'>Armenia</option>
+                                                        <option value='Aruba'>Aruba</option>
+                                                        <option value='Australia'>Australia</option>
+                                                        <option value='Austria'>Austria</option>
+                                                        <option value='Azerbaijan'>Azerbaijan</option>
+                                                        <option value='Bahamas The'>Bahamas The</option>
+                                                        <option value='Bahrain'>Bahrain</option>
+                                                        <option value='Bangladesh'>Bangladesh</option>
+                                                        <option value='Barbados'>Barbados</option>
+                                                        <option value='Belarus'>Belarus</option>
+                                                        <option value='Belgium'>Belgium</option>
+                                                        <option value='Belize'>Belize</option>
+                                                        <option value='Benin'>Benin</option>
+                                                        <option value='Bermuda'>Bermuda</option>
+                                                        <option value='Bhutan'>Bhutan</option>
+                                                        <option value='Bolivia'>Bolivia</option>
+                                                        <option value='Bosnia and Herzegovina'>Bosnia and Herzegovina</option>
+                                                        <option value='Botswana'>Botswana</option>
+
+                                                    </select>
+
+                                                </div>
+                                                <div class="col-lg-6 d-flex"></div>
+                                                <div class="col-lg-6 d-flex">
+                                                    <label class="w-25">NRI : </label>
+                                                    <div class="form-check w-30">
+                                                        <input class="form-check-input" checked="" value="Yes" type="radio" name="nri" id="nriyes">
+                                                        <label class="form-check-label" for="nriyes">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check w-30">
+                                                        <input class="form-check-input" type="radio" value="Not" name="nri" id="nrino">
+                                                        <label class="form-check-label" for="nrino">
+                                                            Not
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-lg-12 text-start">
+                                                    <div class="form-check ml-1 mb-2">
+                                                        <input class="form-check-input" required="" name="" type="checkbox" value="" id="privacy">
+                                                        <label class="form-check-label" for="privacy">
+                                                            Please tick this box to indicate that you have read and agree to the Terms & Conditions of Service
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-12 p-0 mt-4 mb-3">
+                                                    <div class="container-login100-form-btn mt-4">
+                                                        <button type="submit" class="btn btn-primary btn-pdd ">Register Now</button>
+                                                    </div>
+                                                </div>
+
+                                                <!--  <div class="col-md-12">
                                                 <p class="forgot">
                                                     <a class="txt2" href="#"><span>Forgot Password ?</span></a>
                                                     Not a member yet, <a href="#"><span
@@ -468,7 +618,7 @@
 
                         </div>
 
-                       <!--  <div class="col-md-5">
+                        <!--  <div class="col-md-5">
                             <div class="">
                       
                                 <img src="assets/img/register.png" class="img-fluid">
@@ -476,7 +626,7 @@
 
                             </div>
                         </div> -->
-                      
+
                     </div>
                 </div>
             </div>
@@ -534,8 +684,7 @@
                                             Office: demo address</span></a></li>
                                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91
                                             0123456789</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span
-                                            class="text">mail@soulmatesmarraige.com </span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">mail@soulmatesmarraige.com </span></a></li>
 
                             </ul>
                         </div>
@@ -548,7 +697,9 @@
                     <p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> All rights reserved
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>
@@ -558,48 +709,66 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-<script type="text/javascript">
- $(document).ready(function() {
-  $("#basic-form").validate();
-});
-$(document).ready(function() {
-$('#country-dropdown').on('change', function() {
-var country_id = this.value;
-$.ajax({
-url: "states-by-country.php",
-type: "POST",
-data: {
-country_id: country_id
-},
-cache: false,
-success: function(result){
-$("#state-dropdown").html(result);
-$('#city-dropdown').html('<option value="">Select State First</option>'); 
-}
-});
-});    
-$('#state-dropdown').on('change', function() {
-var state_id = this.value;
-$.ajax({
-url: "cities-by-state.php",
-type: "POST",
-data: {
-state_id: state_id
-},
-cache: false,
-success: function(result){
-$("#city-dropdown").html(result);
-}
-});
-});
-});
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+        //  $(document).ready(function() {
+        //   $("#basic-form").validate();
+        // });
+        $(document).ready(function() {
+            $('#country-dropdown').on('change', function() {
+                var country_id = this.value;
+                // alert(country_id);
+                $.ajax({
+                    url: "<?php echo base_url()  ?>Registration/fetch_state",
+                    type: "POST",
+                    data: {
+                        country_id: country_id
+                    },
+                    cache: false,
+                    success: function(result) {
+                        $("#state-dropdown").html(result);
+                        // $('#city-dropdown').html('<option value="">Select State First</option>'); 
+                    }
+                });
+            });
+        });
+        $('#state-dropdown').on('change', function() {
+            var state_id = this.value;
+            $.ajax({
+                url: "<?php echo base_url()  ?>Registration/fetch_city",
+                type: "POST",
+                data: {
+                    state_id: state_id
+                },
+                cache: false,
+                success: function(result) {
+                    $("#city-dropdown").html(result);
+                }
+            });
+        });
 
-  <script src="assets/js/jquery.min.js"></script>
+        $('#religion-dropdown').on('change', function() {
+            var religion_id = this.value;
+            // alert(religion_id);
+            $.ajax({
+                url: "<?php echo base_url()  ?>Registration/fetch_caste",
+                type: "POST",
+                data: {
+                    religion_id: religion_id
+                },
+                cache: false,
+                success: function(result) {
+                    $("#caste-dropdown").html(result);
+                }
+            });
+        });
+    </script>
+
+    <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
