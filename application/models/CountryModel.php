@@ -11,6 +11,33 @@ class CountryModel extends CI_Model{
         return $query->result();
     }
 
+    function getCountryById($id){
+        $this->db->where('id',$id);
+        $query = $this->db->get('countries');
+        return $query->result();
+    }
+    function getStateById($id){
+        $this->db->where('id',$id);
+        $query = $this->db->get('states');
+        return $query->result();
+    }
+    function getCityById($id){
+        $this->db->where('id',$id);
+        $query = $this->db->get('cities');
+        return $query->result();
+    }
+
+    function getReligionById($id){
+        $this->db->where('id',$id);
+        $query = $this->db->get('religion');
+        return $query->result();
+    }
+    function getCasteById($id){
+        $this->db->where('id',$id);
+        $query = $this->db->get('caste');
+        return $query->result();
+    } 
+
     function getReligion()
     {
         
