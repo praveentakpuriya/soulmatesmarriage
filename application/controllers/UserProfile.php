@@ -10,6 +10,7 @@ class UserProfile extends CI_Controller
         parent::__construct();
         $this->load->model('CountryModel');
         $this->load->model('Login_model');
+        $this->load->model('EditDataModel');
     }
 
     public function index()
@@ -22,6 +23,7 @@ class UserProfile extends CI_Controller
         $data['caste'] = $this->CountryModel->getCasteById(
             $data["data"][0]->caste_id
         );
+        $data['documents'] = $this->EditDataModel->fetchDocuments($data["data"][0]->user_id);
         $this->load->view('nav');
         $this->load->view('memberprofile', $data);
     }
