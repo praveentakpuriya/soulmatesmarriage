@@ -322,7 +322,7 @@
 
                                             <div class="col-lg-12 text-start">
                                                 <div class="form-check ml-1 mb-2">
-                                                    <input class="form-check-input" required="" name="cast_barrier" required="" type="checkbox" value="1" id="flexCheckDefault">
+                                                    <input class="form-check-input"  name="cast_barrier"  type="checkbox" value="1" id="flexCheckDefault">
                                                     <label class="form-check-label" for="flexCheckDefault">
                                                         Caste No Bar
                                                     </label>

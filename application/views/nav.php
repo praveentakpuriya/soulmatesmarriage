@@ -67,10 +67,10 @@
 
                     <li class="nav-item"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Search</a>
                         <ul class="dropdown-menu">
-                            <li><a href="search.html">Quick Search</a></li>
-                            <li><a href="search.html">Advance Search</a></li>
-                            <li><a href="search.html">Keyword Search</a></li>
-                            <li><a href="search.html">Search by ID</a></li>
+                            <li><a href="Searching">Quick Search</a></li>
+                            <li><a href="Searching">Advance Search</a></li>
+                            <li><a href="Searching">Keyword Search</a></li>
+                            <li><a href="Searching">Search by ID</a></li>
                         </ul>
                     </li>
 
