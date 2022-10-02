@@ -1,43 +1,36 @@
-<select name='annual_income_max' onchange='ddchange(this.value);newddchange(this);' id='incomefrom' class='form-control' style='background-color:#fff;color: #000;
-       border-color: rgb(169, 169, 169);'>
-                                          <option value='0' selected='selected'>Min</option>                                          
-                                          <option value='0' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "0") echo "checked" ?>>0</option>
-                                          <option value='25000' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "0") echo "checked" ?>>25000</option>
-                                          <option value='50001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "25000") echo "checked" ?>>50001</option>
-                                          <option value='50001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "50001") echo "checked" ?>>50001</option>
-                                          <option value='75001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "75001") echo "checked" ?>>75001</option>
-                                          <option value='100001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "100001") echo "checked" ?>>100001
-                                          </option>
-                                          <option value='100001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "100001") echo "checked" ?>>100001
-                                          </option>
-                                          <option value='150001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "150001") echo "checked" ?>>150001
-                                          </option>
-                                          <option value='200001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "200001") echo "checked" ?>>200001
-                                          </option>
-                                          <option value='200001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "200001") echo "checked" ?>>200001
-                                          </option>
-                                          <option value='300001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "300001") echo "checked" ?>>300001
-                                          </option>
-                                          <option value='400001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "400001") echo "checked" ?>>400001
-                                          </option>
-                                          <option value='500001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "500001") echo "checked" ?>>500001
-                                          </option>
-                                          <option value='700001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "700001") echo "checked" ?>>700001
-                                          </option>
-                                          <option value='1000001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "1000001") echo "checked" ?>>1000001
-                                          </option>
-                                          <option value='1500001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "1500001") echo "checked" ?>>1500001
-                                          </option>
-                                          <option value='2000001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "2000001") echo "checked" ?>>2000001
-                                          </option>
-                                          <option value='3000001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "3000001") echo "checked" ?>>3000001
-                                          </option>
-                                          <option value='4000001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "4000001") echo "checked" ?>>4000001
-                                          </option>
-                                          <option value='5000001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "5000001") echo "checked" ?>>5000001
-                                          </option>
-                                          <option value='7500001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "7500001") echo "checked" ?>>7500001
-                                          </option>
-                                          <option value='10000001' <?php if (isset($preference[0]->annual_income_max)) if ($preference[0]->annual_income_max == "10000001") echo "checked" ?>>10000001
-                                          </option>
-                                        </select>
+<script>
+  function submitForSearch() {
+    var gender = document.getElementsByName('gender');
+    var marital_status = document.getElementsByName('marital_status')
+    var age_from = document.getElementsByName('age_from')
+    var age_to = document.getElementsByName('age_to')
+    var height_from = document.getElementsByName('age_to')
+    var height_to = document.getElementsByName('age_to')
+    var manglik = document.getElementsByName('manglik')
+    var physical_status = document.getElementsByName('physical_status')
+    var caste_barrier = document.getElementsByName('caste_barrier')
+    var employedin = document.getElementsByName('employedin')
+    var countryliving = document.getElementsByName('country-dropdown1')
+    var citizenship = document.getElementsByName('citizenship')
+    
+  }
+</script>
+<?php
+$userdata = array(
+            // "user_id" => $userid,
+            "gender" => $this->input->post("gender"),
+            "age_from" => $this->input->post("age_from"),
+            "age_to" => $this->input->post("age_to"),
+            "marital_status" => $this->input->post("marital_status"),
+            "height_from" => $this->input->post("height_from"),  
+            "height_to" => $this->input->post("height_to"), 
+            "manglik" => $this->input->post("manglik"),
+            "physical_status" => $this->input->post("physical_status"),  
+            "caste_barrier" => $this->input->post("caste_barrier"),
+            "employed_in" => $this->input->post("employedin"), 
+            "countryliving" => $this->input->post("countryliving"),
+            "citizenship" => $this->input->post("citizenship"),  
+            "caste_barrier" => $this->input->post("caste_barrier"), 
+        );
+
+        ?>

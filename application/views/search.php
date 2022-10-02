@@ -374,62 +374,6 @@
                     </div>
                   </div>
                 </div>
-
-
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                  <div class="mega-box-new">
-                    <p class="calibri-Bold-font f-22 color-31 t-transform-ue text-center ab-t1">Search
-                      <span class="color-d">Profile id </span>
-                    </p>
-                    <hr class="search-hr">
-                    <div class="row">
-
-                      <div class="col-md-12">
-
-
-
-                        <form action="#" method="post" name="form3" id="form3">
-
-                          <br>
-                          <div class="form-group">
-                            <div class="row">
-
-                              <div class="col-sm-12 col-md-12">
-
-
-                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
-                                <p style="text-align:left"> <small> search by: Profile Id
-                                  </small> </p>
-
-
-                              </div>
-                            </div>
-                          </div>
-
-
-                          <div class="form-group">
-                            <div class="row">
-
-                              <div class="col-sm-9 col-md-9">
-                                <button class="btn btn-primary btn-block" name="Submit" type="submit" onclick="return checkid()">Search</button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-
-
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-
-                </div>
               </div>
             </div>
             <div role="tabpanel" class="tab-pane fade " id="advance-search-tab">
@@ -444,7 +388,7 @@
                       <hr class="search-hr">
 
                       <div class="add-box-2" id="add_i_cstm2">
-                        <form method="post" name="form2" id="form2">
+                        <form>
                           <div class="form-group">
                             <div class="row">
 
@@ -454,10 +398,10 @@
                               <div class="col-sm-9 col-md-9 ">
                                 <div class="controls_holder">
                                   <label>
-                                    <input name="sex" type="radio" value="Male" checked="checked" />
+                                    <input name="gender" type="radio" id="gender" value="Male" checked="checked" />
                                     Groom &nbsp; </label>
                                   <label>
-                                    <input name="sex" type="radio" value="Female" />
+                                    <input name="gender" type="radio" id="gender" value="Female" />
                                     Bride </label>
                                 </div>
 
@@ -472,19 +416,19 @@
                               <div class="col-sm-9 col-md-9 ">
                                 <div class="controls_holder">
                                   <label>
-                                    <input name="mstatus" type="checkbox" id="mstatus" value="Never Married" checked="checked">
+                                    <input name="marital_status" class="langg" type="checkbox" id="marital_status" value="Never Married" >
                                     Never Married &nbsp;</label>
                                   <label>
-                                    <input name="mstatus" type="checkbox" id="mstatus" value="Widowed">
+                                    <input name="marital_status" class="langg" type="checkbox" id="marital_status" value="Widowed">
                                     Widowed &nbsp;</label>
                                   <label>
-                                    <input name="mstatus" type="checkbox" id="mstatus" value="Divorced">
+                                    <input name="marital_status" class="langg" type="checkbox" id="marital_status" value="Divorced">
                                     Divorced &nbsp;</label>
                                   <label>
-                                    <input name="mstatus" type="checkbox" id="mstatus" value="Separated">
+                                    <input name="marital_status" class="langg" type="checkbox" id="marital_status" value="Separated">
                                     Separated &nbsp;</label>
                                   <label>
-                                    <input name="mstatus" type="checkbox" id="mstatusany" value="Any">
+                                    <input name="marital_status" class="langg" type="checkbox" id="marital_status" value="Any">
                                     Any</label>
                                 </div>
                               </div>
@@ -498,13 +442,13 @@
                               <div class="col-sm-9 col-md-9 ">
                                 <div class="controls_holder pull-left">
                                   <label>
-                                    <input name="child" type="radio" value="none" disabled="disabled">
+                                    <input name="child" id="have_children" type="radio" value="No" disabled="disabled">
                                     No &nbsp;</label>
                                   <label>
-                                    <input name="child" type="radio" value="Yes" disabled="disabled">
+                                    <input name="child" id="have_children" type="radio" value="Yes" disabled="disabled">
                                     Yes &nbsp;</label>
                                   <label>
-                                    <input name="child" type="radio" value="Does Not Matter" disabled="disabled">
+                                    <input name="child" id="have_children" type="radio" value="None" disabled="disabled">
                                     Doesn't matter</label>
                                 </div>
                               </div>
@@ -516,7 +460,7 @@
                                 <label class="control-label   ">Age between </label>
                               </div>
                               <div class="col-sm-4 col-md-4 ">
-                                <select name="agefrom" id="agefrom" class="form-control">
+                                <select name="age_from" id="age_from" class="form-control">
                                   <option value="18">18</option>
                                   <option value="19">19</option>
                                   <option value="20" selected="selected">20</option>
@@ -570,15 +514,25 @@
                                   <option value="68">68</option>
                                   <option value="69">69</option>
                                   <option value="70">70</option>
+                                  <option value="71">71</option>
+                                  <option value="72">72</option>
+                                  <option value="73">73</option>
+                                  <option value="74">74</option>
+                                  <option value="75">75</option>
+                                  <option value="76">76</option>
+                                  <option value="77">77</option>
+                                  <option value="78">78</option>
+                                  <option value="79">79</option>
+                                  <option value="80">80</option>
                                 </select>
                               </div>
                               <div class="col-sm-1 col-md-1 " style="padding-top:10px"> to
                               </div>
                               <div class="col-sm-4 col-md-4">
-                                <select class="form-control" name="ageto" id="ageto">
+                                <select class="form-control" name="age_to" id="age_to">
                                   <option value="18">18</option>
                                   <option value="19">19</option>
-                                  <option value="20">20</option>
+                                  <option value="20" selected="selected">20</option>
                                   <option value="21">21</option>
                                   <option value="22">22</option>
                                   <option value="23">23</option>
@@ -590,10 +544,10 @@
                                   <option value="29">29</option>
                                   <option value="30">30</option>
                                   <option value="31">31</option>
-                                  <option value="32" selected="selected">32</option>
+                                  <option value="32">32</option>
                                   <option value="33">33</option>
                                   <option value="34">34</option>
-                                  <option value="35">35</option>
+                                  <option value="35" selected>35</option>
                                   <option value="36">36</option>
                                   <option value="37">37</option>
                                   <option value="38">38</option>
@@ -629,6 +583,16 @@
                                   <option value="68">68</option>
                                   <option value="69">69</option>
                                   <option value="70">70</option>
+                                  <option value="71">71</option>
+                                  <option value="72">72</option>
+                                  <option value="73">73</option>
+                                  <option value="74">74</option>
+                                  <option value="75">75</option>
+                                  <option value="76">76</option>
+                                  <option value="77">77</option>
+                                  <option value="78">78</option>
+                                  <option value="79">79</option>
+                                  <option value="80">80</option>
                                 </select>
                               </div>
                             </div>
@@ -639,101 +603,101 @@
                                 <label class="control-label   ">Height </label>
                               </div>
                               <div class="col-sm-4 col-md-4">
-                                <select id="heightfr" name="heightfr" class="form-control">
-                                  <option value='1'>3ft.5in-105cm</option>
-                                  <option value='2'>3ft.6in-107cm</option>
-                                  <option value='3'>3ft.7in-110cm</option>
-                                  <option value='4'>3ft.8in-112cm</option>
-                                  <option value='5'>3ft.9in-115cm</option>
-                                  <option value='6'>3ft.10in-117cm</option>
-                                  <option value='7'>3ft.11in-120cm</option>
-                                  <option value='8'>4ft-122cm</option>
-                                  <option value='9'>4ft.1in-125cm</option>
-                                  <option value='10'>4ft.2in-127cm</option>
-                                  <option value='11'>4ft.3in-130cm</option>
-                                  <option value='12'>4ft.4in-132cm</option>
-                                  <option value='13'>4ft.5in-135cm</option>
-                                  <option value='14'>4ft.6in-137cm</option>
-                                  <option value='15'>4ft.7in-140cm</option>
-                                  <option value='16'>4ft.8in-142cm</option>
-                                  <option value='17'>4ft.9in-145cm</option>
-                                  <option value='18'>4ft.10in-147cm</option>
-                                  <option value='19'>4ft.11in-150cm</option>
-                                  <option value='20'>5ft-152cm</option>
-                                  <option value='21'>5ft.1in-155cm</option>
-                                  <option value='22'>5ft.2in-157cm</option>
-                                  <option value='23'>5ft.3in-160cm</option>
-                                  <option value='24'>5ft.4in-162cm</option>
-                                  <option value='25'>5ft.5in-165cm</option>
-                                  <option value='26'>5ft.6in-167cm</option>
-                                  <option value='27'>5ft.7in-170cm</option>
-                                  <option value='28'>5ft.8in-172cm</option>
-                                  <option value='29'>5ft.9in-175cm</option>
-                                  <option value='30'>5ft.10in-177cm</option>
-                                  <option value='31'>5ft.11in-180cm</option>
-                                  <option value='32'>6ft-182cm</option>
-                                  <option value='33'>6ft.1in-185cm</option>
-                                  <option value='34'>6ft.2in-187cm</option>
-                                  <option value='35'>6ft.3in-190cm</option>
-                                  <option value='36'>6ft.4in-192cm</option>
-                                  <option value='37'>6ft.5in-195cm</option>
-                                  <option value='38'>6ft.6in-197cm</option>
-                                  <option value='39'>6ft.7in-200cm</option>
-                                  <option value='40'>6ft.8in-202cm</option>
-                                  <option value='41'>6ft.9in-205cm</option>
-                                  <option value='42'>6ft.10in-207cm</option>
-                                  <option value='43'>6ft.11in-210cm</option>
+                                <select id="height_from" name="height_from" class="form-control">
+                                  <option value="0">Please Select</option>
+                                  <option value='3ft.5in-105cm'>3ft.5in-105cm</option>
+                                  <option value='3ft.6in-107cm'>3ft.6in-107cm</option>
+                                  <option value='3ft.7in-110cm'>3ft.7in-110cm</option>
+                                  <option value='3ft.8in-112cm'>3ft.8in-112cm</option>
+                                  <option value='3ft.9in-115cm'>3ft.9in-115cm</option>
+                                  <option value='3ft.10in-117cm'>3ft.10in-117cm</option>
+                                  <option value='3ft.11in-120cm'>3ft.11in-120cm</option>
+                                  <option value='4ft-122cm'>4ft-122cm</option>
+                                  <option value='4ft.1in-125cm' selected>4ft.1in-125cm</option>
+                                  <option value='4ft.2in-127cm'>4ft.2in-127cm</option>
+                                  <option value='4ft.3in-130cm'>4ft.3in-130cm</option>
+                                  <option value='4ft.4in-132cm'>4ft.4in-132cm</option>
+                                  <option value='4ft.5in-135cm'>4ft.5in-135cm</option>
+                                  <option value='4ft.6in-137cm'>4ft.6in-137cm</option>
+                                  <option value='4ft.7in-140cm'>4ft.7in-140cm</option>
+                                  <option value='4ft.8in-142cm'>4ft.8in-142cm</option>
+                                  <option value='4ft.9in-145cm'>4ft.9in-145cm</option>
+                                  <option value='4ft.10in-147cm'>4ft.10in-147cm</option>
+                                  <option value='4ft.11in-150cm'>4ft.11in-150cm</option>
+                                  <option value='5ft-152cm'>5ft-152cm</option>
+                                  <option value='5ft.1in-155cm'>5ft.1in-155cm</option>
+                                  <option value='5ft.2in-157cm'>5ft.2in-157cm</option>
+                                  <option value='5ft.3in-160cm'>5ft.3in-160cm</option>
+                                  <option value='5ft.4in-162cm'>5ft.4in-162cm</option>
+                                  <option value='5ft.5in-165cm'>5ft.5in-165cm</option>
+                                  <option value='5ft.6in-167cm'>5ft.6in-167cm</option>
+                                  <option value='5ft.7in-170cm'>5ft.7in-170cm</option>
+                                  <option value='5ft.8in-172cm'>5ft.8in-172cm</option>
+                                  <option value='5ft.9in-175cm'>5ft.9in-175cm</option>
+                                  <option value='5ft.10in-177cm'>5ft.10in-177cm</option>
+                                  <option value='5ft.11in-180cm'>5ft.11in-180cm</option>
+                                  <option value='6ft-182cm'>6ft-182cm</option>
+                                  <option value='6ft.1in-185cm'>6ft.1in-185cm</option>
+                                  <option value='6ft.2in-187cm'>6ft.2in-187cm</option>
+                                  <option value='6ft.3in-190cm'>6ft.3in-190cm</option>
+                                  <option value='6ft.4in-192cm'>6ft.4in-192cm</option>
+                                  <option value='6ft.5in-195cm'>6ft.5in-195cm</option>
+                                  <option value='6ft.6in-197cm'>6ft.6in-197cm</option>
+                                  <option value='6ft.7in-200cm'>6ft.7in-200cm</option>
+                                  <option value='6ft.8in-202cm'>6ft.8in-202cm</option>
+                                  <option value='6ft.9in-205cm'>6ft.9in-205cm</option>
+                                  <option value='6ft.10in-207cm'>6ft.10in-207cm</option>
+                                  <option value='6ft.11in-210cm'>6ft.11in-210cm</option>
                                 </select>
                               </div>
                               <div class="col-sm-1 col-md-1 " style="padding-top:10px"> to
                               </div>
                               <div class="col-sm-4 col-md-4">
-                                <select id="heightto" name="heightto" class="form-control">
-                                  <option value='1'>3ft.5in-105cm</option>
-                                  <option value='2'>3ft.6in-107cm</option>
-                                  <option value='3'>3ft.7in-110cm</option>
-                                  <option value='4'>3ft.8in-112cm</option>
-                                  <option value='5'>3ft.9in-115cm</option>
-                                  <option value='6'>3ft.10in-117cm</option>
-                                  <option value='7'>3ft.11in-120cm</option>
-                                  <option value='8'>4ft-122cm</option>
-                                  <option value='9'>4ft.1in-125cm</option>
-                                  <option value='10'>4ft.2in-127cm</option>
-                                  <option value='11'>4ft.3in-130cm</option>
-                                  <option value='12'>4ft.4in-132cm</option>
-                                  <option value='13'>4ft.5in-135cm</option>
-                                  <option value='14'>4ft.6in-137cm</option>
-                                  <option value='15'>4ft.7in-140cm</option>
-                                  <option value='16'>4ft.8in-142cm</option>
-                                  <option value='17'>4ft.9in-145cm</option>
-                                  <option value='18'>4ft.10in-147cm</option>
-                                  <option value='19'>4ft.11in-150cm</option>
-                                  <option value='20'>5ft-152cm</option>
-                                  <option value='21'>5ft.1in-155cm</option>
-                                  <option value='22'>5ft.2in-157cm</option>
-                                  <option value='23'>5ft.3in-160cm</option>
-                                  <option value='24'>5ft.4in-162cm</option>
-                                  <option value='25'>5ft.5in-165cm</option>
-                                  <option value='26'>5ft.6in-167cm</option>
-                                  <option value='27'>5ft.7in-170cm</option>
-                                  <option value='28'>5ft.8in-172cm</option>
-                                  <option value='29'>5ft.9in-175cm</option>
-                                  <option value='30'>5ft.10in-177cm</option>
-                                  <option value='31'>5ft.11in-180cm</option>
-                                  <option value='32'>6ft-182cm</option>
-                                  <option value='33'>6ft.1in-185cm</option>
-                                  <option value='34'>6ft.2in-187cm</option>
-                                  <option value='35'>6ft.3in-190cm</option>
-                                  <option value='36'>6ft.4in-192cm</option>
-                                  <option value='37'>6ft.5in-195cm</option>
-                                  <option value='38'>6ft.6in-197cm</option>
-                                  <option value='39'>6ft.7in-200cm</option>
-                                  <option value='40'>6ft.8in-202cm</option>
-                                  <option value='41'>6ft.9in-205cm</option>
-                                  <option value='42'>6ft.10in-207cm</option>
-                                  <option value='43'>6ft.11in-210cm</option>
-                                  <option value="44" selected="selected">6ft.11in-211cm
-                                  </option>
+                                <select id="height_to" name="height_to" class="form-control">
+                                  <option value="0">Please Select</option>
+                                  <option value='3ft.5in-105cm'>3ft.5in-105cm</option>
+                                  <option value='3ft.6in-107cm'>3ft.6in-107cm</option>
+                                  <option value='3ft.7in-110cm'>3ft.7in-110cm</option>
+                                  <option value='3ft.8in-112cm'>3ft.8in-112cm</option>
+                                  <option value='3ft.9in-115cm'>3ft.9in-115cm</option>
+                                  <option value='3ft.10in-117cm'>3ft.10in-117cm</option>
+                                  <option value='3ft.11in-120cm'>3ft.11in-120cm</option>
+                                  <option value='4ft-122cm'>4ft-122cm</option>
+                                  <option value='4ft.1in-125cm'>4ft.1in-125cm</option>
+                                  <option value='4ft.2in-127cm'>4ft.2in-127cm</option>
+                                  <option value='4ft.3in-130cm'>4ft.3in-130cm</option>
+                                  <option value='4ft.4in-132cm'>4ft.4in-132cm</option>
+                                  <option value='4ft.5in-135cm'>4ft.5in-135cm</option>
+                                  <option value='4ft.6in-137cm'>4ft.6in-137cm</option>
+                                  <option value='4ft.7in-140cm'>4ft.7in-140cm</option>
+                                  <option value='4ft.8in-142cm'>4ft.8in-142cm</option>
+                                  <option value='4ft.9in-145cm'>4ft.9in-145cm</option>
+                                  <option value='4ft.10in-147cm'>4ft.10in-147cm</option>
+                                  <option value='4ft.11in-150cm'>4ft.11in-150cm</option>
+                                  <option value='5ft-152cm'>5ft-152cm</option>
+                                  <option value='5ft.1in-155cm'>5ft.1in-155cm</option>
+                                  <option value='5ft.2in-157cm'>5ft.2in-157cm</option>
+                                  <option value='5ft.3in-160cm'>5ft.3in-160cm</option>
+                                  <option value='5ft.4in-162cm'>5ft.4in-162cm</option>
+                                  <option value='5ft.5in-165cm'>5ft.5in-165cm</option>
+                                  <option value='5ft.6in-167cm'>5ft.6in-167cm</option>
+                                  <option value='5ft.7in-170cm'>5ft.7in-170cm</option>
+                                  <option value='5ft.8in-172cm'>5ft.8in-172cm</option>
+                                  <option value='5ft.9in-175cm' selected>5ft.9in-175cm</option>
+                                  <option value='5ft.10in-177cm'>5ft.10in-177cm</option>
+                                  <option value='5ft.11in-180cm'>5ft.11in-180cm</option>
+                                  <option value='6ft-182cm'>6ft-182cm</option>
+                                  <option value='6ft.1in-185cm'>6ft.1in-185cm</option>
+                                  <option value='6ft.2in-187cm'>6ft.2in-187cm</option>
+                                  <option value='6ft.3in-190cm'>6ft.3in-190cm</option>
+                                  <option value='6ft.4in-192cm'>6ft.4in-192cm</option>
+                                  <option value='6ft.5in-195cm'>6ft.5in-195cm</option>
+                                  <option value='6ft.6in-197cm'>6ft.6in-197cm</option>
+                                  <option value='6ft.7in-200cm'>6ft.7in-200cm</option>
+                                  <option value='6ft.8in-202cm'>6ft.8in-202cm</option>
+                                  <option value='6ft.9in-205cm'>6ft.9in-205cm</option>
+                                  <option value='6ft.10in-207cm'>6ft.10in-207cm</option>
+                                  <option value='6ft.11in-210cm'>6ft.11in-210cm</option>
                                 </select>
                               </div>
                             </div>
@@ -744,7 +708,7 @@
                                 <label class="control-label">Complexion<span class="text-danger">*</span></label>
                               </div>
                               <div class="col-sm-9 col-md-9 ">
-                                <select name="ddlcomplexion" id="ddlcomplexion" class="required form-control combo">
+                                <select name="complexion" id="ddlcomplexion" class="required form-control combo">
                                   <option value="" selected="selected">All</option>
                                   <option>Very Fair</option>
                                   <option>Fair</option>
@@ -763,16 +727,16 @@
                               <div class="col-sm-9 col-md-9 ">
                                 <div class="controls_holder pull-left">
                                   <label>
-                                    <input name="manglik" type="radio" value="No">
+                                    <input name="manglik" id="manglik" type="radio" value="No">
                                     No &nbsp;</label>
                                   <label>
-                                    <input name="manglik" type="radio" value="Yes">
+                                    <input name="manglik" id="manglik" type="radio" value="Yes">
                                     Yes &nbsp;</label>
                                   <label>
-                                    <input name="manglik" type="radio" value="Anshik">
+                                    <input name="manglik" id="manglik" type="radio" value="Anshik">
                                     Anshik &nbsp;</label>
                                   <label>
-                                    <input name="manglik" type="radio" value="All" checked="checked">
+                                    <input name="manglik" id="manglik" type="radio" value="All" checked="checked">
                                     All</label>
                                 </div>
                               </div>
@@ -786,13 +750,13 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="controls_holder ">
                                   <label>
-                                    <input name="physical" type="radio" value="Normal" checked="checked">
+                                    <input name="physical_status" id="physical_status" type="radio" value="Normal" checked="checked">
                                     Normal &nbsp;</label>
                                   <label>
-                                    <input name="physical" type="radio" value="Physically challenged">
+                                    <input name="physical_status" id="physical_status" type="radio" value="Physically challenged">
                                     Disable &nbsp;</label>
                                   <label>
-                                    <input name="physical" type="radio" value="Doesnt Matter">
+                                    <input name="physical_status" id="physical_status" type="radio" value="Doesnt Matter">
                                     Doesn't matter</label>
                                 </div>
                               </div>
@@ -806,16 +770,16 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="controls_holder ">
                                   <label>
-                                    <input name="foodPref" type="radio" value="Vegetarian ">
+                                    <input name="eating_habit" id="eating_habit" type="radio" value="Vegetarian ">
                                     Vegetarian &nbsp;</label>
                                   <label>
-                                    <input name="foodPref" type="radio" value="Non-Vegetarian">
+                                    <input name="eating_habit" id="eating_habit" type="radio" value="Non-Vegetarian">
                                     Non-Vegetarian &nbsp;</label>
                                   <label>
-                                    <input name="foodPref" type="radio" value="Eggetarian">
+                                    <input name="eating_habit" id="eating_habit" type="radio" value="Eggetarian">
                                     Eggetarian &nbsp;</label>
                                   <label>
-                                    <input name="foodPref" type="radio" value="All" checked="checked">
+                                    <input name="eating_habit" id="eating_habit" type="radio" value="All" checked="checked">
                                     All</label>
                                 </div>
                               </div>
@@ -829,72 +793,72 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="row">
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="mtongue1" style="height:100px!important" multiple="multiple" id="mtongue1" class="form-control" style="height:100px!important">
-                                      <option selected="selected">Any</option>
-                                      <option>Arabic</option>
-                                      <option>Assamese</option>
-                                      <option>Awadhi</option>
-                                      <option>Bengali</option>
-                                      <option>Bhojpuri</option>
-                                      <option>Bhutia</option>
-                                      <option>Bihari</option>
-                                      <option>Chattisgarhi</option>
-                                      <option>Chinese</option>
-                                      <option>Dogri</option>
-                                      <option>English</option>
-                                      <option>French</option>
-                                      <option>Garhwali</option>
-                                      <option>Garo</option>
-                                      <option>Gujarati</option>
-                                      <option>Haryanvi</option>
-                                      <option>Hindi</option>
-                                      <option>Kakbarak</option>
-                                      <option>Kanauji</option>
-                                      <option>Kannada</option>
-                                      <option>Kashmiri</option>
-                                      <option>Khandesi</option>
-                                      <option>Khasi</option>
-                                      <option>Konkani</option>
-                                      <option>Koshali</option>
-                                      <option>Kumoani</option>
-                                      <option>Kutchi</option>
-                                      <option>Lepcha</option>
-                                      <option>Magahi</option>
-                                      <option>Maithili</option>
-                                      <option>Malay</option>
-                                      <option>Malayalam</option>
-                                      <option>Manipuri</option>
-                                      <option>Marathi</option>
-                                      <option>Marwari</option>
-                                      <option>Miji</option>
-                                      <option>Mizo</option>
-                                      <option>Monpa</option>
-                                      <option>Nepali</option>
-                                      <option>Oriya</option>
-                                      <option>Other</option>
-                                      <option>Persian</option>
-                                      <option>Punjabi</option>
-                                      <option>Rajasthani</option>
-                                      <option>Russian</option>
-                                      <option>Sanskrit</option>
-                                      <option>Santhali</option>
-                                      <option>Sindhi</option>
-                                      <option>Spanish</option>
-                                      <option>Swedish</option>
-                                      <option>Tagalog</option>
-                                      <option>Tamil</option>
-                                      <option>Telugu</option>
-                                      <option>Tulu</option>
-                                      <option>Urdu</option>
+                                    <select name="mother_tongue" style="height:100px!important" multiple="multiple" id="mother_tongue" class="form-control" style="height:100px!important">
+                                      <option value='0' selected='selected'>Select Mother Tongue </option>
+                                      <option value='Arabic'>Arabic</option>
+                                      <option value='Assamese'>Assamese</option>
+                                      <option value='Awadhi'>Awadhi</option>
+                                      <option value='Bengali'>Bengali</option>
+                                      <option value='Bhojpuri'>Bhojpuri</option>
+                                      <option value='Bhutia'>Bhutia</option>
+                                      <option value='Bihari'>Bihari</option>
+                                      <option value='Chattisgarhi'>Chattisgarhi</option>
+                                      <option value='Chinese'>Chinese</option>
+                                      <option value='Dogri'>Dogri</option>
+                                      <option value='English'>English</option>
+                                      <option value='French'>French</option>
+                                      <option value='Garhwali'>Garhwali</option>
+                                      <option value='Garo'>Garo</option>
+                                      <option value='Gujarati'>Gujarati</option>
+                                      <option value='Haryanvi'>Haryanvi</option>
+                                      <option value='Hindi'>Hindi</option>
+                                      <option value='Kakbarak'>Kakbarak</option>
+                                      <option value='Kanauji'>Kanauji</option>
+                                      <option value='Kannada'>Kannada</option>
+                                      <option value='Kashmiri'>Kashmiri</option>
+                                      <option value='Khandesi'>Khandesi</option>
+                                      <option value='Khasi'>Khasi</option>
+                                      <option value='Konkani'>Konkani</option>
+                                      <option value='Koshali'>Koshali</option>
+                                      <option value='Kumoani'>Kumoani</option>
+                                      <option value='Kutchi'>Kutchi</option>
+                                      <option value='Lepcha'>Lepcha</option>
+                                      <option value='Magahi'>Magahi</option>
+                                      <option value='Maithili'>Maithili</option>
+                                      <option value='Malay'>Malay</option>
+                                      <option value='Malayalam'>Malayalam</option>
+                                      <option value='Manipuri'>Manipuri</option>
+                                      <option value='Marathi'>Marathi</option>
+                                      <option value='Marwari'>Marwari</option>
+                                      <option value='Miji'>Miji</option>
+                                      <option value='Mizo'>Mizo</option>
+                                      <option value='Monpa'>Monpa</option>
+                                      <option value='Nepali'>Nepali</option>
+                                      <option value='Oriya'>Oriya</option>
+                                      <option value='Other'>Other</option>
+                                      <option value='Persian'>Persian</option>
+                                      <option value='Punjabi'>Punjabi</option>
+                                      <option value='Rajasthani'>Rajasthani</option>
+                                      <option value='Russian'>Russian</option>
+                                      <option value='Sanskrit'>Sanskrit</option>
+                                      <option value='Santhali'>Santhali</option>
+                                      <option value='Sindhi'>Sindhi</option>
+                                      <option value='Spanish'>Spanish</option>
+                                      <option value='Swedish'>Swedish</option>
+                                      <option value='Tagalog'>Tagalog</option>
+                                      <option value='Tamil'>Tamil</option>
+                                      <option value='Telugu'>Telugu</option>
+                                      <option value='Tulu'>Tulu</option>
+                                      <option value='Urdu'>Urdu</option>
                                     </select>
                                   </div>
                                   <div class="col-sm-2 col-md-2">
-                                    <input name="button2" class="btn  btn-primary btn-sm" type="button" id="button2" value="Add" style="width:100%">
-                                    <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" value="Remove" style="width:100%">
+                                    <input name="button2" class="btn  btn-primary btn-sm" type="button" onclick="addMotherT()" id="button2" value="Add" style="width:100%">
+                                    <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onclick="deleteMotherT()" value="Remove" style="width:100%">
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="mtongue" style="height:100px!important" multiple="multiple" id="select4" class="form-control">
-                                      <option>Any</option>
+                                    <select name="mother_box" style="height:100px!important" multiple="multiple" id="mother_box" class="form-control">
+
                                     </select>
                                   </div>
                                 </div>
@@ -910,31 +874,22 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="row">
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="lstreligion1" style="height:100px!important" multiple="multiple" id="lstreligion1" class="form-control" style="height:100px!important">
-                                      <option selected="selected">Any </option>
-                                      <option>Buddhist</option>
-                                      <option>Christian</option>
-                                      <option>Christian - Catholic</option>
-                                      <option>Christian - Orthodox</option>
-                                      <option>Christian - Protestant</option>
-                                      <option>Hindu</option>
-                                      <option>Jain</option>
-                                      <option>Jain - Digambar</option>
-                                      <option>Jain - Shwetambar</option>
-                                      <option>Muslim</option>
-                                      <option>Muslim Shiya</option>
-                                      <option>Muslim Sunni</option>
-                                      <option>Parsi</option>
-                                      <option>Sikh</option>
+                                    <select name="religion1" style="height:100px!important" multiple="multiple" id="religion-dropdown1" class="form-control" style="height:100px!important">
+                                      <option value='0' selected='selected'>Select Religion</option>
+                                      <?php foreach ($religion as $list) { ?>
+                                        <option value="<?php echo $list->id; ?>"><?php echo $list->name; ?></option>
+                                      <?php } ?>
+
                                     </select>
                                   </div>
                                   <div class="col-sm-2 col-md-2">
-                                    <input name="button2" class="btn  btn-primary btn-sm" type="button" id="button2" onClick="javascript:addSrcToDestListR()" value="Add" style="width:100%">
-                                    <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onClick="javascript:deleteFromDestListR()" value="Remove" style="width:100%">
+                                    <input type="hidden" name="x" id="rest1">
+                                    <input name="button2" class="btn  btn-primary btn-sm" type="button" id="button2" onClick="javascript:addReligion()" value="Add" style="width:100%">
+                                    <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onClick="javascript:deleteReligion()" value="Remove" style="width:100%">
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="lstreligion" style="height:100px!important" multiple="multiple" id="lstreligion" class="form-control">
-                                      <option>Any</option>
+                                    <select name="religion_box" style="height:100px!important" multiple="multiple" id="religion_box" class="form-control">
+
                                     </select>
 
                                   </div>
@@ -951,17 +906,17 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="row">
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="caste1" style="height:100px!important" multiple="multiple" id="caste1" class="form-control" style="height:100px!important">
-                                      <option selected="selected">Any</option>
+                                    <select name="caste1" style="height:100px!important" multiple="multiple" id="caste-dropdown1" class="form-control" style="height:100px!important">
+                                      <option value="">Select Caste</option>
                                     </select>
                                   </div>
                                   <div class="col-sm-2 col-md-2">
-                                    <input name="button3" class="btn  btn-primary btn-sm" type="button" id="button3" value="Add" style="width:100%">
+                                    <input name="button3" class="btn  btn-primary btn-sm" type="button" onclick="addCaste()" id="button3" value="Add" style="width:100%">
                                     <input name="button33" class="btn  btn-primary btn-sm" type="button" id="button33" value="Remove" style="width:100%">
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="caste" style="height:100px!important" multiple="multiple" id="select4" class="form-control">
-                                      <option>Any</option>
+                                    <select name="caste_box" style="height:100px!important" multiple="multiple" id="caste_box" class="form-control">
+
                                     </select>
                                   </div>
                                 </div>
@@ -976,7 +931,7 @@
                               <div class="col-sm-9 col-md-9 " style="padding: 5px;">
                                 <div class="controls_holder ">
                                   <label>
-                                    <input id="chkcastenobar" type="checkbox" name="cnb" value="Yes">&nbsp;Caste No Bar
+                                    <input id="caste_barrier" type="checkbox" name="caste_barrier" value="1">&nbsp;Caste No Bar
                                   </label>
                                 </div>
                               </div>
@@ -988,7 +943,7 @@
                                 <label class="control-label   ">Sub Caste</label>
                               </div>
                               <div class="col-sm-9 col-md-9 ">
-                                <input type="text" name="subcaste" class="form-control">
+                                <input type="text" name="sub_caste" id="sub_caste" class="form-control">
                               </div>
                             </div>
                           </div>
@@ -1002,72 +957,80 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="row">
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="cmbedu1" style="height:100px!important" multiple="multiple" id="cmbedu1" class="form-control" style="height:100px!important">
-                                      <option selected="selected">Any </option>
-                                      <option>10+2/Senior Secondary School</option>
-                                      <option>B.A.</option>
-                                      <option>B.Arch</option>
-                                      <option>B.Com</option>
-                                      <option>B.Ed</option>
-                                      <option>B.Pharm</option>
-                                      <option>B.Sc</option>
-                                      <option>B.V.Sc.</option>
-                                      <option>BA LLB</option>
-                                      <option>Bachelor</option>
-                                      <option>Bachelor of Physiotherapy</option>
-                                      <option>BAMS</option>
-                                      <option>BBA</option>
-                                      <option>BCA</option>
-                                      <option>BDS</option>
-                                      <option>BE B.Tech</option>
-                                      <option>BHM</option>
-                                      <option>BHMS</option>
-                                      <option>CA</option>
-                                      <option>CS</option>
-                                      <option>Diploma</option>
-                                      <option>High school</option>
-                                      <option>ICWA</option>
-                                      <option>Integrated PG</option>
-                                      <option>Intermediate</option>
-                                      <option>LLB</option>
-                                      <option>M.Arch</option>
-                                      <option>M.Com</option>
-                                      <option>M.Ed</option>
-                                      <option>M.Pharm</option>
-                                      <option>M.Phil</option>
-                                      <option>M.Sc</option>
-                                      <option>M.Tech</option>
-                                      <option>M.V.Sc.</option>
-                                      <option>MA</option>
-                                      <option>Master of Fine Arts</option>
-                                      <option>Master of Physiotherapy</option>
-                                      <option>Masters</option>
-                                      <option>MBA PGDM</option>
-                                      <option>MBA PGDM part time</option>
-                                      <option>MBBS</option>
-                                      <option>MCA PGDCA</option>
-                                      <option>MCA PGDCA part time</option>
-                                      <option>MD</option>
-                                      <option>MD MS</option>
-                                      <option>MDS</option>
-                                      <option>ME M.Tech</option>
-                                      <option>ML LLM</option>
-                                      <option>MS</option>
-                                      <option>MS</option>
-                                      <option>Others</option>
-                                      <option>PGDBM</option>
-                                      <option>PhD doctorate</option>
-                                      <option>Post graduation</option>
-                                      <option>Undergraduate</option>
+                                    <select name="education" style="height:100px!important" multiple="multiple" id="education1" class="form-control" style="height:100px!important">
+                                      <option value='0' selected='selected'>--- Select
+                                        Education ---</option>
+                                      <option value='10+2/Senior Secondary School' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "10+2/Senior Secondary School") echo "selected" ?>>
+                                        10+2/Senior Secondary School</option>
+                                      <option value='B.A.' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "B.A.") echo "selected" ?>>B.A.</option>
+                                      <option value='B.Arch' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "B.Arch") echo "selected" ?>>B.Arch</option>
+                                      <option value='B.Com' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "B.Com") echo "selected" ?>>B.Com</option>
+                                      <option value='B.Ed' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "B.Ed") echo "selected" ?>>B.Ed</option>
+                                      <option value='B.Pharm' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "B.Pharm") echo "selected" ?>>B.Pharm</option>
+                                      <option value='B.Sc' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "B.Sc") echo "selected" ?>>B.Sc</option>
+                                      <option value='B.V.Sc.' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "B.V.Sc.") echo "selected" ?>>B.V.Sc.</option>
+                                      <option value='BA LLB' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "BA LLB") echo "selected" ?>>BA LLB</option>
+                                      <option value='Bachelor' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Bachelor") echo "selected" ?>>Bachelor</option>
+                                      <option value='Bachelor of Physiotherapy' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Bachelor of Physiotherapy") echo "selected" ?>>Bachelor
+                                        of Physiotherapy</option>
+                                      <option value='BAMS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "BAMS") echo "selected" ?>>BAMS</option>
+                                      <option value='BBA' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "BBA") echo "selected" ?>>BBA</option>
+                                      <option value='BCA' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == 'BCA') echo "selected" ?>>BCA</option>
+                                      <option value='BDS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "BDS") echo "selected" ?>>BDS</option>
+                                      <option value='BE B.Tech' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "BE B.Tech") echo "selected" ?>>BE B.Tech</option>
+                                      <option value='BHM' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "BHM") echo "selected" ?>>BHM</option>
+                                      <option value='BHMS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "BHMS") echo "selected" ?>>BHMS</option>
+                                      <option value='CA' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "CA") echo "selected" ?>>CA</option>
+                                      <option value='CS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "CS") echo "selected" ?>>CS</option>
+                                      <option value='Diploma' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Diploma") echo "selected" ?>>Diploma</option>
+                                      <option value='High school' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "High school") echo "selected" ?>>High school</option>
+                                      <option value='ICWA' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "ICWA") echo "selected" ?>>ICWA</option>
+                                      <option value='Integrated PG' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Integrated PG") echo "selected" ?>>Integrated PG</option>
+                                      <option value='Intermediate' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Intermediate") echo "selected" ?>>Intermediate</option>
+                                      <option value='LLB' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "LLB") echo "selected" ?>>LLB</option>
+                                      <option value='M.Arch' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "M.Arch") echo "selected" ?>>M.Arch</option>
+                                      <option value='M.Com' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "M.Com") echo "selected" ?>>M.Com</option>
+                                      <option value='M.Ed' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "M.Ed") echo "selected" ?>>M.Ed</option>
+                                      <option value='M.Pharm' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "M.Pharm") echo "selected" ?>>M.Pharm</option>
+                                      <option value='M.Phil' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "M.Phil") echo "selected" ?>>M.Phil</option>
+                                      <option value='M.Sc<?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "M.Sc") echo "selected" ?>'>M.Sc</option>
+                                      <option value='M.Tech' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "M.Tech") echo "selected" ?>>M.Tech</option>
+                                      <option value='M.V.Sc.' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "M.V.Sc.") echo "selected" ?>>M.V.Sc.</option>
+                                      <option value='MA' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MA") echo "selected" ?>>MA</option>
+                                      <option value='Master of Fine Arts' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Master of Fine Arts") echo "selected" ?>>Master of Fine
+                                        Arts</option>
+                                      <option value='Master of Physiotherapy' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Master of Physiotherapy") echo "selected" ?>>Master of
+                                        Physiotherapy</option>
+                                      <option value='Masters' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Masters") echo "selected" ?>>Masters</option>
+                                      <option value='MBA PGDM' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MBA PGDM") echo "selected" ?>>MBA PGDM</option>
+                                      <option value='MBA PGDM part time' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MBA PGDM part time") echo "selected" ?>>MBA PGDM part
+                                        time</option>
+                                      <option value='MBBS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MBBS") echo "selected" ?>>MBBS</option>
+                                      <option value='MCA PGDCA' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MCA PGDCA") echo "selected" ?>>MCA PGDCA</option>
+                                      <option value='MCA PGDCA part time' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MCA PGDCA part time") echo "selected" ?>>MCA PGDCA part
+                                        time</option>
+                                      <option value='MD' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MD") echo "selected" ?>>MD</option>
+                                      <option value='MD MS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MD MS") echo "selected" ?>>MD MS</option>
+                                      <option value='MDS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MDS") echo "selected" ?>>MDS</option>
+                                      <option value='ME M.Tech' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "ME M.Tech") echo "selected" ?>>ME M.Tech</option>
+                                      <option value='ML LLM' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "ML LLM") echo "selected" ?>>ML LLM</option>
+                                      <option value='MS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MS") echo "selected" ?>>MS</option>
+                                      <option value='MS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MS") echo "selected" ?>>MS</option>
+                                      <option value='Others' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Others") echo "selected" ?>>Others</option>
+                                      <option value='PGDBM' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "PGDBM") echo "selected" ?>>PGDBM</option>
+                                      <option value='PhD doctorate' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "PhD doctorate") echo "selected" ?>>PhD doctorate</option>
+                                      <option value='Post graduation' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Post graduation") echo "selected" ?>>Post graduation
+                                      </option>
+                                      <option value='Undergraduate' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Undergraduate") echo "selected" ?>>Undergraduate</option>
                                     </select>
                                   </div>
                                   <div class="col-sm-2 col-md-2">
-                                    <input name="button4" class="btn  btn-primary btn-sm" type="button" id="button4" onClick="javascript:addSrcToDestListE()" value="Add" style="width:100%">
+                                    <input name="button4" class="btn  btn-primary btn-sm" type="button" id="button4" onClick="javascript:addEducation()" value="Add" style="width:100%">
                                     <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" onClick="javascript:deleteFromDestListE()" value="Remove" style="width:100%">
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="cmbedu" style="height:100px!important" multiple="multiple" id="cmbedu" class="form-control">
-                                      <option>Any</option>
+                                    <select name="cmbedu" style="height:100px!important" multiple="multiple" id="education_box" class="form-control">
+
                                     </select>
                                   </div>
                                 </div>
@@ -1082,76 +1045,105 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="row">
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="cmboccu1" style="height:100px!important" multiple="multiple" id="cmboccu1" class="form-control" style="height:100px!important">
-                                      <option selected="selected">Any </option>
-                                      <option>Accounts</option>
-                                      <option>Administrative Professional</option>
-                                      <option>Advertising</option>
-                                      <option>Agriculture</option>
-                                      <option>Air Hostess</option>
-                                      <option>Airline Professional</option>
-                                      <option>Architect</option>
-                                      <option>Arts & Craftsman</option>
-                                      <option>Auditor</option>
-                                      <option>Banking Service Professional</option>
-                                      <option>Beautician</option>
-                                      <option>Business</option>
-                                      <option>CEO / President/Director/Chairman
+                                    <select name="occupation" style="height:100px!important" multiple="multiple" id="occupation1" class="form-control" style="height:100px!important">
+                                      <option value='0' selected='selected'>--- Select
+                                        Occupation ---</option>
+                                      <option value='Accounts' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Accounts") echo "selected" ?>>Accounts</option>
+                                      <option value='Administrative Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Administrative Professional") echo "selected" ?>>
+                                        Administrative Professional</option>
+                                      <option value='Advertising' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Advertising") echo "selected" ?>>Advertising</option>
+                                      <option value='Agriculture' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Agriculture") echo "selected" ?>>Agriculture</option>
+                                      <option value='Air Hostess' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Air Hostess") echo "selected" ?>>Air Hostess</option>
+                                      <option value='Airline Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Airline Professional") echo "selected" ?>>Airline
+                                        Professional</option>
+                                      <option value='Architect' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Architect") echo "selected" ?>>Architect</option>
+                                      <option value='Arts & Craftsman' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Arts & Craftsman") echo "selected" ?>>Arts &amp;
+                                        Craftsman</option>
+                                      <option value='Auditor' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Auditor") echo "selected" ?>>Auditor</option>
+                                      <option value='Banking Service Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Banking Service Professional") echo "selected" ?>>Banking
+                                        Service Professional</option>
+                                      <option value='Beautician' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Beautician") echo "selected" ?>>Beautician</option>
+                                      <option value='Business' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Business") echo "selected" ?>>Business</option>
+                                      <option value='CEO / President/Director/Chairman' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "CEO / President/Director/Chairman") echo "selected" ?>>
+                                        CEO / President/Director/Chairman</option>
+                                      <option value='Chartered Accountant' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Chartered Accountant") echo "selected" ?>>Chartered
+                                        Accountant</option>
+                                      <option value='Clerk' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Clerk") echo "selected" ?>>Clerk</option>
+                                      <option value='Company Secretary' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Company Secretary") echo "selected" ?>>Company Secretary
                                       </option>
-                                      <option>Chartered Accountant</option>
-                                      <option>Clerk</option>
-                                      <option>Company Secretary</option>
-                                      <option>Consultant</option>
-                                      <option>Cost Accountant</option>
-                                      <option>Customer Care Professional</option>
-                                      <option>Doctor</option>
-                                      <option>Education Professional</option>
-                                      <option>Engineer - IT</option>
-                                      <option>Engineer - Non IT</option>
-                                      <option>Entertainment Professional</option>
-                                      <option>Executive</option>
-                                      <option>Farming Professional</option>
-                                      <option>Fashion Designer</option>
-                                      <option>Finance Professional</option>
-                                      <option>Hardware Professional</option>
-                                      <option>Health Care Professional</option>
-                                      <option>Hotel / Hospitality Professional
+                                      <option value='Consultant' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Consultant") echo "selected" ?>>Consultant</option>
+                                      <option value='Cost Accountant' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Cost Accountant") echo "selected" ?>>Cost Accountant
                                       </option>
-                                      <option>Interior Designer</option>
-                                      <option>Journalist</option>
-                                      <option>Lawyer</option>
-                                      <option>Lecturer</option>
-                                      <option>Legal Professional</option>
-                                      <option>Manager</option>
-                                      <option>Mariner / Merchant Navy</option>
-                                      <option>Marketing Professional</option>
-                                      <option>Media Professional</option>
-                                      <option>Not Working</option>
-                                      <option>Nurse</option>
-                                      <option>Officer</option>
-                                      <option>Others</option>
-                                      <option>Paramedical Professional</option>
-                                      <option>Pilot</option>
-                                      <option>PR Professional</option>
-                                      <option>Professor</option>
-                                      <option>Researcher</option>
-                                      <option>Sales Professional</option>
-                                      <option>Scientist</option>
-                                      <option>Social Worker</option>
-                                      <option>Software Professional</option>
-                                      <option>Sportsman</option>
-                                      <option>Supervisors</option>
-                                      <option>Teaching / Academician</option>
-                                      <option>Technician</option>
+                                      <option value='Customer Care Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Customer Care Professional") echo "selected" ?>>Customer
+                                        Care Professional</option>
+                                      <option value='Doctor' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Doctor") echo "selected" ?>>Doctor</option>
+                                      <option value='Education Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Education Professional") echo "selected" ?>>Education
+                                        Professional</option>
+                                      <option value='Engineer - IT' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Engineer - IT") echo "selected" ?>>Engineer - IT</option>
+                                      <option value='Engineer - Non IT' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Engineer - Non IT") echo "selected" ?>>Engineer - Non IT
+                                      </option>
+                                      <option value='Entertainment Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Entertainment Professional") echo "selected" ?>>
+                                        Entertainment Professional</option>
+                                      <option value='Executive' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Executive") echo "selected" ?>>Executive</option>
+                                      <option value='Farming Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Farming Professional") echo "selected" ?>>Farming
+                                        Professional</option>
+                                      <option value='Fashion Designer' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Fashion Designer") echo "selected" ?>>Fashion Designer
+                                      </option>
+                                      <option value='Finance Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Finance Professional") echo "selected" ?>>Finance
+                                        Professional</option>
+                                      <option value='Hardware Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Hardware Professional") echo "selected" ?>>Hardware
+                                        Professional</option>
+                                      <option value='Health Care Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Health Care Professional") echo "selected" ?>>Health Care
+                                        Professional</option>
+                                      <option value='Hotel / Hospitality Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Hotel / Hospitality Professional") echo "selected" ?>>
+                                        Hotel / Hospitality Professional</option>
+                                      <option value='Interior Designer' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Interior Designer") echo "selected" ?>>Interior Designer
+                                      </option>
+                                      <option value='Journalist' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Journalist") echo "selected" ?>>Journalist</option>
+                                      <option value='Lawyer' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Lawyer") echo "selected" ?>>Lawyer
+                                      </option>
+                                      <option value='Lecturer' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Lecturer") echo "selected" ?>>Lecturer</option>
+                                      <option value='Legal Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Legal Professional") echo "selected" ?>>Legal
+                                        Professional</option>
+                                      <option value='Manager' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Manager") echo "selected" ?>>Manager</option>
+                                      <option value='Mariner / Merchant Navy' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "") echo "selected" ?>>Mariner /
+                                        Merchant Navy</option>
+                                      <option value='Marketing Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Marketing Professional") echo "selected" ?>>Marketing
+                                        Professional</option>
+                                      <option value='Media Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Media Professional") echo "selected" ?>>Media
+                                        Professional</option>
+                                      <option value='Not Working' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Not Working") echo "selected" ?>>Not Working</option>
+                                      <option value='Nurse' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Nurse") echo "selected" ?>>Nurse</option>
+                                      <option value='Officer' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Officer") echo "selected" ?>>Officer</option>
+                                      <option value='Others' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Others") echo "selected" ?>>Others</option>
+                                      <option value='Paramedical Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Paramedical Professional") echo "selected" ?>>Paramedical
+                                        Professional</option>
+                                      <option value='Pilot' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Pilot") echo "selected" ?>>Pilot</option>
+                                      <option value='PR Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "PR Professional") echo "selected" ?>>PR Professional
+                                      </option>
+                                      <option value='Professor' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Professor") echo "selected" ?>>Professor</option>
+                                      <option value='Researcher' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Researcher") echo "selected" ?>>Researcher</option>
+                                      <option value='Sales Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Sales Professional") echo "selected" ?>>Sales
+                                        Professional</option>
+                                      <option value='Scientist' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Scientist") echo "selected" ?>>Scientist</option>
+                                      <option value='Social Worker' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "") echo "selected" ?>>Social Worker</option>
+                                      <option value='Software Professional' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Software Professional") echo "selected" ?>>Software
+                                        Professional</option>
+                                      <option value='Sportsman' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Sportsman") echo "selected" ?>>Sportsman</option>
+                                      <option value='Supervisors' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Supervisors") echo "selected" ?>>Supervisors</option>
+                                      <option value='Teaching / Academician' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Teaching / Academician") echo "selected" ?>>Teaching /
+                                        Academician</option>
+                                      <option value='Technician' <?php if (isset($professional[0]->occupation)) if ($professional[0]->occupation == "Technician") echo "selected" ?>>Technician</option>
+                                    </select>
                                     </select>
                                   </div>
                                   <div class="col-sm-2 col-md-2">
-                                    <input name="button6" class="btn  btn-primary btn-sm" type="button" id="button6" onClick="javascript:addSrcToDestListO()" value="Add" style="width:100%">
+                                    <input name="button6" class="btn  btn-primary btn-sm" type="button" id="button6" onClick="javascript:addOccupation()" value="Add" style="width:100%">
                                     <input name="button66" class="btn  btn-primary btn-sm" type="button" id="button66" onClick="javascript:deleteFromDestListO()" value="Remove" style="width:100%">
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="cmboccu" style="height:100px!important" multiple="multiple" id="cmboccu" class="form-control">
-                                      <option>Any</option>
+                                    <select name="occupation_box" style="height:100px!important" multiple="multiple" id="occupation_box" class="form-control">
+
                                     </select>
                                   </div>
                                 </div>
@@ -1166,22 +1158,22 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="controls_holder ">
                                   <label>
-                                    <input type="checkbox" name="employedin" value="Government" />
+                                    <input type="checkbox" class="epi" name="employedin" id="employedin" value="Government" />
                                     Government&nbsp;</label>
                                   <label>
-                                    <input type="checkbox" name="employedin" value="Private" />
+                                    <input type="checkbox" class="epi" name="employedin" id="employedin" value="Private" />
                                     Private&nbsp;</label>
                                   <label>
-                                    <input type="checkbox" name="employedin" value="Business" />
+                                    <input type="checkbox" class="epi" name="employedin" id="employedin" value="Business" />
                                     Business&nbsp;</label>
                                   <label>
-                                    <input type="checkbox" name="employedin" value="Defence" />
+                                    <input type="checkbox" class="epi" name="employedin" id="employedin" value="Defence" />
                                     Defence&nbsp;</label>
                                   <label>
-                                    <input type="checkbox" name="employedin" value="Not working" />
+                                    <input type="checkbox" class="epi" name="employedin" id="employedin" value="Not working" />
                                     Not working&nbsp;</label>
                                   <label>
-                                    <input type="checkbox" name="employedin" id="employedinany" value="Any" checked="checked" />
+                                    <input type="checkbox" class="epi" name="employedin" id="employedin" value="Any" checked="checked" />
                                     Any</label>
                                 </div>
                               </div>
@@ -1193,263 +1185,12 @@
                                 <label class="control-label   ">Country Living in</label>
                               </div>
                               <div class="col-sm-9 col-md-9">
-                                <select name='countryliving' id='countryliving' class='form-control' style=''>
-                                  <option value='Any' selected='selected'>Any</option>
-                                  <option value='1'>Afghanistan</option>
-                                  <option value='2'>Albania</option>
-                                  <option value='3'>Algeria</option>
-                                  <option value='4'>American Samoa</option>
-                                  <option value='5'>Andorra</option>
-                                  <option value='6'>Angola</option>
-                                  <option value='7'>Anguilla</option>
-                                  <option value='8'>Antarctica</option>
-                                  <option value='9'>Antigua And Barbuda</option>
-                                  <option value='10'>Argentina</option>
-                                  <option value='11'>Armenia</option>
-                                  <option value='12'>Aruba</option>
-                                  <option value='13'>Australia</option>
-                                  <option value='14'>Austria</option>
-                                  <option value='15'>Azerbaijan</option>
-                                  <option value='16'>Bahamas The</option>
-                                  <option value='17'>Bahrain</option>
-                                  <option value='18'>Bangladesh</option>
-                                  <option value='19'>Barbados</option>
-                                  <option value='20'>Belarus</option>
-                                  <option value='21'>Belgium</option>
-                                  <option value='22'>Belize</option>
-                                  <option value='23'>Benin</option>
-                                  <option value='24'>Bermuda</option>
-                                  <option value='25'>Bhutan</option>
-                                  <option value='26'>Bolivia</option>
-                                  <option value='27'>Bosnia and Herzegovina</option>
-                                  <option value='28'>Botswana</option>
-                                  <option value='29'>Bouvet Island</option>
-                                  <option value='30'>Brazil</option>
-                                  <option value='31'>British Indian Ocean Territory
-                                  </option>
-                                  <option value='32'>Brunei</option>
-                                  <option value='33'>Bulgaria</option>
-                                  <option value='34'>Burkina Faso</option>
-                                  <option value='35'>Burundi</option>
-                                  <option value='36'>Cambodia</option>
-                                  <option value='37'>Cameroon</option>
-                                  <option value='38'>Canada</option>
-                                  <option value='39'>Cape Verde</option>
-                                  <option value='40'>Cayman Islands</option>
-                                  <option value='41'>Central African Republic</option>
-                                  <option value='42'>Chad</option>
-                                  <option value='43'>Chile</option>
-                                  <option value='44'>China</option>
-                                  <option value='45'>Christmas Island</option>
-                                  <option value='46'>Cocos (Keeling) Islands</option>
-                                  <option value='47'>Colombia</option>
-                                  <option value='48'>Comoros</option>
-                                  <option value='49'>Congo</option>
-                                  <option value='50'>Congo The Democratic Republic Of The
-                                  </option>
-                                  <option value='51'>Cook Islands</option>
-                                  <option value='52'>Costa Rica</option>
-                                  <option value='53'>Cote DIvoire (Ivory Coast)</option>
-                                  <option value='54'>Croatia (Hrvatska)</option>
-                                  <option value='55'>Cuba</option>
-                                  <option value='56'>Cyprus</option>
-                                  <option value='57'>Czech Republic</option>
-                                  <option value='58'>Denmark</option>
-                                  <option value='59'>Djibouti</option>
-                                  <option value='60'>Dominica</option>
-                                  <option value='61'>Dominican Republic</option>
-                                  <option value='62'>East Timor</option>
-                                  <option value='63'>Ecuador</option>
-                                  <option value='64'>Egypt</option>
-                                  <option value='65'>El Salvador</option>
-                                  <option value='66'>Equatorial Guinea</option>
-                                  <option value='67'>Eritrea</option>
-                                  <option value='68'>Estonia</option>
-                                  <option value='69'>Ethiopia</option>
-                                  <option value='70'>External Territories of Australia
-                                  </option>
-                                  <option value='71'>Falkland Islands</option>
-                                  <option value='72'>Faroe Islands</option>
-                                  <option value='73'>Fiji Islands</option>
-                                  <option value='74'>Finland</option>
-                                  <option value='75'>France</option>
-                                  <option value='76'>French Guiana</option>
-                                  <option value='77'>French Polynesia</option>
-                                  <option value='78'>French Southern Territories</option>
-                                  <option value='79'>Gabon</option>
-                                  <option value='80'>Gambia The</option>
-                                  <option value='81'>Georgia</option>
-                                  <option value='82'>Germany</option>
-                                  <option value='83'>Ghana</option>
-                                  <option value='84'>Gibraltar</option>
-                                  <option value='85'>Greece</option>
-                                  <option value='86'>Greenland</option>
-                                  <option value='87'>Grenada</option>
-                                  <option value='88'>Guadeloupe</option>
-                                  <option value='89'>Guam</option>
-                                  <option value='90'>Guatemala</option>
-                                  <option value='91'>Guernsey and Alderney</option>
-                                  <option value='92'>Guinea</option>
-                                  <option value='93'>Guinea-Bissau</option>
-                                  <option value='94'>Guyana</option>
-                                  <option value='95'>Haiti</option>
-                                  <option value='96'>Heard and McDonald Islands</option>
-                                  <option value='97'>Honduras</option>
-                                  <option value='98'>Hong Kong S.A.R.</option>
-                                  <option value='99'>Hungary</option>
-                                  <option value='100'>Iceland</option>
-                                  <option value='101'>India</option>
-                                  <option value='102'>Indonesia</option>
-                                  <option value='103'>Iran</option>
-                                  <option value='104'>Iraq</option>
-                                  <option value='105'>Ireland</option>
-                                  <option value='106'>Israel</option>
-                                  <option value='107'>Italy</option>
-                                  <option value='108'>Jamaica</option>
-                                  <option value='109'>Japan</option>
-                                  <option value='110'>Jersey</option>
-                                  <option value='111'>Jordan</option>
-                                  <option value='112'>Kazakhstan</option>
-                                  <option value='113'>Kenya</option>
-                                  <option value='114'>Kiribati</option>
-                                  <option value='115'>Korea North</option>
-                                  <option value='116'>Korea South</option>
-                                  <option value='117'>Kuwait</option>
-                                  <option value='118'>Kyrgyzstan</option>
-                                  <option value='119'>Laos</option>
-                                  <option value='120'>Latvia</option>
-                                  <option value='121'>Lebanon</option>
-                                  <option value='122'>Lesotho</option>
-                                  <option value='123'>Liberia</option>
-                                  <option value='124'>Libya</option>
-                                  <option value='125'>Liechtenstein</option>
-                                  <option value='126'>Lithuania</option>
-                                  <option value='127'>Luxembourg</option>
-                                  <option value='128'>Macau S.A.R.</option>
-                                  <option value='129'>Macedonia</option>
-                                  <option value='130'>Madagascar</option>
-                                  <option value='131'>Malawi</option>
-                                  <option value='132'>Malaysia</option>
-                                  <option value='133'>Maldives</option>
-                                  <option value='134'>Mali</option>
-                                  <option value='135'>Malta</option>
-                                  <option value='136'>Man (Isle of)</option>
-                                  <option value='137'>Marshall Islands</option>
-                                  <option value='138'>Martinique</option>
-                                  <option value='139'>Mauritania</option>
-                                  <option value='140'>Mauritius</option>
-                                  <option value='141'>Mayotte</option>
-                                  <option value='142'>Mexico</option>
-                                  <option value='143'>Micronesia</option>
-                                  <option value='144'>Moldova</option>
-                                  <option value='145'>Monaco</option>
-                                  <option value='146'>Mongolia</option>
-                                  <option value='147'>Montserrat</option>
-                                  <option value='148'>Morocco</option>
-                                  <option value='149'>Mozambique</option>
-                                  <option value='150'>Myanmar</option>
-                                  <option value='151'>Namibia</option>
-                                  <option value='152'>Nauru</option>
-                                  <option value='153'>Nepal</option>
-                                  <option value='154'>Netherlands Antilles</option>
-                                  <option value='155'>Netherlands The</option>
-                                  <option value='156'>New Caledonia</option>
-                                  <option value='157'>New Zealand</option>
-                                  <option value='158'>Nicaragua</option>
-                                  <option value='159'>Niger</option>
-                                  <option value='160'>Nigeria</option>
-                                  <option value='161'>Niue</option>
-                                  <option value='162'>Norfolk Island</option>
-                                  <option value='163'>Northern Mariana Islands</option>
-                                  <option value='164'>Norway</option>
-                                  <option value='165'>Oman</option>
-                                  <option value='166'>Pakistan</option>
-                                  <option value='167'>Palau</option>
-                                  <option value='168'>Palestinian Territory Occupied
-                                  </option>
-                                  <option value='169'>Panama</option>
-                                  <option value='170'>Papua new Guinea</option>
-                                  <option value='171'>Paraguay</option>
-                                  <option value='172'>Peru</option>
-                                  <option value='173'>Philippines</option>
-                                  <option value='174'>Pitcairn Island</option>
-                                  <option value='175'>Poland</option>
-                                  <option value='176'>Portugal</option>
-                                  <option value='177'>Puerto Rico</option>
-                                  <option value='178'>Qatar</option>
-                                  <option value='179'>Reunion</option>
-                                  <option value='180'>Romania</option>
-                                  <option value='181'>Russia</option>
-                                  <option value='182'>Rwanda</option>
-                                  <option value='183'>Saint Helena</option>
-                                  <option value='184'>Saint Kitts And Nevis</option>
-                                  <option value='185'>Saint Lucia</option>
-                                  <option value='186'>Saint Pierre and Miquelon</option>
-                                  <option value='187'>Saint Vincent And The Grenadines
-                                  </option>
-                                  <option value='188'>Samoa</option>
-                                  <option value='189'>San Marino</option>
-                                  <option value='190'>Sao Tome and Principe</option>
-                                  <option value='191'>Saudi Arabia</option>
-                                  <option value='192'>Senegal</option>
-                                  <option value='193'>Serbia</option>
-                                  <option value='194'>Seychelles</option>
-                                  <option value='195'>Sierra Leone</option>
-                                  <option value='196'>Singapore</option>
-                                  <option value='197'>Slovakia</option>
-                                  <option value='198'>Slovenia</option>
-                                  <option value='199'>Smaller Territories of the UK
-                                  </option>
-                                  <option value='200'>Solomon Islands</option>
-                                  <option value='201'>Somalia</option>
-                                  <option value='202'>South Africa</option>
-                                  <option value='203'>South Georgia</option>
-                                  <option value='204'>South Sudan</option>
-                                  <option value='205'>Spain</option>
-                                  <option value='206'>Sri Lanka</option>
-                                  <option value='207'>Sudan</option>
-                                  <option value='208'>Suriname</option>
-                                  <option value='209'>Svalbard And Jan Mayen Islands
-                                  </option>
-                                  <option value='210'>Swaziland</option>
-                                  <option value='211'>Sweden</option>
-                                  <option value='212'>Switzerland</option>
-                                  <option value='213'>Syria</option>
-                                  <option value='214'>Taiwan</option>
-                                  <option value='215'>Tajikistan</option>
-                                  <option value='216'>Tanzania</option>
-                                  <option value='217'>Thailand</option>
-                                  <option value='218'>Togo</option>
-                                  <option value='219'>Tokelau</option>
-                                  <option value='220'>Tonga</option>
-                                  <option value='221'>Trinidad And Tobago</option>
-                                  <option value='222'>Tunisia</option>
-                                  <option value='223'>Turkey</option>
-                                  <option value='224'>Turkmenistan</option>
-                                  <option value='225'>Turks And Caicos Islands</option>
-                                  <option value='226'>Tuvalu</option>
-                                  <option value='227'>Uganda</option>
-                                  <option value='228'>Ukraine</option>
-                                  <option value='229'>United Arab Emirates</option>
-                                  <option value='230'>United Kingdom</option>
-                                  <option value='232'>United States Minor Outlying Islands
-                                  </option>
-                                  <option value='233'>Uruguay</option>
-                                  <option value='231'>USA</option>
-                                  <option value='234'>Uzbekistan</option>
-                                  <option value='235'>Vanuatu</option>
-                                  <option value='236'>Vatican City State (Holy See)
-                                  </option>
-                                  <option value='237'>Venezuela</option>
-                                  <option value='238'>Vietnam</option>
-                                  <option value='239'>Virgin Islands (British)</option>
-                                  <option value='240'>Virgin Islands (US)</option>
-                                  <option value='241'>Wallis And Futuna Islands</option>
-                                  <option value='242'>Western Sahara</option>
-                                  <option value='243'>Yemen</option>
-                                  <option value='244'>Yugoslavia</option>
-                                  <option value='245'>Zambia</option>
-                                  <option value='246'>Zimbabwe</option>
+                                <select name='countryliving' id='country-dropdown1' class='form-control' style=''>
+                                  <option value='0' selected='selected'>Select Country</option>
+                                  <?php foreach ($country as $list) { ?>
+                                    <option value="<?php echo $list->id; ?>"><?php echo $list->name; ?></option>
+                                  <?php } ?>
+
                                 </select>
                               </div>
                             </div>
@@ -1462,17 +1203,17 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="row">
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="lststate1" style="height:100px!important" multiple="multiple" id="lststate1" class="form-control" style="height:100px!important">
-                                      <option selected="selected">Any </option>
+                                    <select name="location" style="height:100px!important" multiple="multiple" id="state-dropdown1" class="form-control" style="height:100px!important">
+                                      <option value="">Select State</option>
                                     </select>
                                   </div>
                                   <div class="col-sm-2 col-md-2">
-                                    <input name="button4" class="btn  btn-primary btn-sm" type="button" id="button4" onClick="javascript:addSrcToDestListS()" value="Add" style="width:100%">
+                                    <input name="button4" class="btn  btn-primary btn-sm" type="button" id="button4" onClick="javascript:addState()" value="Add" style="width:100%">
                                     <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" onClick="javascript:deleteFromDestListS()" value="Remove" style="width:100%">
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="lststate" style="height:100px!important" multiple="multiple" id="select2" class="form-control">
-                                      <option>Any</option>
+                                    <select name="state_box" style="height:100px!important" multiple="multiple" id="state_box" class="form-control">
+
                                     </select>
                                   </div>
                                 </div>
@@ -1487,17 +1228,17 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="row">
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="lstcity1" style="height:100px!important" multiple="multiple" id="select3s" class="form-control">
-                                      <option selected="selected">Any</option>
+                                    <select name="city1" style="height:100px!important" multiple="multiple" id="city-dropdown1" class="form-control">
+                                      <option value="">Select City</option>
                                     </select>
                                   </div>
                                   <div class="col-sm-2 col-md-2">
-                                    <input name="button4" class="btn  btn-primary btn-sm" type="button" id="button4" value="Add" style="width:100%">
+                                    <input name="button4" class="btn  btn-primary btn-sm" type="button" onclick="addCity()" id="button4" value="Add" style="width:100%">
                                     <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" value="Remove" style="width:100%">
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
-                                    <select name="lstcity" style="height:100px!important" multiple="multiple" id="select2s" class="form-control">
-                                      <option>Any</option>
+                                    <select name="city_box" style="height:100px!important" multiple="multiple" id="city_box" class="form-control">
+
                                     </select>
                                   </div>
                                 </div>
@@ -1630,7 +1371,7 @@
                                   </option>
                                   <option value='Hungary'>Hungary</option>
                                   <option value='Iceland'>Iceland</option>
-                                  <option value='India' selected='true'>India</option>
+                                  <option value='India' >India</option>
                                   <option value='Indonesia'>Indonesia</option>
                                   <option value='Iran'>Iran</option>
                                   <option value='Iraq'>Iraq</option>
@@ -1808,10 +1549,10 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="controls_holder ">
                                   <label>
-                                    <input name="chkphoto" type="checkbox" checked="checked" id="chkphoto" value="Yes">
+                                    <input name="profile_with" type="checkbox" checked="checked" id="chkphoto" value="Yes">
                                     Photo &nbsp;</label>
                                   <label>
-                                    <input name="chkhoro" type="checkbox" id="chkhoro" value="Yes">
+                                    <input name="profile_with" type="checkbox" id="chkhoro" value="Yes">
                                     Horoscope</label>
                                 </div>
                               </div>
@@ -1821,7 +1562,8 @@
                             <div class="row">
                               <div class="col-md-3">&nbsp;</div>
                               <div class="col-md-4 ">
-                                <input type="submit" name="Submit" class="btn btn-primary btn-block" value="Search">
+                                <button type="button" id="signup" class="btn btn-primary btn-block">Search &rarr;</button>
+                                <!-- <input type="submit" name="Submit" onclick="submitForSearch()" class="btn btn-primary btn-block" value="Search"> -->
                               </div>
 
                             </div>
@@ -1835,58 +1577,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                  <div class="mega-box-new">
-                    <p class="calibri-Bold-font f-22 color-31 t-transform-ue text-center ab-t1">Search
-                      <span class="color-d">Profile id </span>
-                    </p>
-                    <hr class="search-hr">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <form action="#" method="post" name="form3" target="_parent" id="form3">
-
-
-                          <br>
-                          <div class="form-group">
-                            <div class="row">
-
-                              <div class="col-sm-12 col-md-12">
-
-
-                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" accesskey="13">
-                                <p style="text-align:left"> <small> search by: Profile Id
-                                  </small> </p>
-
-
-                              </div>
-                            </div>
-                          </div>
-
-
-                          <div class="form-group">
-                            <div class="row">
-
-                              <div class="col-sm-9 col-md-9">
-                                <button class="btn btn-primary btn-block" name="Submit" type="submit">Search</button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-
-
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-
                 </div>
 
 
@@ -1920,7 +1610,7 @@
                                     Groom </label>
                                 </div>
                                 <div class="form-check ml-1 mb-2">
-                                  <input class="form-check-input" required="" name="gender" type="radio" value="female" id="privacy">
+                                  <input class="form-check-input" required="" name="gender" type="radio" value="Female" id="privacy">
                                   <label class="form-check-label" for="privacy">
                                     Bride </label>
                                 </div>
@@ -2097,57 +1787,7 @@
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-12 col-xs-12">
-                  <div class="mega-box-new">
-                    <p class="calibri-Bold-font f-22 color-31 t-transform-ue text-center ab-t1">Search
-                      <span class="color-d">Profile id </span>
-                    </p>
-                    <hr class="search-hr">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <form action="#" method="post" name="form3" target="_parent" id="form3">
 
-
-                          <br>
-                          <div class="form-group">
-                            <div class="row">
-
-                              <div class="col-sm-12 col-md-12">
-
-
-                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" accesskey="13">
-                                <p style="text-align:left"> <small> search by: Profile Id
-                                  </small> </p>
-
-
-                              </div>
-                            </div>
-                          </div>
-
-
-                          <div class="form-group">
-                            <div class="row">
-
-                              <div class="col-sm-9 col-md-9">
-                                <button class="btn btn-primary btn-block" name="Submit" type="submit" onclick="return checkid()">Search</button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-
-
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-
-                </div>
               </div>
             </div>
             <div role="tabpanel" class="tab-pane fade " id="id-search-tab">
@@ -2159,14 +1799,14 @@
                     <hr class="search-hr">
 
                     <div class="add-box-2">
-                      <form method="post" name="form3" target="_parent" id="form3">
+                      <form method="post" name="form3" action="Searching/searchById" method="post" id="form3">
                         <div class="row add-b-cstm">
                           <div class="col-md-12 col-sm-4 col-xs-12">
                             <p class="Poppins-Medium f-16 color-31 ad-name">Search By ID <span class="color-d f-16 select2-lbl-span">*</span> :</p>
                           </div>
                           <div class="col-md-12 col-sm-8 col-xs-12">
                             <div class="add-input">
-                              <input type="text" class="form-control ni-input" required="" name="txtLoginId" placeholder="Enter Your Profile ID">
+                              <input type="text" class="form-control ni-input" required="" name="id" placeholder="Enter Your Profile ID">
                               <input type="hidden" name="search_page_nm" value="ID Search">
                             </div>
                           </div>
@@ -2202,6 +1842,8 @@
   </div>
 
 </section>
+
+<!-- <textarea name="" id="test" cols="30" rows="10"></textarea> -->
 
 <footer class="ftco-footer ftco-bg-dark ftco-section">
   <div class="container"><br><br>
@@ -2281,6 +1923,298 @@
 <script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<!-- <script type="text/javascript"> -->
+<script type="text/javascript">
+  var m_data = new Array();
+  var r_data = new Array();
+  var c_data = new Array();
+  var e_data = new Array();
+  var o_data = new Array();
+  var state_data = new Array();
+  var city_data = new Array();
+
+
+  $(document).ready(function() {
+    $("#signup").click(function() {
+      var gender = document.getElementById('gender').value;
+      var marital_status = [];
+      $(".langg").each(function(){
+        if($(this).is(":checked")){
+          marital_status.push($(this).val())
+        }
+      })
+      
+      var employedin = [];
+      $(".epi").each(function(){
+        if($(this).is(":checked")){
+          employedin.push($(this).val())
+        }
+      })      
+      var age_from = document.getElementById('age_from').value
+      var age_to = document.getElementById('age_to').value
+      var height_from = document.getElementById('height_from').value
+      var height_to = document.getElementById('height_to').value
+      var manglik = document.getElementById('manglik').value
+      var physical_status = document.getElementById('physical_status').value
+      var caste_barrier = document.getElementById('caste_barrier').value
+      // var employedin = document.getElementById('employedin').value
+      var countryliving = document.getElementById('country-dropdown1').value
+      var citizenship = document.getElementById('citizenship').value
+      var have_children = document.getElementById('have_children').value
+      var physical_status = document.getElementById('physical_status').value
+      var eating_habit = document.getElementById('eating_habit').value
+      // alert(marital_status3);
+
+      $.ajax({
+        url: "<?php echo base_url()  ?>Searching/advanceSearch",
+        type: "POST",
+        data: {
+          gender: gender,
+          marital_status: marital_status,
+          // marital_status2: marital_status2,
+          // marital_status3: marital_status3,
+          // marital_status4: marital_status4,
+          // marital_status5: marital_status5,
+          have_children:have_children,
+          physical_status:physical_status,
+          eating_habit:eating_habit,
+          age_from: age_from,
+          age_to: age_to,
+          height_from: height_from,
+          height_to: height_to,
+          manglik: manglik,
+          physical_status: physical_status,
+          caste_barrier: caste_barrier,
+          employedin: employedin,
+          countryliving: countryliving,
+          citizenship: citizenship,
+          m_data: m_data,
+          r_data: r_data,
+          c_data: c_data,
+          e_data: e_data,
+          o_data: o_data,
+          state_data: state_data,
+          city_data: city_data
+        },
+        cache: false,
+        success: function(result) {
+          // alert("hey")
+          window.location = "SearchResult";
+        }
+      });
+
+    });
+  });
+
+  $(document).ready(function() {
+    $('#country-dropdown1').on('change', function() {
+      var country_id = this.value;
+      // alert(country_id);
+      $.ajax({
+        url: "<?php echo base_url()  ?>Registration/fetch_state",
+        type: "POST",
+        data: {
+          country_id: country_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#state-dropdown1").html(result);
+          // $('#city-dropdown').html('<option value="">Select State First</option>'); 
+        }
+      });
+    });
+  });
+  $('#state-dropdown1').on('change', function() {
+    var state_id = this.value;
+    $.ajax({
+      url: "<?php echo base_url()  ?>Registration/fetch_city",
+      type: "POST",
+      data: {
+        state_id: state_id
+      },
+      cache: false,
+      success: function(result) {
+        $("#city-dropdown1").html(result);
+      }
+    });
+  });
+  $('#religion-dropdown1').on('change', function() {
+    var religion_id = this.value;
+    // alert(religion_id);
+    $.ajax({
+      url: "<?php echo base_url()  ?>Registration/fetch_caste",
+      type: "POST",
+      data: {
+        religion_id: religion_id
+      },
+      cache: false,
+      success: function(result) {
+        // alert("df")
+        $("#caste-dropdown1").html(result);
+      }
+    });
+  });
+
+  function addMotherT() {
+
+    let m_t = document.getElementById('mother_tongue').value;
+    m_data.push(m_t);
+    let box = document.getElementById('mother_box');
+    let li = document.createElement('option');
+    li.textContent = m_t;
+    let pos = box.firstElementChild;
+    if (pos == null)
+      box.append(li)
+    else
+      box.insertBefore(li, pos)
+  }
+
+  function addOccupation() {
+
+    let m_t = document.getElementById('occupation1').value;
+    o_data.push(m_t);
+    let box = document.getElementById('occupation_box');
+    let li = document.createElement('option');
+    li.textContent = m_t;
+    let pos = box.firstElementChild;
+    if (pos == null)
+      box.append(li)
+    else
+      box.insertBefore(li, pos)
+  }
+
+  function addEducation() {
+    let m_t = document.getElementById('education1').value;
+    // alert(m_t)
+    e_data.push(m_t);
+    let box = document.getElementById('education_box');
+    let li = document.createElement('option');
+    li.textContent = m_t;
+    let pos = box.firstElementChild;
+    if (pos == null)
+      box.append(li)
+    else
+      box.insertBefore(li, pos)
+  }
+
+  function deleteMotherT() {
+    var current_tasks = document.querySelector("#mother_box");
+    for (var i = 0; i < current_tasks.length; i++) {
+      current_tasks[i].onclick = function() {
+        this.parentNode.remove();
+      }
+    }
+
+  }
+
+  function addState() {
+    let m_t = document.getElementById('state-dropdown1').value;
+    let religion_name = null
+    $.ajax({
+      type: 'get',
+      url: 'Searching/getStateName',
+      data: {
+        id: m_t,
+      },
+
+      async: false,
+      success: function(response) {
+        religion_name = response;
+      }
+    });
+    state_data.push(m_t);
+
+    let box = document.getElementById('state_box');
+    let li = document.createElement('option');
+    li.textContent = religion_name;
+    let pos = box.firstElementChild;
+    if (pos == null)
+      box.append(li)
+    else
+      box.insertBefore(li, pos)
+  }
+
+  function addCity() {
+    let m_t = document.getElementById('city-dropdown1').value;
+    let religion_name = null
+    $.ajax({
+      type: 'get',
+      url: 'Searching/getCityName',
+      data: {
+        id: m_t,
+      },
+
+      async: false,
+      success: function(response) {
+        religion_name = response;
+      }
+    });
+    city_data.push(m_t);
+    let box = document.getElementById('city_box');
+    let li = document.createElement('option');
+    li.textContent = religion_name;
+    let pos = box.firstElementChild;
+    if (pos == null)
+      box.append(li)
+    else
+      box.insertBefore(li, pos)
+  }
+
+  function addReligion() {
+    let m_t = document.getElementById('religion-dropdown1').value;
+    let religion_name = null
+    $.ajax({
+      type: 'get',
+      url: 'Searching/getReligionName',
+      data: {
+        id: m_t,
+      },
+
+      async: false,
+      success: function(response) {
+        religion_name = response;
+      }
+    });
+    r_data.push(m_t);
+    let box = document.getElementById('religion_box');
+    let li = document.createElement('option');
+    li.textContent = religion_name;
+    let pos = box.firstElementChild;
+    if (pos == null)
+      box.append(li)
+    else
+      box.insertBefore(li, pos)
+  }
+
+  function addCaste() {
+    let m_t = document.getElementById('caste-dropdown1').value;
+    let religion_name = null
+    $.ajax({
+      type: 'get',
+      url: 'Searching/getCasteName',
+      data: {
+        id: m_t,
+      },
+
+      async: false,
+      success: function(response) {
+        religion_name = response;
+      }
+    });
+    c_data.push(m_t);
+    // alert(religion_name)
+    let box = document.getElementById('caste_box');
+    let li = document.createElement('option');
+    li.textContent = religion_name;
+    let pos = box.firstElementChild;
+    if (pos == null)
+      box.append(li)
+    else
+      box.insertBefore(li, pos)
+  }
+</script>
 
 </body>
 

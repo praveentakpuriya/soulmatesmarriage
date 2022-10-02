@@ -12,6 +12,8 @@ class Login extends CI_Controller
 
     public function checkLogin()
     {
+        // var_dump($this->input->post());
+        // die();
         $username = $_POST['email'];
         $password = md5($_POST['password']);
         $this->load->model('Login_model');
