@@ -8,6 +8,7 @@ class Login extends CI_Controller
     {
         $this->load->view('nav');
         $this->load->view('login');
+        $this->load->view('footer');
     }
 
     public function checkLogin()

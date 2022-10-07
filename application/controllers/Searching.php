@@ -23,10 +23,18 @@ class Searching extends CI_Controller
         $this->load->view('search', $data);
     }
 
+    public function view_profile()
+    {
+        $id = $_POST['id'];
+        $this->session->set_userdata("id", $id);
+        $this->session->userdata("id");
+        redirect(base_url() . "View_Profile");
+    }
+
     public function quicksearch()
     {
 
-        $userid = $this->input->post("userid");
+        // $userid = $this->input->post("userid");
         $userdata = array(
             // "user_id" => $userid,
             "gender" => $this->input->post("gender"),
@@ -36,9 +44,11 @@ class Searching extends CI_Controller
             "mother_tongue" => $this->input->post("mother_tongue"),
             "profile_with" => $this->input->post("profile_with"),
         );
-        $result = $this->SearchModel->quicksearch($userdata, $userid);
+        $result = $this->SearchModel->quicksearch($userdata);
         $this->session->set_userdata("dataArr", $result);
         $this->session->userdata("dataArr");
+        // var_dump($result);
+        // die();
         redirect(base_url() . "SearchResult");
     }
 

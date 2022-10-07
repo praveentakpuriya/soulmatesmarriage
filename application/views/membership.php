@@ -1,5 +1,4 @@
-     
-    <div class="hero-wrap"
+<div class="hero-wrap"
         style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
         <div class="container">
@@ -15,9 +14,28 @@
     </div>
 
 
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+            <div class="sectiondeib">
+                <!-- <h4>Membership Benefits</h4> -->
+            <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Dedicated Relationship Manager</p>
+            <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Discreet and Confidential service</p>
+            <p><i class="fa fa-check-square-o" aria-hidden="true"></i>
+     Relationship Manager confirms the prospect interest to save your valuable time✔️(only with Platinum and Premium Dimond)</p>
+            <p> <i class="fa fa-check-square-o" aria-hidden="true"></i>
+ A senior Relationship manager with extensive experience will look for the perfect match for you✔️(only with Platinum and Premium Dimond)</p>
+        </div>
+        </div>
+        </div>
+    </div>
+</section>
 
 <section class="membaer">
         <div class="pricing pricing-palden">
+ 
+
             <div class="pricing-item features-item ja-animate" data-animation="move-from-bottom" data-delay="item-0" style="min-height: 497px;">
                 <div class="pricing-deco">
                     <svg class="pricing-deco-img" enable-background="new 0 0 300 100" height="100px" id="Layer_1" preserveAspectRatio="none" version="1.1" viewBox="0 0 300 100" width="300px" x="0px" xml:space="preserve" y="0px">
@@ -169,6 +187,3 @@
 </div>
 
     </section>
-
-
-

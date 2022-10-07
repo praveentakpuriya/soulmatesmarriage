@@ -16,6 +16,7 @@ class UpdateProfile extends CI_Controller
 
     public function index()
     {
+        if ($this->session->userdata('user_data')) {
         $username = $this->session->userdata('username');
         $data['data'] = $this->Login_model->get_user($username);
 
@@ -53,6 +54,9 @@ class UpdateProfile extends CI_Controller
 
         $this->load->view('nav');
         $this->load->view('editprofile', $data);
+    }else{
+        redirect(base_url() . "Login");
+    }
     }
 
     public function editpersonaldetails()

@@ -178,7 +178,7 @@
                                             Photo<span class="text-danger">*</span></label>
                                         </div>
                                         <div class="col-sm-7 col-md-7 mt-10">
-                                          <input type="file" name="document" id="fileupload" class="required form-control image" accept="image/jpg, image/jpeg" />
+                                          <input type="file" name="document" id="fileupload" class="required form-control image" required='true' accept="image/jpg, image/jpeg" />
                                           <span class="err_msg" id="errfileupload"></span>
                                           <p style="color:#ac0940">Select only
                                             jpg/jpeg file.</p>
@@ -1705,13 +1705,13 @@
                                 <div class="col-sm-9 col-md-9">
                                   <select name="father_occupation" id="f_occupation" class="required combo form-control">
                                     <option value="">----Please Select---- </option>
-                                    <option value="Employed" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Employed") echo "selected" ?>>Employed</option>
+                                    <option value="Employed" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Govt Employee") echo "selected" ?>>Govt Employed</option>
                                     <option value="Business man" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Business man") echo "selected" ?>>Business man
                                     </option>
-                                    <option value="Retired" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Retired") echo "selected" ?>>Retired</option>
-                                    <option value="Not employed" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Not employed") echo "selected" ?>>Not employed
+                                    <option value="Retired" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Private Employee") echo "selected" ?>>Private Employee</option>
+                                    <option value="Not employed" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Retired") echo "selected" ?>>Retired
                                     </option>
-                                    <option value="Expired" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Expired") echo "selected" ?>>Expired</option>
+                                    <option value="Expired" <?php if (isset($family[0]->father_occupation)) if ($family[0]->father_occupation == "Late") echo "selected" ?>>Late</option>
                                   </select>
                                   <!--              <input name="f_occupation" class="required form-control" type="text" id="f_occupation" size="40" maxlength="100">-->
                                   <span class="err_msg" id="errf_occupation"></span>
@@ -1735,8 +1735,8 @@
                                     <option value="Retired" <?php if (isset($family[0]->mother_occupation)) if ($family[0]->mother_occupation == "Retired") echo "selected" ?>>Retired</option>
                                     <option value="Not employed" <?php if (isset($family[0]->mother_occupation)) if ($family[0]->mother_occupation == "Not employed") echo "selected" ?>>Not employed
                                     </option>
-                                    <option value="House Wife" <?php if (isset($family[0]->mother_occupation)) if ($family[0]->mother_occupation == "House Wife") echo "selected" ?>>House Wife</option>
-                                    <option value="Expired" <?php if (isset($family[0]->mother_occupation)) if ($family[0]->mother_occupation == "Expired") echo "selected" ?>>Expired</option>
+                                    <option value="House Wife" <?php if (isset($family[0]->mother_occupation)) if ($family[0]->mother_occupation == "House Wife") echo "selected" ?>>Home Maker</option>
+                                    <option value="Expired" <?php if (isset($family[0]->mother_occupation)) if ($family[0]->mother_occupation == "Late") echo "selected" ?>>Late</option>
                                   </select>
                                   <!--              <input name="m_occupation" class="required form-control" type="text" id="m_occupation" size="40" maxlength="100">-->
                                   <span class="err_msg" id="errm_occupation"></span>
@@ -1956,6 +1956,18 @@
                                           <option value="68" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "68") echo "selected" ?>>68</option>
                                           <option value="69" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "69") echo "selected" ?>>69</option>
                                           <option value="70" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "70") echo "selected" ?>>70</option>
+                                          <option value="71" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "71") echo "selected" ?>>71</option>
+                                          <option value="72" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "72") echo "selected" ?>>72</option>
+                                          <option value="73" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "73") echo "selected" ?>>73</option>
+                                          <option value="74" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "74") echo "selected" ?>>74</option>
+                                          <option value="75" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "75") echo "selected" ?>>75</option>
+
+                                          <option value="76" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "76") echo "selected" ?>>76</option>
+                                          <option value="77" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "77") echo "selected" ?>>77</option>
+                                          <option value="78" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "78") echo "selected" ?>>78</option>
+                                          <option value="79" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "79") echo "selected" ?>>79</option>
+                                          <option value="80" <?php if (isset($preference[0]->age_from)) if ($preference[0]->age_from == "80") echo "selected" ?>>80</option>
+
                                         </select>
                                       </div>
                                       <div class="col-sm-2 col-md-2">
@@ -2016,6 +2028,16 @@
                                           <option value="68" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "68") echo "selected" ?>>68</option>
                                           <option value="69" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "69") echo "selected" ?>>69</option>
                                           <option value="70" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "70") echo "selected" ?>>70</option>
+                                          <option value="71" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "71") echo "selected" ?>>71</option>
+                                          <option value="72" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "72") echo "selected" ?>>72</option>
+                                          <option value="73" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "73") echo "selected" ?>>73</option>
+                                          <option value="74" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "74") echo "selected" ?>>74</option>
+                                          <option value="75" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "75") echo "selected" ?>>75</option>
+                                          <option value="76" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "76") echo "selected" ?>>76</option>
+                                          <option value="77" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "77") echo "selected" ?>>77</option>
+                                          <option value="78" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "78") echo "selected" ?>>78</option>
+                                          <option value="79" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "79") echo "selected" ?>>79</option>
+                                          <option value="80" <?php if (isset($preference[0]->age_to)) if ($preference[0]->age_to == "80") echo "selected" ?>>80</option>
                                         </select>
                                       </div>
                                     </div>
@@ -2556,10 +2578,12 @@
                                               Physiotherapy</option>
                                             <option value='Masters' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "Masters") echo "selected" ?>>Masters</option>
                                             <option value='MBA PGDM' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MBA PGDM") echo "selected" ?>>MBA PGDM</option>
+                                            <option value='MBA PGDM' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MBA") echo "selected" ?>>MBA </option>
                                             <option value='MBA PGDM part time' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MBA PGDM part time") echo "selected" ?>>MBA PGDM part
                                               time</option>
                                             <option value='MBBS' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MBBS") echo "selected" ?>>MBBS</option>
                                             <option value='MCA PGDCA' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MCA PGDCA") echo "selected" ?>>MCA PGDCA</option>
+                                            <option value='MCA PGDCA' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MCA") echo "selected" ?>>MCA</option>
                                             <option value='MCA PGDCA part time' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MCA PGDCA part time") echo "selected" ?>>MCA PGDCA part
                                               time</option>
                                             <option value='MD' <?php if (isset($preference[0]->education_preference)) if ($preference[0]->education_preference == "MD") echo "selected" ?>>MD</option>

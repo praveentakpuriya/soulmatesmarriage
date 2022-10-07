@@ -170,38 +170,41 @@
                                                     Like/Unlike </span> profile
                                             </p>
 
-                                            <div class="">
-                                                <div class="row">
 
-                                                    <div class="main-short row">
-                                                        <div class="col-md-4 col-xs-4 col-sm-4">
-                                                            <div class="tooltip" style="display:block">
-                                                                <a href="#" target="_blank"><i class="sr-i1 sr-icon fa fa-user" aria-hidden="true"></i></i>
-                                                                    <span class="tooltiptext">View Profile</span>
-                                                                </a>
-                                                            </div>
+                                            <div class="row">
 
+                                                <div class="main-short row">
+                                                    <div class="col-md-4 col-xs-4 col-sm-4">
+                                                        <div class="tooltip" style="display:block">
+                                                        <form id="GFG" method="post" action="<?php echo base_url('Searching/view_profile')  ?>">
+                                                            <input type="hidden" name="id" value="<?php echo $list->user_id ?>">                                                           
+                                                        
+                                                            <a href="#" onclick="myFunction()" ><i class="sr-i1 sr-icon fa fa-user" aria-hidden="true"></i></i>
+                                                                <span class="tooltiptext">View Profile</span>
+                                                            </a></form>
                                                         </div>
 
-                                                        <div class="col-md-4 col-xs-4 col-sm-4">
-                                                            <a class="tooltip" style="display:inline-block;" href="#" target="_blank">
-                                                                <i class="fa fa-heart sr-i2 sr-icon" aria-hidden="true"></i>
-                                                                <span class="tooltiptext">Express Interest</span>
-                                                            </a>
-
-                                                        </div>
-                                                        <div class="col-md-4 col-xs-4 col-sm-4">
-                                                            <a class="tooltip" style="display:inline-block;" href="#" target="_blank">
-                                                                <i class="fa fa-envelope-o sr-i2 sr-icon" aria-hidden="true"></i>
-                                                                <span class="tooltiptext">Send Message</span>
-                                                            </a>
-
-                                                        </div>
                                                     </div>
 
+                                                    <div class="col-md-4 col-xs-4 col-sm-4">
+                                                        <a class="tooltip" style="display:inline-block;" href="#" target="_blank">
+                                                            <i class="fa fa-heart sr-i2 sr-icon" aria-hidden="true"></i>
+                                                            <span class="tooltiptext">Express Interest</span>
+                                                        </a>
+
+                                                    </div>
+                                                    <div class="col-md-4 col-xs-4 col-sm-4">
+                                                        <a class="tooltip" style="display:inline-block;" href="#" target="_blank">
+                                                            <i class="fa fa-envelope-o sr-i2 sr-icon" aria-hidden="true"></i>
+                                                            <span class="tooltiptext">Send Message</span>
+                                                        </a>
+
+                                                    </div>
                                                 </div>
 
                                             </div>
+
+
                                             <hr>
 
                                         </div>
@@ -209,8 +212,10 @@
                                 </div>
                             </div>
                         </div>
-                <?php }
-                } ?>
+                    <?php }
+                } else { ?>
+                    <p style="text-align:center">Profile not found</p>
+                <?php } ?>
 
             </div>
             <nav aria-label="..." class="d-flex justify-content-end">
@@ -315,7 +320,12 @@
 <script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
-
+<script>
+            function myFunction() {
+                // alert("hh")
+                document.getElementById("GFG").submit();
+            }
+        </script>
 </body>
 
 </html>

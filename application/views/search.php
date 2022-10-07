@@ -194,6 +194,16 @@
                                 <option value="68">68</option>
                                 <option value="69">69</option>
                                 <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
                               </select>
                             </div>
                             <div class="col-sm-1 col-md-1" style="padding-top:10px;"> to </div>
@@ -201,7 +211,7 @@
                               <select class="form-control" name="age_to" id="ageto">
                                 <option value="18">18</option>
                                 <option value="19">19</option>
-                                <option value="20">20</option>
+                                <option value="20" selected="selected">20</option>
                                 <option value="21">21</option>
                                 <option value="22">22</option>
                                 <option value="23">23</option>
@@ -213,7 +223,7 @@
                                 <option value="29">29</option>
                                 <option value="30">30</option>
                                 <option value="31">31</option>
-                                <option value="32" selected="selected">32</option>
+                                <option value="32">32</option>
                                 <option value="33">33</option>
                                 <option value="34">34</option>
                                 <option value="35">35</option>
@@ -252,6 +262,16 @@
                                 <option value="68">68</option>
                                 <option value="69">69</option>
                                 <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
                               </select>
                             </div>
                           </div>
@@ -416,7 +436,7 @@
                               <div class="col-sm-9 col-md-9 ">
                                 <div class="controls_holder">
                                   <label>
-                                    <input name="marital_status" class="langg" type="checkbox" id="marital_status" value="Never Married" >
+                                    <input name="marital_status" class="langg" type="checkbox" id="marital_status" value="Never Married">
                                     Never Married &nbsp;</label>
                                   <label>
                                     <input name="marital_status" class="langg" type="checkbox" id="marital_status" value="Widowed">
@@ -1371,7 +1391,7 @@
                                   </option>
                                   <option value='Hungary'>Hungary</option>
                                   <option value='Iceland'>Iceland</option>
-                                  <option value='India' >India</option>
+                                  <option value='India'>India</option>
                                   <option value='Indonesia'>Indonesia</option>
                                   <option value='Iran'>Iran</option>
                                   <option value='Iraq'>Iraq</option>
@@ -1680,6 +1700,16 @@
                                 <option value="68">68</option>
                                 <option value="69">69</option>
                                 <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
                               </select>
                             </div>
                             <div class="col-sm-1 col-md-1" style="padding-top:10px"> to </div>
@@ -1687,7 +1717,7 @@
                               <select class="form-control" name="age_to" id="ageto">
                                 <option value="18">18</option>
                                 <option value="19">19</option>
-                                <option value="20">20</option>
+                                <option value="20" selected="selected">20</option>
                                 <option value="21">21</option>
                                 <option value="22">22</option>
                                 <option value="23">23</option>
@@ -1699,7 +1729,7 @@
                                 <option value="29">29</option>
                                 <option value="30">30</option>
                                 <option value="31">31</option>
-                                <option value="32" selected="selected">32</option>
+                                <option value="32">32</option>
                                 <option value="33">33</option>
                                 <option value="34">34</option>
                                 <option value="35">35</option>
@@ -1738,6 +1768,16 @@
                                 <option value="68">68</option>
                                 <option value="69">69</option>
                                 <option value="70">70</option>
+                                <option value="71">71</option>
+                                <option value="72">72</option>
+                                <option value="73">73</option>
+                                <option value="74">74</option>
+                                <option value="75">75</option>
+                                <option value="76">76</option>
+                                <option value="77">77</option>
+                                <option value="78">78</option>
+                                <option value="79">79</option>
+                                <option value="80">80</option>
                               </select>
                             </div>
                           </div>
@@ -1940,18 +1980,18 @@
     $("#signup").click(function() {
       var gender = document.getElementById('gender').value;
       var marital_status = [];
-      $(".langg").each(function(){
-        if($(this).is(":checked")){
+      $(".langg").each(function() {
+        if ($(this).is(":checked")) {
           marital_status.push($(this).val())
         }
       })
-      
+
       var employedin = [];
-      $(".epi").each(function(){
-        if($(this).is(":checked")){
+      $(".epi").each(function() {
+        if ($(this).is(":checked")) {
           employedin.push($(this).val())
         }
-      })      
+      })
       var age_from = document.getElementById('age_from').value
       var age_to = document.getElementById('age_to').value
       var height_from = document.getElementById('height_from').value
@@ -1977,9 +2017,9 @@
           // marital_status3: marital_status3,
           // marital_status4: marital_status4,
           // marital_status5: marital_status5,
-          have_children:have_children,
-          physical_status:physical_status,
-          eating_habit:eating_habit,
+          have_children: have_children,
+          physical_status: physical_status,
+          eating_habit: eating_habit,
           age_from: age_from,
           age_to: age_to,
           height_from: height_from,

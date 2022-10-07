@@ -5,9 +5,9 @@ use LDAP\Result;
 defined('BASEPATH') or exit('No direct script access allowed');
 class SearchModel extends CI_Model
 {
-    function quicksearch($data, $userid)
+    function quicksearch($data)
     {
-        $this->db->select('*,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
+        $this->db->select('*,u.user_id as user_id,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
 
         $this->db->from('user as u');
         $this->db->join('religion as r', 'u.religion_id = r.id', 'inner');
@@ -17,7 +17,7 @@ class SearchModel extends CI_Model
         $this->db->join('professional_details as profession', 'u.user_id = profession.user_id', 'left');
         $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
 
-        $this->db->where('u.user_id !=', $userid);
+        // $this->db->where('u.user_id !=', $userid);
         if ($data['gender'] != '') {
             $this->db->where('u.gender', $data['gender']);
         }

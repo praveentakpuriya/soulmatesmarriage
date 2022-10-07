@@ -1,52 +1,23 @@
-<div class="hero-wrap" style="background-image: url('assets/img/bg_2.jpg');">
+<div class="hero-wrap" style="background-image: url('assets/img/pexels-aksh-shaurya-12200847.jpg');">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text justify-content-start align-items-end">
 
             <div style="display: none;" class="col-lg-4 col-md-6 mt-0 mt-md-0 d-flex">
-                <div class="carousel_wrapper" style="display: none;">
-                    <div class="carousel">
-                        <div class="slide one">
-                            <img src="assets/img/3.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                        <div class="slide two">
-                            <img src="assets/img/2.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                        <div class="slide three">
-                            <img src="assets/img/3.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                        <div class="slide four">
-                            <img src="assets/img/4.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                        <div class="slide five">
-                            <img src="assets/img/2.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                        <div class="slide six">
-                            <img src="assets/img/3.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                        <div class="slide seven">
-                            <img src="assets/img/4.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                        <div class="slide eight">
-                            <img src="assets/img/3.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                        <div class="slide nine">
-                            <img src="assets/img/2.jpg" style="width: 150px; height: 100px;" />
-                        </div>
-                    </div>
-                </div>
+
             </div>
 
             <div class="col-lg-2 col" style=" "></div>
             <div class="col-lg-6 col-md-6  d-flex align-items-end">
                 <div class="text">
-                    <h1 class="mb-4">Your search for the perfect match ends here!</h1>
-                    <p style="font-size: 18px;">Register Free to see your matching profiles</p>
+                    <h1 class="mb-4">Find Your Soulmate… </h1>
+                    <p style="font-size: 18px;">Finding The Soulmate May Not Be Easy.</p>
+                    <p style="font-size: 18px;">We Made it Simple ..</p>
                     <a href="#" class="icon-wrap popup-vimeo d-flex align-items-center mt-4">
 
-                        <div class="heading-title ml-5">
-                            <span> Find the Love of Your Life?</span>
-                        </div>
+                        <!-- <div class="heading-title ml-5">
+                                <span> Find the Love of Your Life?</span>
+                            </div> -->
                     </a>
                 </div>
             </div>
@@ -88,11 +59,69 @@
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                             <select class="form-control" name="agefrom" id="agefrom" style="#">
                                                 <option class="active">Age From</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20" selected="selected">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
+                                                <<option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20" selected="selected">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                    <option value="32">32</option>
+                                                    <option value="33">33</option>
+                                                    <option value="34">34</option>
+                                                    <option value="35">35</option>
+                                                    <option value="36">36</option>
+                                                    <option value="37">37</option>
+                                                    <option value="38">38</option>
+                                                    <option value="39">39</option>
+                                                    <option value="40">40</option>
+                                                    <option value="41">41</option>
+                                                    <option value="42">42</option>
+                                                    <option value="43">43</option>
+                                                    <option value="44">44</option>
+                                                    <option value="45">45</option>
+                                                    <option value="46">46</option>
+                                                    <option value="47">47</option>
+                                                    <option value="48">48</option>
+                                                    <option value="49">49</option>
+                                                    <option value="50">50</option>
+                                                    <option value="51">51</option>
+                                                    <option value="52">52</option>
+                                                    <option value="53">53</option>
+                                                    <option value="54">54</option>
+                                                    <option value="55">55</option>
+                                                    <option value="56">56</option>
+                                                    <option value="57">57</option>
+                                                    <option value="58">58</option>
+                                                    <option value="59">59</option>
+                                                    <option value="60">60</option>
+                                                    <option value="61">61</option>
+                                                    <option value="62">62</option>
+                                                    <option value="63">63</option>
+                                                    <option value="64">64</option>
+                                                    <option value="65">65</option>
+                                                    <option value="66">66</option>
+                                                    <option value="67">67</option>
+                                                    <option value="68">68</option>
+                                                    <option value="69">69</option>
+                                                    <option value="70">70</option>
+                                                    <option value="71">71</option>
+                                                    <option value="72">72</option>
+                                                    <option value="73">73</option>
+                                                    <option value="74">74</option>
+                                                    <option value="75">75</option>
+                                                    <option value="76">76</option>
+                                                    <option value="77">77</option>
+                                                    <option value="78">78</option>
+                                                    <option value="79">79</option>
+                                                    <option value="80">80</option>
 
                                             </select>
                                         </div>
@@ -105,13 +134,71 @@
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                            <select class="form-control" name="ageto" id="ageto" style="#">
+                                            <select class="form-control" name="ageto" id="ageto">
                                                 <option class="active">Age To</option>
                                                 <option value="18">18</option>
                                                 <option value="19">19</option>
                                                 <option value="20" selected="selected">20</option>
                                                 <option value="21">21</option>
                                                 <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32" selected>32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                                <option value="49">49</option>
+                                                <option value="50">50</option>
+                                                <option value="51">51</option>
+                                                <option value="52">52</option>
+                                                <option value="53">53</option>
+                                                <option value="54">54</option>
+                                                <option value="55">55</option>
+                                                <option value="56">56</option>
+                                                <option value="57">57</option>
+                                                <option value="58">58</option>
+                                                <option value="59">59</option>
+                                                <option value="60">60</option>
+                                                <option value="61">61</option>
+                                                <option value="62">62</option>
+                                                <option value="63">63</option>
+                                                <option value="64">64</option>
+                                                <option value="65">65</option>
+                                                <option value="66">66</option>
+                                                <option value="67">67</option>
+                                                <option value="68">68</option>
+                                                <option value="69">69</option>
+                                                <option value="70">70</option>
+                                                <option value="71">71</option>
+                                                <option value="72">72</option>
+                                                <option value="73">73</option>
+                                                <option value="74">74</option>
+                                                <option value="75">75</option>
+                                                <option value="76">76</option>
+                                                <option value="77">77</option>
+                                                <option value="78">78</option>
+                                                <option value="79">79</option>
+                                                <option value="80">80</option>
 
                                             </select>
                                         </div>
@@ -171,7 +258,7 @@
     <div class="container">
         <div class="row no-gutters">
 
-            <div class="col-md-7 p-md-5 img-fluid img img-2 d-flex justify-content-center align-items-center" style="background-image: url(assets/img/choose1.jpg);">
+            <div class="col-md-7 p-md-5 img-fluid img img-2 d-flex justify-content-center align-items-center" style="background-image: url(assets/img/choose1.jpg);     border-radius: 8px;">
             </div>
             <div class="col-md-5 wrap-about py-md-5 ">
                 <div class="heading-section mb-5 pl-md-5" style="background-image: url('assets/img/blur.jpg'); background-size: cover; padding: 12px; position: relative; right: 215px; width: 693px;">
@@ -204,7 +291,7 @@
             <div class="col-md-3 d-flex ">
                 <div class="blog-entry justify-content-end">
                     <figure class="swing" style="    height: 250px;overflow: hidden;">
-                        <img src="assets/img/img2.jpg" style="width: 260px;">
+                        <img src="assets/img/89.jpg" style="width: 260px;">
                     </figure>
                     </a>
                     <div class="text pt-4">
@@ -213,7 +300,6 @@
                             <div><a href="#"></a></div>
                         </div>
                         <h3 class="heading mt-2"><a href="#"></a></h3>
-
                     </div>
                 </div>
             </div>
@@ -221,7 +307,7 @@
             <div class="col-md-3 d-flex ">
                 <div class="blog-entry justify-content-end">
                     <figure class="swing" style="    height: 250px;overflow: hidden;">
-                        <img src="assets/img/img3.jpg" style="width: 260px;">
+                        <img src="assets/img/56.jpg" style="width: 260px;">
                     </figure>
                     </a>
                     <div class="text pt-4">
@@ -238,7 +324,94 @@
             <div class="col-md-3 d-flex ">
                 <div class="blog-entry justify-content-end">
                     <figure class="swing" style="height: 250px;overflow: hidden;">
-                        <img src="assets/img/img4.jpg" style="width: 260px;">
+                        <img src="assets/img/411.jpg" style="width: 260px;">
+                    </figure>
+                    </a>
+                    <div class="text pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">1 years,</a></div>
+                            <div><a href="#"></a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#"></a></h3>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 d-flex ">
+                <div class="blog-entry justify-content-end">
+                    <figure class="swing" style="    height: 250px;overflow: hidden; background-image: linear-gradient(-224deg,#971b1f,#692454) !important;">
+                        <h1 style=" padding: 25px; color: white; ">next photo will be yours...</h1>
+                    </figure>
+                    </a>
+                    <div class="text pt-4">
+                        <!-- <div class="meta mb-3">
+                                <div><a href="#">2 years,</a></div>
+                                <div><a href="#"></a></div> -->
+                    </div>
+                    <h3 class="heading mt-2"><a href="#"></a></h3>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    </div>
+    </div>
+</section>
+
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-7 heading-section text-center ">
+                <span class="subheading">SUCCESS STORIES</span>
+                <h2>Our Success Stories </h2>
+            </div>
+        </div>
+        <div class="row d-flex">
+
+            <div class="col-md-3 d-flex ">
+                <div class="blog-entry justify-content-end">
+                    <figure class="swing" style="    height: 250px;overflow: hidden;">
+                        <img src="assets/img/1.jfif" style="width: 260px;">
+                    </figure>
+                    </a>
+                    <div class="text pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">2 years,</a></div>
+                            <div><a href="#"></a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#"></a></h3>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 d-flex ">
+                <div class="blog-entry justify-content-end">
+                    <figure class="swing" style="    height: 250px;overflow: hidden;">
+                        <img src="assets/img/img2.jfif" style="width: 260px;">
+                    </figure>
+                    </a>
+                    <div class="text pt-4">
+                        <div class="meta mb-3">
+                            <div><a href="#">6 years,</a></div>
+                            <div><a href="#"></a></div>
+                        </div>
+                        <h3 class="heading mt-2"><a href="#"></a></h3>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 d-flex ">
+                <div class="blog-entry justify-content-end">
+                    <figure class="swing" style="height: 250px;overflow: hidden;">
+                        <img src="assets/img/img3.jfif" style="width: 260px;">
                     </figure>
                     </a>
                     <div class="text pt-4">
@@ -255,7 +428,7 @@
             <div class="col-md-3 d-flex ">
                 <div class="blog-entry justify-content-end">
                     <figure class="swing" style="    height: 250px;overflow: hidden;">
-                        <img src="assets/img/img1.jpg" style="width: 260px;">
+                        <img src="assets/img/img56.jpg" style="width: 260px;">
                     </figure>
                     </a>
                     <div class="text pt-4">
@@ -277,7 +450,6 @@
     </div>
 </section>
 
-
 <section class="slice--offset parallax-section parallax-section-lg" style="background-image: url(assets/img/parallax_image_1594499147.jpg);">
     <span class="mask mask-dark--style-2"></span>
     <div class="container" style="    padding: 32px 1px;">
@@ -289,177 +461,68 @@
                 <div class="fluid-paragraph fluid-paragraph-sm mt-3 mb-3 c-white text-white">
                     No. 1 Matrimonial Site. Easy, Safe &amp; Secure Way To Find The Perfect One For You! Most Trusted Marriage Portal. View &amp; Contact Millions Of Profiles. Register Now! Strict Privacy Controls. Search by Community </div>
                 <div class="btn-container mt-5">
-                    <a href="#" class="button btn btn-styled btn-md btn-base-1 z-depth-2-bottom">Register Now</a>
+                    <a href="registration.html" class="btn btn-primary" style="padding: 10px 35px !important;">Register Now</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div class="container-fluid" id="mobilelay" style="margin-top: 43px;">
-    <section class="ftco-section services-section img">
-
-        <div class="row">
-            <div class="col-md-12">
-
-                <div class="row justify-content-center">
-                    <div class="col-md-12 heading-section text-center  mb-5">
-                        <span class="subheading">Member</span>
-                        <h2 class="mb-2">Membership Features</h2>
-                    </div>
-                </div><br>
-
-                <div class="container2">
-                    <div class="card">
-                        <h3 class="title">Edit Profile</h3>
-                        <div class="bar">
-                            <div class="emptybar"></div>
-                            <div class="filledbar"></div>
-                        </div>
-                        <div class="circle">
-                            <img src="assets/img/newedit1.png">
-                            <circle class="stroke" cx="60" cy="60" r="50" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h3 class="title">Upload Photos</h3>
-                        <div class="bar">
-                            <div class="emptybar"></div>
-                            <div class="filledbar"></div>
-                        </div>
-                        <div class="circle">
-                            <img src="assets/img/newupload.png">
-                            <circle class="stroke" cx="60" cy="60" r="50" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h3 class="title">Search Profiles</h3>
-                        <div class="bar">
-                            <div class="emptybar"></div>
-                            <div class="filledbar"></div>
-                        </div>
-                        <div class="circle">
-                            <img src="assets/img/newsearch.png">
-                            <circle class="stroke" cx="60" cy="60" r="50" />
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h3 class="title">Send Message</h3>
-                        <div class="bar">
-                            <div class="emptybar"></div>
-                            <div class="filledbar"></div>
-                        </div>
-                        <div class="circle">
-                            <img src="assets/img/newmessage1.png">
-                            <circle class="stroke" cx="60" cy="60" r="50" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
-        </div>
-
-</div>
-</section>
-
-
-
-
-
-
-
-
-<section class="ftco-section">
-    <div class="container">
+<section class="mt-5">
+    <div class="fw container">
         <div class="row justify-content-center">
-            <div class="col-md-12 heading-section text-center  mb-5">
-                <span class="subheading">What we Success</span>
-                <h2 class="mb-2">Our Success Stories</h2>
+            <div class="col-md-12 heading-section text-center  mb-0">
+                <span class="subheading">Member</span>
+                <h2 class="mb-2">Membership Features</h2>
             </div>
         </div>
-        <div class="row">
+        <ul class="fsstfylf ffrr">
+            <li>
+                <div class="fsstfylf-icon">
+                    <i class="fad fa-edit"></i>
+                    <span class="step">01</span>
+                </div>
+                <div class="fsstfylf-info">
+                    <p class="fsstfylf-title">Edit Profile </p>
 
+                </div>
+            </li>
+            <li>
+                <div class="fsstfylf-icon">
+                    <i class="fad fa-cloud-upload-alt"></i>
+                    <span class="step">02</span>
+                </div>
+                <div class="fsstfylf-info">
+                    <p class="fsstfylf-title">Upload Photos
+                    </p>
 
-        </div>
+                </div>
+            </li>
+            <li>
+                <div class="fsstfylf-icon">
+                    <i class="fad fa-users-class"></i>
+                    <span class="step">03</span>
+                </div>
+                <div class="fsstfylf-info">
+                    <p class="fsstfylf-title">Search Profiles
+                    </p>
+
+                </div>
+            </li>
+            <li>
+                <div class="fsstfylf-icon">
+                    <i class="fad fa-comments-alt"></i>
+                    <span class="step">04</span>
+                </div>
+                <div class="fsstfylf-info">
+                    <p class="fsstfylf-title">Send Message </p>
+
+                </div>
+            </li>
+        </ul>
+
     </div>
-    </div>
-    </div>
+    <br><br>
 </section>
-
-
-<!--  <section class="ftco-section testimony-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center heading-section ">
-            <span class="subheading">Testimonial</span>
-            <h2 class="mb-3">Happy Clients</h2>
-          </div>
-        </div>
-        <div class="row ">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel ftco-owl">
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(assets/img/person_1.jpg)">
-                  </div>
-                  <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">Marketing Manager</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(assets/img/person_2.jpg)">
-                  </div>
-                  <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">Interface Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(assets/img/person_3.jpg)">
-                  </div>
-                  <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">UI Designer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(assets/img/person_1.jpg)">
-                  </div>
-                  <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">Web Developer</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(assets/img/person_1.jpg)">
-                  </div>
-                  <div class="text pt-4">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Roger Scott</p>
-                    <span class="position">System Analyst</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
