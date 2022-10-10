@@ -83,7 +83,7 @@
                   <div class="col-md-3 col-sm-12 col-xs-12">
 
                     <div class="mem_img">
-                      <img src="<?php if (isset($data[0]->main_photo)) echo base_url('Documents/document/' . $data[0]->main_photo); ?>">
+                      <img src="<?php if(isset($data[0]->main_photo)) echo base_url('Documents/document/' . $data[0]->main_photo); else echo 'assets/img/user.webp';?>">
 
                       <span class="frame">Soulmates Marraige</span>
 

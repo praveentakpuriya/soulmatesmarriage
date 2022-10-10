@@ -89,12 +89,12 @@
                   <div class="bbox" style="">
                     <div class="single-staff">
                       <div class="sraff-inner" style="height: 300px;">
-                        <img src="<?php if (isset($documents[0]->main_photo)) echo base_url('Documents/document/' . $documents[0]->main_photo); ?>" style="width: 100%;height: -webkit-fill-available;" alt="">
+                        <img src="<?php if (isset($documents[0]->main_photo)) echo base_url('Documents/document/' . $documents[0]->main_photo);else echo 'assets/img/user.webp'; ?>" style="width: 100%;height: -webkit-fill-available;" alt="">
 
                         <div class="staff-title plus"> <span class="plus"></span>
                           <h4>
-                            <!-- <a class="popup-with-zoom-anim btn btn-danger " onclick=" alert('Please Upload Photos First')">Protect
-                              Photo</a> -->
+                            <a class="popup-with-zoom-anim btn btn-danger " onclick=" alert('Please Upload Photos First')">Protect
+                              Photo</a>
                           </h4>
                           <h6></h6>
                         </div>

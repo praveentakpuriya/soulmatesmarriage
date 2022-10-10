@@ -175,6 +175,47 @@ class login_model extends CI_Model
             return false;
         }
     }
+    function fill_professional_details($id){
+        $this->db->where('user_id', $id);
+        $query = $this->db->get('professional_details');
+        if ($query->num_rows() == 1) {
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+    function fill_astrological_details($id){
+        $this->db->where('user_id', $id);
+        $query = $this->db->get('astrological_details');
+        if ($query->num_rows() == 1) {
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+    function fill_family_details($id){
+        $this->db->where('user_id', $id);
+        $query = $this->db->get('family_details');
+        if ($query->num_rows() == 1) {
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+    function fill_document_details($id){
+        $this->db->where('user_id', $id);
+        $query = $this->db->get('documents');
+        if ($query->num_rows() == 1) {
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+
     function insert_interest($data)
     {
         if ($this->check_user_data_present_in($data)) {
@@ -399,4 +440,177 @@ class login_model extends CI_Model
         }
         return $output;
     }
+
+    function get_message_list($id)
+    {
+        $this->db->select("*,u.user_id as uid");
+        $this->db->from('user as u');
+        $this->db->join('message as m', 'u.user_id = m.message_to', 'inner');
+        $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
+        $this->db->where('message_to', $id);
+        // $this->db->order_by('name','ASC');
+        $query = $this->db->get();
+        $output = '';
+        // $output = '<option value="">Select Caste </option>';
+        // var_dump($query->result());
+        foreach ($query->result() as $row) {
+            $output .= '<div class="col-md-12">
+            <div class="hidbox">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 ">
+                        <div class="tab-content border">
+                            <table width="100%" id="pending">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" height="25" class="acttop">
+                                            <span class="style13"
+                                                style="padding-left: 10px;font-size: 12px">
+                                                Pending </span><img src="<img src="Documents/document/' . $row->main_photo . '"
+                                                style="display: none;" id="loadpending">
+                                            <span class="style13"
+                                                style="float:right;font-size: 12px;margin-right: 10px;"
+                                                id="spnpending">1 Records Found</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td valign="top" id="loadpendingdata" style="width:100%">
+
+                                            <div class="col-md-12 col-sm-12" style="display:table;">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <div class="mem_img">
+                                                            <img src="">
+
+                                                            <span class="frame">Soulmates
+                                                                Marraige</span>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <p><a class="down" href="#">' . $row->name . ' (
+                                                                ' . $row->uid . ' ) </a></p>
+                                                        <p>Age :' . $row->age . ' Years</p>
+                                                        <p>Caste : ' . $row->sub_cast . '</p>
+                                                        <p>Location : ' . $row->address . '</p>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+                                                        <p><b>Expression of Interest (28-Sep-2022)</b>
+                                                        </p>
+                                                        <p>' . $row->message . '</p>
+                                                    </div>
+                                                    <div class="col-md-2 col-sm-2">
+                                                        <input type="button" name="btnbutton"
+                                                            class="btn btn-primary" value="Delete">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="col-md-4 col-sm-4 pull-right">
+
+                                                <input type="hidden" id="txtpending" value="1">
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+        }
+        return $output;
+    }
+    function get_message_list_to($id){
+        $this->db->select("*,u.user_id as uid");
+        $this->db->from('user as u');
+        $this->db->join('message as m', 'u.user_id = m.message_from', 'inner');
+        $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
+        $this->db->where('message_from', $id);
+        // $this->db->order_by('name','ASC');
+        $query = $this->db->get();
+        $output = '';
+        // $output = '<option value="">Select Caste </option>';
+        // var_dump($query->result());
+        foreach ($query->result() as $row) {
+            $output .= '<div class="col-md-12">
+            <div class="hidbox">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 ">
+                        <div class="tab-content border">
+                            <table width="100%" id="pending">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" height="25" class="acttop">
+                                            <span class="style13"
+                                                style="padding-left: 10px;font-size: 12px">
+                                                Pending </span><img src="<img src="Documents/document/' . $row->main_photo . '"
+                                                style="display: none;" id="loadpending">
+                                            <span class="style13"
+                                                style="float:right;font-size: 12px;margin-right: 10px;"
+                                                id="spnpending">1 Records Found</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td valign="top" id="loadpendingdata" style="width:100%">
+
+                                            <div class="col-md-12 col-sm-12" style="display:table;">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <div class="mem_img">
+                                                            <img src="">
+
+                                                            <span class="frame">Soulmates
+                                                                Marraige</span>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <p><a class="down" href="#">' . $row->name . ' (
+                                                                ' . $row->uid . ' ) </a></p>
+                                                        <p>Age :' . $row->age . ' Years</p>
+                                                        <p>Caste : ' . $row->sub_cast . '</p>
+                                                        <p>Location : ' . $row->address . '</p>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+                                                        <p><b>Expression of Interest (28-Sep-2022)</b>
+                                                        </p>
+                                                        <p>' . $row->message . '</p>
+                                                    </div>
+                                                    <div class="col-md-2 col-sm-2">
+                                                        <input type="button" name="btnbutton"
+                                                            class="btn btn-primary" value="Delete">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="col-md-4 col-sm-4 pull-right">
+
+                                                <input type="hidden" id="txtpending" value="1">
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+        }
+        return $output;
+    }
+
 }

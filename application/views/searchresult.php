@@ -28,7 +28,7 @@
                                 <div class="col-md-4 col-sm-4 col-xs-12">
 
                                     <a href="#">
-                                        <img src="<?php echo base_url('Documents/document/' . $list->main_photo); ?>" class="img-responsive placeholder-img">
+                                        <img src="<?php if(isset($list->main_photo)) echo base_url('Documents/document/' . $list->main_photo); else echo 'assets/img/user.webp';?>" class="img-responsive placeholder-img">
                                     </a>
 
                                 </div>

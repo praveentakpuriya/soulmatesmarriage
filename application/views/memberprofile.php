@@ -30,7 +30,7 @@
 
                                             <figure class="effect-lexi">
 
-                                                <a href="<?php echo base_url("UpdateProfile") ?>"><img src="<?php if (isset($documents[0]->main_photo)) echo base_url('Documents/document/' . $documents[0]->main_photo); ?>" style="width: 100%;height: 300px;" alt="">
+                                                <a href="<?php echo base_url("UpdateProfile") ?>"><img src="<?php if (isset($documents[0]->main_photo)) echo base_url('Documents/document/' . $documents[0]->main_photo);else echo 'assets/img/user.webp'; ?>" style="width: 100%;height: 300px;" alt="">
                                                 </a>
                                                 <figcaption>
                                                     <a href="<?php echo base_url("UpdateProfile") ?>">
@@ -117,7 +117,7 @@
                                                 <div class="mask half">
                                                     <div class="fill"></div>
                                                 </div>
-                                                <div class="inside-circle"> 75% </div>
+                                                <div class="inside-circle"> <?= $profile_per ?>% </div>
                                             </div>
                                         </div>
 
@@ -145,7 +145,7 @@
                             <div id="icetab-content">
                                 <div class="tabcontent tab-active">
                                     <ul class="int_list">
-                                        <a href="#" onclick="showInterest('<?= $data[0]->user_id ?>')">
+                                        <a  onclick="showInterest('<?= $data[0]->user_id ?>')">
                                             <li><?php if (isset($interest[0]->no_of_interest)) echo $interest[0]->no_of_interest;
                                                 else echo '0'; ?> <br> Pending</li>
                                         </a>
@@ -162,7 +162,7 @@
                                 </div>
                                 <div class="tabcontent ">
                                     <ul class="int_list">
-                                        <a href="recmessage.php?mode=pending">
+                                        <a  onclick="showMessage('<?= $data[0]->user_id ?>')" >
                                             <li><?php if (isset($message[0]->no_of_message)) echo $message[0]->no_of_message;
                                                 else echo '0'; ?> <br> Pending</li>
                                         </a>
@@ -179,7 +179,7 @@
                                 </div>
                                 <div class="tabcontent ">
                                     <ul class="int_list">
-                                        <a href="#" onclick="showInterest_to('<?= $data[0]->user_id ?>')">
+                                        <a  onclick="showInterest_to('<?= $data[0]->user_id ?>')">
                                             <li><?php if (isset($interest_to[0]->no_of_interest)) echo $interest_to[0]->no_of_interest;
                                                 else echo '0'; ?><br> Pending</li>
                                         </a>
@@ -196,7 +196,7 @@
                                 </div>
                                 <div class="tabcontent ">
                                     <ul class="int_list">
-                                        <a href="viewmessage.php?mode=pending">
+                                        <a onclick="showMessage_to('<?= $data[0]->user_id ?>')">
                                             <li><?php if (isset($message_to[0]->no_of_message)) echo $message_to[0]->no_of_message;
                                                 else echo '0'; ?> <br> Pending</li>
                                         </a>
@@ -268,6 +268,35 @@
         $.ajax({
             type: 'POST',
             url: "UserProfile/get_interest_list_to",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                // alert("hey")
+                $("#interest_got").empty();
+                $("#interest_got").html(data1);
+            }
+        });
+    }
+    function showMessage(id) {
+        // alert(id)
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/get_message_list",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                // alert("hey")
+                $("#interest_got").empty();
+                $("#interest_got").html(data1);
+            }
+        });
+    }
+    function showMessage_to(id){
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/get_message_list_to",
             data: {
                 id: id,
             },
