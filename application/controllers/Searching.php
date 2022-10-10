@@ -17,10 +17,14 @@ class Searching extends CI_Controller
     }
     public function index()
     {
-        $data['religion'] = $this->CountryModel->getReligion();
-        $data['country'] = $this->CountryModel->getData();
-        $this->load->view('nav');
-        $this->load->view('search', $data);
+        if ($this->session->userdata('user_data')) {
+            $data['religion'] = $this->CountryModel->getReligion();
+            $data['country'] = $this->CountryModel->getData();
+            $this->load->view('nav');
+            $this->load->view('search', $data);
+        } else {
+            redirect(base_url() . "Login");
+        }
     }
 
     public function view_profile()
@@ -121,7 +125,5 @@ class Searching extends CI_Controller
         $this->session->set_userdata("dataArr", $result);
         $this->session->userdata("dataArr");
         echo $result;
-        // var_dump($result);
-        // // echo $result;
     }
 }

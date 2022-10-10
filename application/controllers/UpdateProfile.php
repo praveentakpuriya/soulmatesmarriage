@@ -286,6 +286,15 @@ class UpdateProfile extends CI_Controller
         $config['allowed_types'] = 'jpg|jpeg|bmp|png|pdf';  //type of images allowed        //Max Size
         $config['encrypt_name'] = TRUE;   // For unique image name at a time
 
+        $config['wm_text'] = "Soulmates";
+        $config['wm_type'] = "text";
+        $config['wm_font_path'] = "./system/fonts/texb.ttf";
+        $config['wm_font_size'] = 25;
+        $config['wm_vrt_alignment'] = "middel";
+        $config['wm_font_color'] = "ffffff";
+        $config['wm_hor_alignment'] = "center";
+
+
         $this->load->library('upload', $config);  //File Uploading library
         $this->upload->do_upload('document');  // input name which have to upload 
         $document = $this->upload->data();

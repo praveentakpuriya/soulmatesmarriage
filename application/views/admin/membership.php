@@ -1,43 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v5.15.4/css/all.css" />
-
-    <link href="assets/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-    <link href="assets/assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
-
-    <link href="assets/assets/css/style/style.css" rel="stylesheet" />
-    <link href="assets/assets/css/skins.css" rel="stylesheet" />
-    <link href="assets/assets/css/dark-style.css" rel="stylesheet" />
-    <link href="assets/assets/css/colors/default.css" rel="stylesheet" />
-
-    <!-- Color css-->
-    <link id="theme" rel="stylesheet" type="text/css" media="all" href="assets/css/colors/color.css" />
-
-    <!-- Select2 css-->
-    <link href="assets/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
-
-    <!-- Mutipleselect css-->
-    <link rel="stylesheet" href="assets/plugins/multipleselect/multiple-select.css" />
-
-    <!-- Sidemenu css-->
-    <link href="assets/assets/css/sidemenu/sidemenu.css" rel="stylesheet" />
-
-    <!-- Switcher css-->
-    <link href="assets/assets/switcher/css/switcher.css" rel="stylesheet" />
-    <link href="assets/assets/switcher/demo.css" rel="stylesheet" />
-
-    <title>Soulmate</title>
-</head>
-
 <body class="main-body">
 
     <div class="main-sidebar main-sidebar-sticky side-menu">
@@ -278,36 +238,37 @@
                     <div class="col-lg-12 table-responsive border border-bottom-0">
                         <div class="card custom-card">
                             <div class="card-body">
+                                <?php $msg = $this->session->flashdata('msg');
+                                if (isset($msg)) { ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <p><?php echo $msg; ?>!!</p>
+                                    </div>
+                                <?php } ?>
                                 <div class="row justify-content-center">
                                     <div class="col-lg-10">
-                                        <form class="mt-3">
+                                        <form class="mt-3" action="Ad_User_Membership/add_plan" method="post">
 
                                             <div class='row'>
 
                                                 <div class='mb-4 col-lg-6'>
                                                     <label class="title-col">Select Plan</label>
 
-                                                    <select class="form-control">
-                                                        <option>CLASSIC</option>
-                                                        <option>CLASSIC GOLD</option>
-                                                        <option>CLASSIC PLUS</option>
-                                                        <option>CLASSIC DIAMOND</option>
-                                                        <option>PLATINUM PLAN</option>
-                                                        <option>CLASSIC PLATINUM</option>
+                                                    <select name="plan" class="form-control">
+                                                        <option value="1">CLASSIC</option>
+                                                        <option value="2">CLASSIC GOLD</option>
+                                                        <option value="3">CLASSIC PLUS</option>
+                                                        <option value="4">CLASSIC DIAMOND</option>
+                                                        <option value="5">PLATINUM </option>
+                                                        <option value="6">TITANIUM</option>
+                                                        <option value="7">SIGNATURE</option>
                                                     </select>
 
                                                 </div>
                                                 <div class='mb-4 col-lg-3'>
                                                     <label class="title-col">User Id</label>
 
-                                                    <input id="categor" class="form-control filter-input" name="name" autoComplete="off" type="text" required />
+                                                    <input id="categor" class="form-control filter-input" name="user_id" autoComplete="off" type="text" required />
                                                 </div>
-                                                <div class='mb-4 col-lg-3'>
-                                                    <label class="title-col">Number Of Contacts</label>
-
-                                                    <input id="categor" class="form-control filter-input" name="name" autoComplete="off" type="text" required />
-                                                </div>
-
                                                 <div class="mt-0 col-lg-12">
                                                     <Button type='submit' class="mr-3 btn-pd btnBg">Submit</Button>
                                                     <Button type='reset' variant="contained" class="btn btn-dark btn-pd">Reset</Button>
@@ -329,27 +290,3 @@
 
         </div>
     </div>
-
-
-    <script src="assets/assets/plugins/jquery/jquery.min.js"></script>
-    <script src="assets/assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="assets/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/assets/plugins/select2/js/select2.min.js"></script>
-    <script src="assets/assets/plugins/sidemenu/sidemenu.js"></script>
-    <script src="assets/assets/plugins/sidebar/sidebar.js"></script>
-    <script src="assets/assets/js/custom.js"></script>
-
-    <!-- Sticky js -->
-    <script src="assets/assets/js/sticky.js"></script>
-    <script>
-        $(".main-profile-menu").click(function() {
-            $(".dropdown-menu").toggle();
-        });
-    </script>
-
-    <!-- Custom js -->
-    <script src="assets/assets/js/custom.js"></script>
-
-</body>
-
-</html>

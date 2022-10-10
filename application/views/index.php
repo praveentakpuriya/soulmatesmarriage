@@ -33,7 +33,7 @@
                         background: linear-gradient(45deg, #bf5e5a, #a39c9cf0);
                         padding: 22px;
                         border-radius: 10px;">
-                    <form class="search-property-1" action="#" method=post>
+                    <form class="search-property-1" action="Searching" method=post>
                         <div class="row">
                             <div class="col-lg align-items-end">
                                 <div class="form-group">

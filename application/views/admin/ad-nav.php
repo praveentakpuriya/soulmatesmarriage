@@ -9,31 +9,38 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v5.15.4/css/all.css" />
 
-  <link href="assets/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/plugins/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet" />
 
-  <link href="assets/assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
-  <link href="assets/assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/plugins/web-fonts/font-awesome/font-awesome.min.css') ?>" rel="stylesheet">
+  <link href="<?php echo base_url('assets/assets/plugins/web-fonts/plugin.css') ?>" rel="stylesheet" />
 
-  <link href="assets/assets/css/style/style.css" rel="stylesheet" />
-  <link href="assets/assets/css/skins.css" rel="stylesheet" />
-  <link href="assets/assets/css/dark-style.css" rel="stylesheet" />
-  <link href="assets/assets/css/colors/default.css" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/css/style/style.css" rel="stylesheet') ?>" />
+  <link href="<?php echo base_url('assets/assets/css/skins.css" rel="stylesheet') ?>" />
+  <link href="<?php echo base_url('assets/assets/css/dark-style.css" rel="stylesheet') ?>" />
+  <link href="<?php echo base_url('assets/assets/css/colors/default.css') ?>" rel="stylesheet" />
 
   <!-- Color css-->
-  <link id="theme" rel="stylesheet" type="text/css" media="all" href="assets/css/colors/color.css" />
+  <link id="theme" rel="stylesheet" type="text/css" media="all" href="<?php echo base_url('assets/css/colors/color.css') ?>" />
 
   <!-- Select2 css-->
-  <link href="assets/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/plugins/select2/css/select2.min.css') ?>" rel="stylesheet" />
 
   <!-- Mutipleselect css-->
-  <link rel="stylesheet" href="assets/plugins/multipleselect/multiple-select.css" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/multipleselect/multiple-select.css') ?>" />
 
   <!-- Sidemenu css-->
-  <link href="assets/assets/css/sidemenu/sidemenu.css" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/css/sidemenu/sidemenu.css') ?>" rel="stylesheet" />
 
   <!-- Switcher css-->
-  <link href="assets/assets/switcher/css/switcher.css" rel="stylesheet" />
-  <link href="assets/assets/switcher/demo.css" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/switcher/css/switcher.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/switcher/demo.css') ?>" rel="stylesheet" />
+
+
+  <!-- Internal DataTables css-->
+  <link href="<?php echo base_url('assets/assets/plugins/datatable/dataTables.bootstrap4.min.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/plugins/datatable/responsivebootstrap4.min.css') ?>" rel="stylesheet" />
+  <link href="<?php echo base_url('assets/assets/plugins/datatable/fileexport/buttons.bootstrap4.min.css') ?>" rel="stylesheet" />
+
 
   <title>Soulmate</title>
 </head>
@@ -64,7 +71,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a  class="nav-link" href="Ad_User_Membership"><span class="shape1"></span><span class="shape2"></span>
+          <a class="nav-link" href="Ad_User_Membership"><span class="shape1"></span><span class="shape2"></span>
             <i class="fas fa-user-shield  sidemenu-icon menu-icon"></i>
             <span class="sidemenu-label">Membership</span>
           </a>
@@ -86,41 +93,40 @@
     </div>
   </div>
   <div class="main-header side-header sticky">
-        <div class="container-fluid">
-          <div class="main-header-left">
-            <a class="main-header-menu-icon" href="#" id="mainSidebarToggle"><span></span></a>
-          </div>
+    <div class="container-fluid">
+      <div class="main-header-left">
+        <a class="main-header-menu-icon" href="#" id="mainSidebarToggle"><span></span></a>
+      </div>
 
-          <div class="main-header-right">
-            <div class="dropdown header-search">
-              <a class="nav-link icon header-search">
-                <i class="fe fe-search header-icons"></i>
-              </a>
+      <div class="main-header-right">
+        <div class="dropdown header-search">
+          <a class="nav-link icon header-search">
+            <i class="fe fe-search header-icons"></i>
+          </a>
+        </div>
+
+
+
+        <div class="main-profile-menu" }>
+          <a class="d-flex" href="#">
+            <span class="main-img-user"><img alt="avatar" src="assets/img/admin.png" /></span>
+          </a>
+          <div class="dropdown-menu">
+            <div class="header-navheading">
+              <h6 class="main-notification-title">Admin</h6>
+              <p class="main-notification-text">admin@gmail.com</p>
             </div>
-
-                   
-           
-            <div class="main-profile-menu" }>
-              <a class="d-flex" href="#">
-                <span class="main-img-user"><img alt="avatar" src="assets/img/admin.png" /></span>
-              </a>
-              <div class="dropdown-menu">
-                <div class="header-navheading">
-                  <h6 class="main-notification-title">Admin</h6>
-                  <p class="main-notification-text">admin@gmail.com</p>
-                </div>
-              <!--  <a class="dropdown-item border-top" href="#">
+            <!--  <a class="dropdown-item border-top" href="#">
                   <i class="fe fe-user"></i> My Profile
                 </a>  -->
-                <a class="dropdown-item border-top" href="login.html">
-                  <i class="fe fe-power"></i> Log Out 
-                </a>
-
-              </div>
-            </div>
-
+            <a class="dropdown-item border-top" href="Admin_Login/logout">
+              <i class="fe fe-power"></i> Log Out
+            </a>
 
           </div>
         </div>
-      </div>
 
+
+      </div>
+    </div>
+  </div>

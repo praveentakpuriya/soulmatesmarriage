@@ -16,6 +16,7 @@ class SearchModel extends CI_Model
         $this->db->join('cities as city', 'u.city_id = city.id', 'inner');
         $this->db->join('professional_details as profession', 'u.user_id = profession.user_id', 'left');
         $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
+        $this->db->join('membership as membership', 'u.user_id = membership.user_id', 'left');
 
         // $this->db->where('u.user_id !=', $userid);
         if ($data['gender'] != '') {
@@ -32,6 +33,14 @@ class SearchModel extends CI_Model
 
         if (($data['age_from'] != '') && ($data['age_to'] != '')) {
             $this->db->where("u.age between " . $data['age_from'] . " and " . $data['age_to'] . "");
+        }
+        if ($data['profile_with'] == 'photo') {
+            $this->db->where('d.main_photo is not null', null, false);
+        }
+
+        $xx = "d.main_photo is NULL";
+        if ($data['profile_with'] == 'horoscope') {
+            $this->db->where($xx);
         }
 
 
@@ -105,6 +114,14 @@ class SearchModel extends CI_Model
             if (isset($religion[0]->id)) $this->db->where('u.religion_id', $religion[0]->id);
             if (isset($city[0]->id)) $this->db->where('u.city_id', $city[0]->id);
             $this->db->or_where('profession.education_details', $data['keyword']);
+        }
+        if ($data['profile_with'] == 'photo') {
+            $this->db->where('d.main_photo is not null', null, false);
+        }
+
+        $xx = "d.main_photo is NULL";
+        if ($data['profile_with'] == 'horoscope') {
+            $this->db->where($xx);
         }
         $query = $this->db->get();
         // print_r($this->db->last_query());
@@ -181,6 +198,14 @@ class SearchModel extends CI_Model
             if (isset($data['city_data'])) {
                 $this->db->where_in('u.city_id', $data['city_data']);
             }
+            if ($data['profile_with'] == 'photo') {
+                $this->db->where('d.main_photo is not null', null, false);
+            }
+    
+            $xx = "d.main_photo is NULL";
+            if ($data['profile_with'] == 'horoscope') {
+                $this->db->where($xx);
+            }
 
             // var_dump($data['marital_status']);
             if (isset($data['marital_status'])) {
@@ -195,7 +220,6 @@ class SearchModel extends CI_Model
             // var_dump("hey");
             // die();
             return $result;
-           
         }
     }
 

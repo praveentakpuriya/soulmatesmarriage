@@ -10,31 +10,31 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v5.15.4/css/all.css" />
 
-    <link href="assets/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/plugins/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet" />
 
-    <link href="assets/assets/plugins/web-fonts/font-awesome/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/assets/plugins/web-fonts/plugin.css" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/plugins/web-fonts/font-awesome/font-awesome.min.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/assets/plugins/web-fonts/plugin.css')?>" rel="stylesheet" />
 
-    <link href="assets/assets/css/style/style.css" rel="stylesheet" />
-    <link href="assets/assets/css/skins.css" rel="stylesheet" />
-    <link href="assets/assets/css/dark-style.css" rel="stylesheet" />
-    <link href="assets/assets/css/colors/default.css" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/css/style/style.css')?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/css/skins.css')?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/css/dark-style.css')?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/css/colors/default.css')?>" rel="stylesheet" />
 
     <!-- Color css-->
     <link id="theme" rel="stylesheet" type="text/css" media="all" href="assets/css/colors/color.css" />
 
     <!-- Select2 css-->
-    <link href="assets/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/plugins/select2/css/select2.min.css')?>" rel="stylesheet" />
 
     <!-- Mutipleselect css-->
-    <link rel="stylesheet" href="assets/plugins/multipleselect/multiple-select.css" />
+    <link rel="stylesheet" href="assets/plugins/multipleselect/multiple-select.css')?>" />
 
     <!-- Sidemenu css-->
-    <link href="assets/assets/css/sidemenu/sidemenu.css" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/css/sidemenu/sidemenu.css')?>" rel="stylesheet" />
 
     <!-- Switcher css-->
-    <link href="assets/assets/switcher/css/switcher.css" rel="stylesheet" />
-    <link href="assets/assets/switcher/demo.css" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/switcher/css/switcher.css')?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/assets/switcher/demo.css')?>" rel="stylesheet" />
 
     <title>Soulmate</title>
   </head>
@@ -52,7 +52,7 @@
                                        
                                         <h3 class="text-white mb-4">Soulmate</h3>
                                         <div class="clearfix"></div>
-                                        <img src="assets/assets/images/user.svg" class="ht-100 mb-0" alt="user" />
+                                        <img src="<?php echo base_url('assets/assets/images/user.svg')?>" class="ht-100 mb-0" alt="user" />
                                         <h5 class="mt-4 text-white">Signin Your Account</h5>
                                        <!--  <span class="tx-white-6 tx-13 mb-5 mt-xl-0">Signup to create, discover and connect with the global community</span> -->
                                     </div>
@@ -62,7 +62,7 @@
                                         <div class="row row-sm">
                                             <div class="card-body mt-2 mb-2">
                                                 
-                                                <form action="Admin_Login/checkLogin" method="post"> 
+                                                <form action="<?php echo base_url('Admin_Login/checkLogin')?>" method="post"> 
                                                     <h5 class="text-left mb-2">Signin to Your Account</h5>
                                                     <!-- <p class="mb-4 text-muted tx-13 ml-0 text-left">Signin to create, discover and connect with the global community</p> -->
                                                     <div class="form-group text-left">
@@ -95,13 +95,13 @@
             </div>
 
 
-      <script src="assets/assets/plugins/jquery/jquery.min.js"></script>
-      <script src="assets/assets/plugins/bootstrap/js/popper.min.js"></script>
-      <script src="assets/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-      <script src="assets/assets/plugins/select2/js/select2.min.js"></script>
-      <script src="assets/assets/plugins/sidemenu/sidemenu.js"></script>
-      <script src="assets/assets/plugins/sidebar/sidebar.js"></script>
-      <script src="assets/assets/js/custom.js"></script>
+      <script src="<?php echo base_url('assets/assets/plugins/jquery/jquery.min.js')?>"></script>
+      <script src="<?php echo base_url('assets/assets/plugins/bootstrap/js/popper.min.js')?>"></script>
+      <script src="<?php echo base_url('assets/assets/plugins/bootstrap/js/bootstrap.min.js')?>"></script>
+      <script src="<?php echo base_url('assets/assets/plugins/select2/js/select2.min.js')?>"></script>
+      <script src="<?php echo base_url('assets/assets/plugins/sidemenu/sidemenu.js')?>"></script>
+      <script src="<?php echo base_url('assets/assets/plugins/sidebar/sidebar.js')?>"></script>
+      <script src="<?php echo base_url('assets/assets/js/custom.js')?>"></script>
       <script>
         $(".main-profile-menu").click(function(){
         $(".dropdown-menu").toggle();

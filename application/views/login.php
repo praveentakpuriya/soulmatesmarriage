@@ -42,7 +42,7 @@
                                     <form id="form-login1" action="<?php echo base_url('Login/checkLogin')  ?>" class="form-horizontal" method="post">
 
                                         <div class="form-floating mb-3">
-                                            <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
+                                            <input type="text" class="form-control" name="email" id="floatingInput" placeholder="name@example.com">
                                             <label for="floatingInput">Email address</label>
                                         </div>
                                         <div class="form-floating">

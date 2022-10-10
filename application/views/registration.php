@@ -1,86 +1,3 @@
-<style>
-    .slider-text h1 {
-        font-size: 40px;
-        color: #fff;
-        line-height: 1.1;
-        font-weight: 200;
-    }
-
-    .slider-text {
-        height: 480px;
-    }
-
-    .ftco-navbar-light {
-        background: #2a2929ba !important;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 3;
-        height: 110px;
-    }
-
-    .login_det {
-        padding: 20px;
-        background: white;
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    .login_det h5 {
-        font-size: 19px;
-        color: #ec4c4c;
-        font-weight: 500;
-        padding-bottom: 10px;
-    }
-
-    .login_det p {
-        line-height: 30px;
-        font-size: 15px;
-        color: #3d3c3c;
-    }
-
-    label {
-        color: #6f6060 !important;
-        display: inline-block;
-        padding: 10px;
-        cursor: pointer;
-        /* text-shadow: 0px 0px 0px rgba(0,0,0,0.9)!important; */
-        font-weight: 500;
-        font-family: inherit;
-
-    }
-
-    .reg {
-        padding: 15px 0px;
-        background: white;
-        border: 2px solid #99979729;
-    }
-
-    .reg h5 {
-        line-height: 30px;
-        color: #e84a4a;
-        font-size: 18px;
-    }
-
-    .reg p {
-        line-height: 28px;
-        font-weight: 300;
-    }
-
-    .btn-info {
-        color: #fff;
-        background-color: #ca5b61;
-        border-color: #ca5b61;
-        font-size: 15px;
-        border-radius: 0px;
-        /*
-    margin-top: 19px;
-    position: relative;
-    left: 64px;
-*/
-    }
-</style>
 <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
     <div class="container">
@@ -94,9 +11,6 @@
         </div>
     </div>
 </div>
-
-
-
 <section class="ftco-section ftco-no-pt ftco-no-pb pt-5 " style="background: #f9f9f9;">
     <div class="container">
         <div class="row no-gutters ">
@@ -155,7 +69,7 @@
 
                                             <div class="col-lg-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" name="name" id="error1" placeholder="name@example.com" required="">
+                                                    <input type="text" class="form-control" name="name" id="error1" placeholder="" required="">
                                                     <label for="error1">Name of Bride / Groom*</label>
                                                 </div>
                                             </div>
@@ -322,7 +236,7 @@
 
                                             <div class="col-lg-12 text-start">
                                                 <div class="form-check ml-1 mb-2">
-                                                    <input class="form-check-input"  name="cast_barrier"  type="checkbox" value="1" id="flexCheckDefault">
+                                                    <input class="form-check-input" name="cast_barrier" type="checkbox" value="1" id="flexCheckDefault">
                                                     <label class="form-check-label" for="flexCheckDefault">
                                                         Caste No Bar
                                                     </label>
@@ -331,7 +245,7 @@
 
                                             <div class="col-lg-6 mb-3">
                                                 <div class="form-floating">
-                                                    <input type="text" name="sub_cast" class="form-control" id="subcuste" placeholder="Password">
+                                                    <input type="text" name="sub_cast" class="form-control" id="subcuste" placeholder="">
                                                     <label for="subcuste">Sub Caste</label>
                                                 </div>
 
@@ -341,25 +255,25 @@
                                             <div class="col-lg-10 d-flex">
                                                 <label class="w-30 pl-0">Marital Status : </label>
                                                 <div class="form-check w-25">
-                                                    <input class="form-check-input" checked="" value="never married" type="radio" name="marital_status" id="Married">
+                                                    <input class="form-check-input" value="never married" checked type="radio" name="marital_status" id="Married">
                                                     <label class="form-check-label" for="Married">
                                                         Never Married
                                                     </label>
                                                 </div>
                                                 <div class="form-check w-25">
-                                                    <input class="form-check-input" value="divorced" type="radio" name="marital" id="Divorced">
+                                                    <input class="form-check-input" value="divorced" type="radio" name="marital_status" id="Divorced">
                                                     <label class="form-check-label" for="Divorced">
                                                         Divorced
                                                     </label>
                                                 </div>
                                                 <div class="form-check w-25">
-                                                    <input class="form-check-input" value="widowed" type="radio" name="marital" id="Widowed">
+                                                    <input class="form-check-input" value="widowed" type="radio" name="marital_status" id="Widowed">
                                                     <label class="form-check-label" for="Widowed">
                                                         Widowed
                                                     </label>
                                                 </div>
                                                 <div class="form-check w-25">
-                                                    <input class="form-check-input" value="separated" type="radio" name="marital" id="Separated">
+                                                    <input class="form-check-input" value="separated" type="radio" name="marital_status" id="Separated">
                                                     <label class="form-check-label" for="Separated">
                                                         Separated
                                                     </label>
@@ -386,7 +300,7 @@
                                                         </label>
                                                     </div>
                                                     <div class="form-check w-50">
-                                                        <input class="form-check-input" type="radio" value="Not living with me" name="relestionship" id="notliving">
+                                                        <input class="form-check-input" type="radio" value="Not living with me" name="relationship" id="notliving">
                                                         <label class="form-check-label" for="notliving">
                                                             Not living with me
                                                         </label>
@@ -426,7 +340,7 @@
 
                                             <div class="col-lg-6 mt-3">
                                                 <div class="form-floating">
-                                                    <input type="text" name="address" class="form-control" id="address" placeholder="Password" required="">
+                                                    <input type="text" name="address" class="form-control" id="address" placeholder="" required="">
                                                     <label for="address">Contact Address</label>
                                                 </div>
 
@@ -448,7 +362,7 @@
                                             <div class="col-lg-6">
                                                 <label id="heigt" class="p-0">Citizenship</label>
                                                 <select required="required" name="citizenship" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                                <option value='0' selected='selected'>Select Country</option>
+                                                    <option value='0' selected='selected'>Select Country</option>
                                                     <?php foreach ($data as $list) { ?>
                                                         <option value="<?php echo $list->id; ?>"><?php echo $list->name; ?></option>
                                                     <?php } ?>
@@ -525,83 +439,107 @@
     </div>
 </section>
 
+<section class="footer-section">
+    <div class="container">
 
-<footer class="ftco-footer ftco-bg-dark ftco-section">
-    <div class="container"><br><br>
-        <div class="row mb-5">
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4" style="margin-top: 7px;">
-                    <h5 style=" font-size: 20px;  color: #e15757; margin-bottom: 57px;">Soulmates Marraige</h5>
-                    <p style="margin-top: -43px;">soulmatesmarraige.com is for people who are single, who are
-                        married,
-                        and anyone who wants to make new friends or help their friends meet new people.</p>
-                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-
-                        <li class=""><a href="#"><span class="icon-facebook"></span></a></li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4 ml-md-5">
-                    <h2 class="ftco-heading-2">Useful Links</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="py-2 d-block">Home</a></li>
-                        <li><a href="search.html" class="py-2 d-block">Search</a></li>
-                        <li><a href="membership.html" class="py-2 d-block">Membership</a></li>
-                        <li><a href="privacy.html" class="py-2 d-block">Privacy Policy</a></li>
-
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Links</h2>
-                    <ul class="list-unstyled">
-
-                        <li><a href="#" class="py-2 d-block">Payment</a></li>
-                        <li><a href="registration.html" class="py-2 d-block">Registration</a></li>
-                        <li><a href="contact.html" class="py-2 d-block">Contact Us</a></li>
-
-                        <li><a href="terms.html" class="py-2 d-block">Terms & Condition</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Address</h2>
-                    <div class="block-23 mb-3">
-                        <ul>
-                            <li><a href="#"><span class="icon icon-map-marker"></span><span class="text">Registered
-                                        Office: demo address</span></a></li>
-                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91
-                                        0123456789</span></a></li>
-                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">mail@soulmatesmarraige.com </span></a></li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="row">
-            <div class="col-md-12 text-center">
 
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script> All rights reserved
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget about-widget">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="<?php echo base_url() ?>" class="">Home</a></li>
+                        <li><a href="About" class="">About Us</a></li>
+                        <li><a href="Searching" class="">Search</a></li>
+                        <li><a href="Membership" class="">Membership</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+                <div class="footer-widget about-widget">
+                    <h2>Questions</h2>
+                    <ul>
+                        <li><a href="#" class="">Payment</a></li>
+                        <li><a href="Registration" class="">Registration</a></li>
+                        <li><a href="Contact" class="">Contact Us</a></li>
+                        <li><a href="Privacy" class="">Privacy Policy</a></li>
+                        <li><a href="Term" class="">Terms & Condition</a></li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-widget contact-widget">
+                    <h2>Contact Us</h2>
+
+                    <div class="con-info">
+                        <span><i class="fa fa-phone"></i></span>
+                        <a href="tel:+91 98272 12943">
+                            <p>+91 98272 12943 </p>
+                        </a>
+                    </div>
+                    <div class="con-info">
+                        <span><i class="fa fa-envelope"></i></span>
+                        <!-- <a href=":Info@soulmatesmarriage.com"> -->
+                        <p>Info@soulmatesmarriage.com</p>
+                        </a>
+                    </div>
+                    <div class="con-info">
+                        <span><i class="fas fa-map-marker-alt"></i></span>
+                        <p> Registered Office: demo address
+                        </p>
+                    </div>
+                    <div class="con-info">
+
+                        <p style="color: #cfc360;font-weight: 600!important;"></p>
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+                <div class="footer-widget about-widget">
+                    <h2>Get In Touch</h2>
+                    <form>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="Your Name" id="ass_name" style="margin-bottom: 10px;">
+                            </div>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" placeholder="Phone No" id="ass_mobile" style="margin-bottom: 10px;">
+                            </div>
+                            <div class="col-md-12">
+                                <input type="email" class="form-control" placeholder="Email" id="ass_email" style="margin-bottom: 10px;">
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button type="button" class="btn btn-submit" id="btnAssistance" style="background: #fffce4;
+                               padding: 4px 26px;
+                               border-radius: 10px;
+                               color: #851e33;">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</footer>
+    <div class="social-links-warp">
+        <div class="container">
 
 
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            <p class="text-white text-center">Copyright ©2022 All rights reserved </p>
+
+        </div>
+    </div>
+</section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
 <script type="text/javascript">
     //  $(document).ready(function() {
     //   $("#basic-form").validate();
@@ -656,11 +594,10 @@
     });
 </script>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/jquery-migrate-3.0.1.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/popper.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 </body>
 
 </html>

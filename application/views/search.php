@@ -371,10 +371,10 @@
                             <div class="col-sm-9 col-md-9">
                               <div class="controls_holder ">
                                 <label>
-                                  <input name="profile_with" type="checkbox" checked="checked" id="chkphoto" value="photo">
+                                  <input name="profile_with" type="radio"  id="chkphoto" value="photo">
                                   Photo</label>
                                 <label>
-                                  <input name="profile_with" type="checkbox" id="chkhoro" value="horoscope">
+                                  <input name="profile_with" type="radio" id="chkhoro" value="horoscope">
                                   Horoscope</label>
                               </div>
                             </div>
@@ -1569,10 +1569,10 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="controls_holder ">
                                   <label>
-                                    <input name="profile_with" type="checkbox" checked="checked" id="chkphoto" value="Yes">
+                                    <input name="profile_with" type="radio" checked="checked" id="profile_with" value="photo">
                                     Photo &nbsp;</label>
                                   <label>
-                                    <input name="profile_with" type="checkbox" id="chkhoro" value="Yes">
+                                    <input name="profile_with" type="radio" id="profile_with" value="horoscope">
                                     Horoscope</label>
                                 </div>
                               </div>
@@ -2005,7 +2005,8 @@
       var have_children = document.getElementById('have_children').value
       var physical_status = document.getElementById('physical_status').value
       var eating_habit = document.getElementById('eating_habit').value
-      // alert(marital_status3);
+      var profile_with = document.getElementById('profile_with').value
+      // alert("hey");
 
       $.ajax({
         url: "<?php echo base_url()  ?>Searching/advanceSearch",
@@ -2036,7 +2037,8 @@
           e_data: e_data,
           o_data: o_data,
           state_data: state_data,
-          city_data: city_data
+          city_data: city_data,
+          profile_with:profile_with
         },
         cache: false,
         success: function(result) {

@@ -17,9 +17,9 @@ class Ad_Contact_List extends CI_Controller
     {
         if ($this->session->userdata('user_data')) {
         $data['data'] = $this->Login_model->fetch_all_user();
-        // $this->load->view('admin/ad-nav');
+        $this->load->view('admin/ad-nav');
         $this->load->view('admin/ad-contact-list', $data);
-        // $this->load->view('admin/ad-footer');
+        $this->load->view('admin/ad-footer');
         }else{
             redirect(base_url() . "Admin_Login");
         }

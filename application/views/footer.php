@@ -24,7 +24,7 @@
             <li><a href="Registration" class="">Registration</a></li>
             <li><a href="Contact" class="">Contact Us</a></li>
             <li><a href="Privacy" class="">Privacy Policy</a></li>
-            <li><a href="Terms" class="">Terms & Condition</a></li>
+            <li><a href="Term" class="">Terms & Condition</a></li>
           </ul>
 
         </div>
@@ -35,14 +35,14 @@
 
           <div class="con-info">
             <span><i class="fa fa-phone"></i></span>
-            <a href="tel:0123456789">
-              <p>+91-0123456789 </p>
+            <a href="tel:+91 98272 12943">
+              <p>+91 98272 12943 </p>
             </a>
           </div>
           <div class="con-info">
-            <span><i class="fa fa-whatsapp"></i></span>
-            <a href="tel:0123456789">
-              <p>+91-0123456789</p>
+            <span><i class="fa fa-envelope"></i></span>
+            <!-- <a href=":Info@soulmatesmarriage.com"> -->
+              <p>Info@soulmatesmarriage.com</p>
             </a>
           </div>
           <div class="con-info">
@@ -100,10 +100,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/jquery-migrate-3.0.1.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/popper.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/js/bootstrap.min.js') ?>"></script>
 
 </body>
 

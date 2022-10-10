@@ -1,3 +1,19 @@
+<style>
+  .sub_list {
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+
+  .sub_list li {
+    display: inline-block;
+    padding: 4px 30px;
+    background: #ca5b61;
+    color: white;
+    background-image: linear-gradient(-224deg, #971b1f, #692454) !important;
+    border-radius: 13px;
+    margin-top: 1rem;
+  }
+</style>
 <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
   <div class="container">
@@ -35,7 +51,7 @@
                   <div class="col-md-5 col-sm-12 col-xs-12">
                     <div class="head" style="">
                       <h4><?php if (isset($data[0]->name)) echo $data[0]->name; ?></h4>
-                      <p class="para"><span><?php if (isset($data[0]->user_id)) echo $data[0]->user_id; ?> &nbsp; | &nbsp; Created for Self</span></p>
+                      <p class="para"><span><?php if (isset($data[0]->u_id)) echo $data[0]->u_id; ?> &nbsp; | &nbsp; Created for Self</span></p>
                     </div>
                     <div class="det_box prof_det">
 
@@ -95,13 +111,13 @@
             </div>
             <div class="col-md-12">
               <ul class="sub_list">
-                <a onclick="return btnclickView('SH421720');">
+                <a onclick="return btnclickView('<?php echo $data[0]->u_id; ?>');">
                   <li><i class="icon icon-phone"></i> View Contact</li>
                 </a>
-                <a href="Send_Impression">
+                <a href='Send_Impression/index?id=<?php echo $data[0]->u_id; ?>'>
                   <li><i class="icon icon-heart"></i> Send Interest</li>
                 </a>
-                <a href="Send_Message">
+                <a href='Send_Message/index?id=<?php echo $data[0]->u_id; ?>'>
                   <li><i class="icon icon-envelope"></i> Send Message</li>
                 </a>
                 <a href="#"></a>
@@ -384,8 +400,8 @@
                               <span class="pro_head col-md-5">Time of Birth :</span>
                               <span class="pro_head col-md-7"> <strong> <?php if (isset($data[0]->birth_time_hh)) echo $data[0]->birth_time_hh;
                                                                         else echo "----"; ?>:<?php if (isset($data[0]->birth_time_mm)) echo $data[0]->birth_time_mm;
-                                                                                                                                                                    else echo "----"; ?> <?php if (isset($data[0]->birth_time_am)) echo $data[0]->birth_time_am;
-                                                                                                                                                                                                                                                                else echo "----"; ?> </strong></span>
+                                                                                              else echo "----"; ?> <?php if (isset($data[0]->birth_time_am)) echo $data[0]->birth_time_am;
+                                                                                                                    else echo "----"; ?> </strong></span>
 
                             </div>
 
@@ -574,7 +590,7 @@
                                 <strong>
                                   <?php if (isset($data[0]->age_from)) echo $data[0]->age_from;
                                   else echo "----"; ?> &nbsp;<small> To&nbsp;</small> <?php if (isset($data[0]->age_to)) echo $data[0]->age_to;
-                                                                                                                                                    else echo "----"; ?> <small> Years </small> </strong>
+                                                                                      else echo "----"; ?> <small> Years </small> </strong>
                               </span>
 
                             </div>
@@ -603,7 +619,7 @@
                                 <strong>
                                   <?php if (isset($data[0]->height_from)) echo $data[0]->height_from;
                                   else echo "----"; ?> &nbsp;&nbsp; <small>To</small>&nbsp;&nbsp;<?php if (isset($data[0]->height_to)) echo $data[0]->height_to;
-                                                                                                                                                                    else echo "----"; ?></strong>
+                                                                                                  else echo "----"; ?></strong>
                               </span>
 
                             </div>
@@ -712,3 +728,74 @@
     </div>
   </div>
 </section>
+<script>
+  function btnclickView(x) {
+    //showload("#loaddata");
+    // alert(x);
+    $("#id").val(x);
+    $("#divb").show();
+    $("#divs").show();
+    return false;
+  }
+
+  function btnclickCancel(x) {
+    $('#loader').hide();
+    $("#divb").hide();
+    $("#divs").hide();
+    return false;
+  }
+</script>
+<script>
+  function checkmembership(x) {
+    $("#loadcontactdetail").empty();
+    var txt = "<br/><div style='margin-left: 0px;margin-top: 10px;margin-right: 0px;text-align: left'>\n\
+              <b><img src='images/ajax-loader.gif' style='width:16px;height:16px;' id='loadcontact'/> Please wait while loading.......</b></div><br/>";
+    $(txt).appendTo("#loadcontactdetail");
+    $.ajax({
+      type: 'POST',
+      url: "View_Profile/check_contact_left",
+      data: {
+        id: x,
+      },
+      success: function(data1) {
+        // alert(data1)
+        $("#loadcontactdetail").empty();
+        $("#loadcontactdetail").html(data1);
+      }
+    });
+    return false;
+  }
+</script>
+<div style="opacity:0.5;filter:alpha(opacity=50);background-color:#000;width:2000px;height:2000px;position:fixed;top:0px;left:0px;display:none;" id="divb">
+</div>
+<div class="widget papular-post .popup_1" style="position:fixed;margin-left:0;top:50%;left:50%;display:none;width:651px; z-index:9999;background-color: #F0F0F0;transform: translate(-50%, -50%);" id="divs">
+  <div style="margin: 0px 50px 0px 50px;">
+    <form id="form2" name="form2" method="post" action="" enctype="multipart/form-data">
+      <fieldset>
+        <div class="col-sm-12  col-md-12">
+          <p>&nbsp;</p>
+          <div class="form-group col-sm-12  col-md-12">
+            <div class="col-sm-12  col-md-12">
+
+
+              <p> If contact not viewed already, one contact will be reduced from your allotted (<?php if (isset($membership[0]->contact_left)) echo $membership[0]->contact_left; ?>) contact!!. Available Contacts (<?php if (isset($membership[0]->contact_left)) echo $membership[0]->contact_left; ?>).</p>
+            </div>
+          </div>
+          <div class="form-group col-sm-12  col-md-12">
+            <div class="col-sm-12  col-md-12">
+              <a href="#" onclick="return checkmembership('<?=$data[0]->u_id ?>');"><button class="btn btn-success width-full"><span><i class="fa fa-phone"></i> View Contact Details </span></button></a>
+              <input type="submit" name="btncancel" onclick="return btnclickCancel();" id="btncancel" value="Cancel" class="btn btn-success" />
+            </div>
+
+          </div>
+          <div class="form-group col-sm-12  col-md-12">
+            <div class="col-sm-12  col-md-12">
+              <div id='loadcontactdetail' style="color: #000;margin-top: 20px;"></div>
+            </div>
+          </div>
+        </div>
+        <p>&nbsp;</p>
+      </fieldset>
+    </form>
+  </div>
+</div>

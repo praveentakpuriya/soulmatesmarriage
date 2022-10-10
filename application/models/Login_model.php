@@ -8,15 +8,43 @@ class login_model extends CI_Model
     function can_login($username, $password)
     {
 
-        $this->db->where('email', $username);
+
         $this->db->where('Password', $password);
+        $this->db->where('status', 1);
+        $this->db->where('email', $username);
+        $this->db->or_where('user_id', $username);
         $query = $this->db->get('user', array('email' => $username, 'password' => $password));
+        // print_r($this->db->last_query());
+        // die();
 
         if ($query->num_rows() == 1) {
             return true;
         } else {
 
             return false;
+        }
+    }
+
+    function check_user_data_present($userid, $table)
+    {
+        $this->db->where('user_id', $userid);
+        $query = $this->db->get($table, array('user_id' => $userid));
+
+        if ($query->num_rows() == 1) {
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+
+    function update_Plan($data, $user_id)
+    {
+        if ($this->check_user_data_present($user_id, "membership")) {
+            $this->db->where('user_id', $user_id);
+            return $this->db->update('membership', $data);
+        } else {
+            $this->db->insert("membership", $data);
         }
     }
     function get_user($username)
@@ -28,22 +56,66 @@ class login_model extends CI_Model
         return $query->result();
     }
 
-    function change_status($user_id,$data){
-        $this->db->where('user_id',$user_id);
+    function get_interest($user_id)
+    {
+        $this->db->select("*,count(*) as no_of_interest");
+        $this->db->where('interest_to', $user_id);
+        $query = $this->db->get('interest');
+        // print_r($this->db->last_query());
+        return $query->result();
+    }
+    function get_interest_to($user_id)
+    {
+        $this->db->select("*,count(*) as no_of_interest");
+        $this->db->where('interest_from', $user_id);
+        $query = $this->db->get('interest');
+        // print_r($this->db->last_query());
+        return $query->result();
+    }
+    function get_message($user_id)
+    {
+        $this->db->select("*,count(*) as no_of_message");
+        $this->db->where('message_to', $user_id);
+        $query = $this->db->get('message');
+        // print_r($this->db->last_query());
+        return $query->result();
+    }
+    function get_message_to($user_id)
+    {
+        $this->db->select("*,count(*) as no_of_message");
+        $this->db->where('message_from', $user_id);
+        $query = $this->db->get('message');
+        // print_r($this->db->last_query());
+        return $query->result();
+    }
+
+    function get_user_by_id($user_id)
+    {
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get('user');
+
+        return $query->result();
+    }
+
+    function change_status($user_id, $data)
+    {
+        $this->db->where('user_id', $user_id);
         return $this->db->update('user', $data);
     }
 
-    function get_status($user_id){
-        $this->db->where('user_id',$user_id);
+    function get_status($user_id)
+    {
+        $this->db->where('user_id', $user_id);
         $query = $this->db->get('user');
         return $query->result();
     }
 
-    function fetch_all_user(){
-        $this->db->select('*,u.user_id as u_id'); 
+    function fetch_all_user()
+    {
+        $this->db->select('*,u.user_id as u_id');
         $this->db->from('user as u');
         $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
-        $this->db->where('role',0);
+        $this->db->where('role', 0);
         $query = $this->db->get();
 
         return $query->result();
@@ -51,7 +123,7 @@ class login_model extends CI_Model
 
     function get_user_data($user_id)
     {
-        $this->db->select('*,u.marital_status as u_m_s ,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
+        $this->db->select('*,u.marital_status as u_m_s,u.user_id as u_id ,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
 
         $this->db->from('user as u');
         $this->db->join('religion as r', 'u.religion_id = r.id', 'inner');
@@ -87,23 +159,139 @@ class login_model extends CI_Model
         return $query->result();
     }
 
-    function get_mt_preference($user_id){
-       
+    function insert_message($data)
+    {
+        $this->db->insert("message", $data);
+    }
+    function insert_interest($data)
+    {
+        $this->db->insert("interest", $data);
+    }
+
+    function get_count_left($user_id)
+    {
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get('membership');
+        return $query->result();
+    }
+
+    function update_membership_count($data, $userid)
+    {
+        $this->db->where('user_id', $userid);
+        return $this->db->update('membership', $data);
+    }
+
+    function change_privacy($table, $userid, $col, $value)
+    {
+        $this->db->where('user_id', $userid);
+        return $this->db->update($table, array($col => $value));
+    }
+
+    function get_mt_preference($user_id)
+    {
+
         $this->db->where('user_id', $user_id);
         $query = $this->db->get('mother_tongue_preference');
         return $query->result();
     }
-    function get_e_preference($user_id){
-       
+    function get_e_preference($user_id)
+    {
+
         $this->db->where('user_id', $user_id);
         $query = $this->db->get('education_preference');
         return $query->result();
     }
-    function get_rs_preference($user_id){
+    function get_rs_preference($user_id)
+    {
         $this->db->from('states as s');
         $this->db->join('residing_state_preference as rs', 's.id = rs.state_id');
         $this->db->where('user_id', $user_id);
         $query = $this->db->get();
         return $query->result();
+    }
+
+    function get_interest_list($id)
+    {
+        $this->db->from('user as u');
+        $this->db->join('interest as i', 'u.user_id = i.interest_to', 'inner');
+        $this->db->where('interest_to', $id);
+        // $this->db->order_by('name','ASC');
+        $query = $this->db->get();
+        $output = '';
+        // $output = '<option value="">Select Caste </option>';
+        var_dump($query->result());
+        foreach ($query->result() as $row) {
+            $output .= '<div class="col-md-12">
+            <div class="hidbox">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 ">
+                        <div class="tab-content border">
+                            <table width="100%" id="pending">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" height="25" class="acttop">
+                                            <span class="style13"
+                                                style="padding-left: 10px;font-size: 12px">
+                                                Pending </span><img src="<img src="Documents/document/'.$row->main_photo.'"
+                                                style="display: none;" id="loadpending">
+                                            <span class="style13"
+                                                style="float:right;font-size: 12px;margin-right: 10px;"
+                                                id="spnpending">1 Records Found</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td valign="top" id="loadpendingdata" style="width:100%">
+
+                                            <div class="col-md-12 col-sm-12" style="display:table;">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <div class="mem_img">
+                                                            <img src="">
+
+                                                            <span class="frame">Soulmates
+                                                                Marraige</span>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <p><a class="down" href="#">Gourav (
+                                                                '.$row->user_id.' ) </a></p>
+                                                        <p>Age :'.$row->age.' Years</p>
+                                                        <p>Caste : '.$row->sub_cast.'</p>
+                                                        <p>Location : '.$row->address.'</p>
+                                                    </div>
+                                                    <div class="col-md-4 col-sm-4">
+                                                        <p><b>Expression of Interest (28-Sep-2022)</b>
+                                                        </p>
+                                                        <p>'.$row->interest.'</p>
+                                                    </div>
+                                                    <div class="col-md-2 col-sm-2">
+                                                        <input type="button" name="btnbutton"
+                                                            class="btn btn-primary" value="Delete">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="col-md-4 col-sm-4 pull-right">
+
+                                                <input type="hidden" id="txtpending" value="1">
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+        }
+        return $output;
     }
 }

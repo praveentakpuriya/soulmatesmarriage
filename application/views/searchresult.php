@@ -1,50 +1,3 @@
-<style>
-    .slider-text h1 {
-        font-size: 30px;
-        color: #fff;
-        line-height: 1.1;
-        font-weight: 200;
-    }
-
-    .form-group label {
-        color: #4c4a4a !important;
-    }
-
-    .slider-text {
-        height: 480px;
-    }
-
-
-    .ftco-navbar-light {
-        background: #2a2929ba !important;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 3;
-        height: 110px;
-    }
-
-    .msgg {
-        border-bottom: 1px solid #ece1e1;
-        text-align: center;
-    }
-
-    label.control-label.labell {
-        font-size: 15px;
-    }
-
-    .dropdown-menu li {
-        background: #ca5b61;
-        margin-bottom: 0px;
-        padding: 8px;
-        color: #ffffff;
-        border-bottom: 1px solid;
-    }
-</style>
-
-
-
 <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
     <div class="container">
@@ -85,7 +38,8 @@
                                             <p class="p-search OpenSans-Bold" style="margin-bottom:0px;">
                                                 <?php echo $list->name ?> </p>
                                             <span class="p-search2"><i class="icon icon-user"></i>&nbsp;<a href="profile.php?id=SH421210" target="_blank"><?php echo $list->user_id ?></a> &nbsp; |
-                                                &nbsp; Free Member</span>
+                                                &nbsp;<?php if (isset($list->plan_type)) echo $list->plan_type;
+                                                        else echo 'Free Member' ?></span>
                                         </div>
 
                                     </div>
@@ -176,25 +130,26 @@
                                                 <div class="main-short row">
                                                     <div class="col-md-4 col-xs-4 col-sm-4">
                                                         <div class="tooltip" style="display:block">
-                                                        <form id="GFG" method="post" action="<?php echo base_url('Searching/view_profile')  ?>">
-                                                            <input type="hidden" name="id" value="<?php echo $list->user_id ?>">                                                           
-                                                        
-                                                            <a href="#" onclick="myFunction()" ><i class="sr-i1 sr-icon fa fa-user" aria-hidden="true"></i></i>
-                                                                <span class="tooltiptext">View Profile</span>
-                                                            </a></form>
+                                                            <form id="GFG" method="post" action="<?php echo base_url('Searching/view_profile')  ?>">
+                                                                <input type="hidden" name="id" value="<?php echo $list->user_id ?>">
+
+                                                                <a href="#" onclick="myFunction()"><i class="sr-i1 sr-icon fa fa-user" aria-hidden="true"></i></i>
+                                                                    <span class="tooltiptext">View Profile</span>
+                                                                </a>
+                                                            </form>
                                                         </div>
 
                                                     </div>
 
                                                     <div class="col-md-4 col-xs-4 col-sm-4">
-                                                        <a class="tooltip" style="display:inline-block;" href="#" target="_blank">
+                                                        <a class="tooltip" style="display:inline-block;" href='Send_Impression/index?id=<?php echo $list->user_id; ?>' target="_blank">
                                                             <i class="fa fa-heart sr-i2 sr-icon" aria-hidden="true"></i>
                                                             <span class="tooltiptext">Express Interest</span>
                                                         </a>
 
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 col-sm-4">
-                                                        <a class="tooltip" style="display:inline-block;" href="#" target="_blank">
+                                                        <a class="tooltip" style="display:inline-block;" href='Send_Message/index?id=<?php echo $list->user_id ?>' target="_blank">
                                                             <i class="fa fa-envelope-o sr-i2 sr-icon" aria-hidden="true"></i>
                                                             <span class="tooltiptext">Send Message</span>
                                                         </a>
@@ -321,11 +276,11 @@
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script>
-            function myFunction() {
-                // alert("hh")
-                document.getElementById("GFG").submit();
-            }
-        </script>
+    function myFunction() {
+        // alert("hh")
+        document.getElementById("GFG").submit();
+    }
+</script>
 </body>
 
 </html>
