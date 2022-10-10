@@ -1,3 +1,4 @@
+
 <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
     <div class="container">
@@ -178,7 +179,7 @@
                                 </div>
                                 <div class="tabcontent ">
                                     <ul class="int_list">
-                                        <a href="#" onclick="show">
+                                        <a href="#" onclick="showInterest_to('<?= $data[0]->user_id ?>')">
                                             <li><?php if (isset($interest_to[0]->no_of_interest)) echo $interest_to[0]->no_of_interest;
                                                 else echo '0'; ?><br> Pending</li>
                                         </a>
@@ -253,6 +254,20 @@
         $.ajax({
             type: 'POST',
             url: "UserProfile/get_interest_list",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                // alert("hey")
+                $("#interest_got").empty();
+                $("#interest_got").html(data1);
+            }
+        });
+    }
+    function showInterest_to(id){
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/get_interest_list_to",
             data: {
                 id: id,
             },

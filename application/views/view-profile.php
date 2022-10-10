@@ -13,6 +13,48 @@
     border-radius: 13px;
     margin-top: 1rem;
   }
+  .iconmm {
+      color: #ca5b61;
+      padding-right: 10px;
+    }
+
+    @media screen and (max-width:480px) {
+      .sub_list li {
+        width: 100%;
+        margin-bottom: 1px;
+      }
+
+      .nav-btn {
+        width: 100%;
+        text-align: left !important;
+      }
+
+      .connected-blocks .icon {
+        left: 5px;
+      }
+
+      .connected-blocks {
+        padding: 0 0 30px 54px;
+      }
+
+      #nav ul {
+        padding-left: 5px;
+      }
+    }
+
+.iconmm {
+    color: #ffffff;
+    padding-right: 10px;
+    /* background: red; */
+    background-image: linear-gradient(-224deg, #971b1f, #692454) !important;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 31px;
+}
+
 </style>
 <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 

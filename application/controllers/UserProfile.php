@@ -46,4 +46,8 @@ class UserProfile extends CI_Controller
         $id = $_POST['id'];
         echo $this->Login_model->get_interest_list($id);
     }
+    public function get_interest_list_to(){
+        $id = $_POST['id'];
+        echo $this->Login_model->get_interest_list_to($id);
+    }
 }
