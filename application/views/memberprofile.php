@@ -1,4 +1,3 @@
-
 <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
     <div class="container">
@@ -243,11 +242,7 @@
     </div>
 </section>
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/tabs.js"></script>
+
 <script>
     function showInterest(id) {
         // alert(id)
