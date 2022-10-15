@@ -28,7 +28,8 @@
                                 <div class="col-md-4 col-sm-4 col-xs-12">
 
                                     <a href="#">
-                                        <img src="<?php if(isset($list->main_photo)) echo base_url('Documents/document/' . $list->main_photo); else echo 'assets/img/user.webp';?>" class="img-responsive placeholder-img">
+                                        <img src="<?php if (isset($list->main_photo)) echo base_url('Documents/document/' . $list->main_photo);
+                                                    else echo 'assets/img/user.webp'; ?>" class="img-responsive placeholder-img">
                                     </a>
 
                                 </div>
@@ -37,7 +38,7 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <p class="p-search OpenSans-Bold" style="margin-bottom:0px;">
                                                 <?php echo $list->name ?> </p>
-                                            <span class="p-search2"><i class="icon icon-user"></i>&nbsp;<a href="profile.php?id=SH421210" target="_blank"><?php echo $list->user_id ?></a> &nbsp; |
+                                            <span class="p-search2"><i class="icon icon-user"></i>&nbsp;<a  target="_blank"><?php echo $list->u_id ?></a> &nbsp; |
                                                 &nbsp;<?php if (isset($list->plan_type)) echo $list->plan_type;
                                                         else echo 'Free Member' ?></span>
                                         </div>
@@ -129,27 +130,24 @@
 
                                                 <div class="main-short row">
                                                     <div class="col-md-4 col-xs-4 col-sm-4">
-                                                        <div class="tooltip" style="display:block">
-                                                            <form id="GFG" method="post" action="<?php echo base_url('Searching/view_profile')  ?>">
-                                                                <input type="hidden" name="id" value="<?php echo $list->user_id ?>">
 
-                                                                <a href="#" onclick="myFunction()"><i class="sr-i1 sr-icon fa fa-user" aria-hidden="true"></i></i>
-                                                                    <span class="tooltiptext">View Profile</span>
-                                                                </a>
-                                                            </form>
+                                                        <div class="tooltip" style="display:block">
+                                                            <a href="Searching/view_profile?id=<?= $list->u_id ?>" target="_blank"><i class="icon icon-user sr-i1 sr-icon"></i>
+                                                                <span class="tooltiptext">View Profile</span>
+                                                            </a>
                                                         </div>
 
                                                     </div>
 
                                                     <div class="col-md-4 col-xs-4 col-sm-4">
-                                                        <a class="tooltip" style="display:inline-block;" href='Send_Impression/index?id=<?php echo $list->user_id; ?>' target="_blank">
+                                                        <a class="tooltip" style="display:inline-block;" href='Send_Impression/index?id=<?php echo $list->u_id; ?>' target="_blank">
                                                             <i class="fa fa-heart sr-i2 sr-icon" aria-hidden="true"></i>
                                                             <span class="tooltiptext">Express Interest</span>
                                                         </a>
 
                                                     </div>
                                                     <div class="col-md-4 col-xs-4 col-sm-4">
-                                                        <a class="tooltip" style="display:inline-block;" href='Send_Message/index?id=<?php echo $list->user_id ?>' target="_blank">
+                                                        <a class="tooltip" style="display:inline-block;" href='Send_Message/index?id=<?php echo $list->u_id ?>' target="_blank">
                                                             <i class="fa fa-envelope-o sr-i2 sr-icon" aria-hidden="true"></i>
                                                             <span class="tooltiptext">Send Message</span>
                                                         </a>

@@ -117,17 +117,19 @@
 
                               <div class="controls_holder d-flex">
 
-
-                                <div class="form-check ml-1 mb-2 mr-3">
-                                  <input class="form-check-input" required="" name="gender" type="radio" value="male" id="groom">
-                                  <label class="form-check-label" for="groom">
-                                    Groom </label>
-                                </div>
-                                <div class="form-check ml-1 mb-2">
-                                  <input class="form-check-input" required="" name="gender" type="radio" value="female" id="bride">
-                                  <label class="form-check-label" for="bride">
-                                    Bride </label>
-                                </div>
+                                <?php if ($this->session->userdata('gender') == 'Female') { ?>
+                                  <div class="form-check ml-1 mb-2 mr-3">
+                                    <input class="form-check-input" required="" name="gender" type="radio" value="male" id="groom">
+                                    <label class="form-check-label" for="groom">
+                                      Groom </label>
+                                  </div>
+                                <?php } else { ?>
+                                  <div class="form-check ml-1 mb-2">
+                                    <input class="form-check-input" required="" name="gender" type="radio" value="female" id="bride">
+                                    <label class="form-check-label" for="bride">
+                                      Bride </label>
+                                  </div>
+                                <?php } ?>
 
 
                               </div>
@@ -211,7 +213,7 @@
                               <select class="form-control" name="age_to" id="ageto">
                                 <option value="18">18</option>
                                 <option value="19">19</option>
-                                <option value="20" selected="selected">20</option>
+                                <option value="20">20</option>
                                 <option value="21">21</option>
                                 <option value="22">22</option>
                                 <option value="23">23</option>
@@ -231,7 +233,7 @@
                                 <option value="37">37</option>
                                 <option value="38">38</option>
                                 <option value="39">39</option>
-                                <option value="40">40</option>
+                                <option value="40" selected="selected">40</option>
                                 <option value="41">41</option>
                                 <option value="42">42</option>
                                 <option value="43">43</option>
@@ -371,7 +373,7 @@
                             <div class="col-sm-9 col-md-9">
                               <div class="controls_holder ">
                                 <label>
-                                  <input name="profile_with" type="radio"  id="chkphoto" value="photo">
+                                  <input name="profile_with" type="radio" id="chkphoto" value="photo">
                                   Photo</label>
                                 <label>
                                   <input name="profile_with" type="radio" id="chkhoro" value="horoscope">
@@ -393,6 +395,60 @@
                       </form>
                     </div>
                   </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="mega-box-new">
+                    <p class="calibri-Bold-font f-22 color-31 t-transform-ue text-center ab-t1">Search
+                      <span class="color-d">Profile id </span>
+                    </p>
+                    <hr class="search-hr">
+                    <div class="row">
+
+                      <div class="col-md-12">
+
+
+
+                        <form action="#" method="post" name="form3" id="form3">
+
+                          <br>
+                          <div class="form-group">
+                            <div class="row">
+
+                              <div class="col-sm-12 col-md-12">
+
+
+                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
+                                <p style="text-align:left"> <small> search by: Profile Id
+                                  </small> </p>
+
+
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <div class="row">
+
+                              <div class="col-sm-9 col-md-9">
+                                <button class="btn btn-primary btn-block" name="Submit" type="submit" onclick="return checkid()">Search</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+
                 </div>
               </div>
             </div>
@@ -417,12 +473,13 @@
                               </div>
                               <div class="col-sm-9 col-md-9 ">
                                 <div class="controls_holder">
-                                  <label>
-                                    <input name="gender" type="radio" id="gender" value="Male" checked="checked" />
-                                    Groom &nbsp; </label>
-                                  <label>
-                                    <input name="gender" type="radio" id="gender" value="Female" />
-                                    Bride </label>
+                                  <?php if ($this->session->userdata('gender') == 'Female') { ?>
+                                    <label>
+                                      <input name="gender" type="radio" id="gender" value="Male"  />
+                                      Groom &nbsp; </label><?php } else { ?>
+                                    <label>
+                                      <input name="gender" type="radio" id="gender" value="Female" />
+                                      Bride </label><?php } ?>
                                 </div>
 
                               </div>
@@ -567,7 +624,7 @@
                                   <option value="32">32</option>
                                   <option value="33">33</option>
                                   <option value="34">34</option>
-                                  <option value="35" selected>35</option>
+                                  <option value="35" selected="selected">35</option>
                                   <option value="36">36</option>
                                   <option value="37">37</option>
                                   <option value="38">38</option>
@@ -756,7 +813,7 @@
                                     <input name="manglik" id="manglik" type="radio" value="Anshik">
                                     Anshik &nbsp;</label>
                                   <label>
-                                    <input name="manglik" id="manglik" type="radio" value="All" checked="checked">
+                                    <input name="manglik" id="manglik" type="radio" value="All" >
                                     All</label>
                                 </div>
                               </div>
@@ -770,7 +827,7 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="controls_holder ">
                                   <label>
-                                    <input name="physical_status" id="physical_status" type="radio" value="Normal" checked="checked">
+                                    <input name="physical_status" id="physical_status" type="radio" value="Normal">
                                     Normal &nbsp;</label>
                                   <label>
                                     <input name="physical_status" id="physical_status" type="radio" value="Physically challenged">
@@ -799,7 +856,7 @@
                                     <input name="eating_habit" id="eating_habit" type="radio" value="Eggetarian">
                                     Eggetarian &nbsp;</label>
                                   <label>
-                                    <input name="eating_habit" id="eating_habit" type="radio" value="All" checked="checked">
+                                    <input name="eating_habit" id="eating_habit" type="radio" value="All" >
                                     All</label>
                                 </div>
                               </div>
@@ -874,7 +931,7 @@
                                   </div>
                                   <div class="col-sm-2 col-md-2">
                                     <input name="button2" class="btn  btn-primary btn-sm" type="button" onclick="addMotherT()" id="button2" value="Add" style="width:100%">
-                                    <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onclick="deleteMotherT()" value="Remove" style="width:100%">
+                                    <!-- <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onclick="deleteMotherT()" value="Remove" style="width:100%"> -->
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
                                     <select name="mother_box" style="height:100px!important" multiple="multiple" id="mother_box" class="form-control">
@@ -905,7 +962,7 @@
                                   <div class="col-sm-2 col-md-2">
                                     <input type="hidden" name="x" id="rest1">
                                     <input name="button2" class="btn  btn-primary btn-sm" type="button" id="button2" onClick="javascript:addReligion()" value="Add" style="width:100%">
-                                    <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onClick="javascript:deleteReligion()" value="Remove" style="width:100%">
+                                    <!-- <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onClick="javascript:deleteReligion()" value="Remove" style="width:100%"> -->
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
                                     <select name="religion_box" style="height:100px!important" multiple="multiple" id="religion_box" class="form-control">
@@ -1046,7 +1103,7 @@
                                   </div>
                                   <div class="col-sm-2 col-md-2">
                                     <input name="button4" class="btn  btn-primary btn-sm" type="button" id="button4" onClick="javascript:addEducation()" value="Add" style="width:100%">
-                                    <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" onClick="javascript:deleteFromDestListE()" value="Remove" style="width:100%">
+                                    <!-- <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" onClick="javascript:deleteFromDestListE()" value="Remove" style="width:100%"> -->
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
                                     <select name="cmbedu" style="height:100px!important" multiple="multiple" id="education_box" class="form-control">
@@ -1159,7 +1216,7 @@
                                   </div>
                                   <div class="col-sm-2 col-md-2">
                                     <input name="button6" class="btn  btn-primary btn-sm" type="button" id="button6" onClick="javascript:addOccupation()" value="Add" style="width:100%">
-                                    <input name="button66" class="btn  btn-primary btn-sm" type="button" id="button66" onClick="javascript:deleteFromDestListO()" value="Remove" style="width:100%">
+                                    <!-- <input name="button66" class="btn  btn-primary btn-sm" type="button" id="button66" onClick="javascript:deleteFromDestListO()" value="Remove" style="width:100%"> -->
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
                                     <select name="occupation_box" style="height:100px!important" multiple="multiple" id="occupation_box" class="form-control">
@@ -1193,7 +1250,7 @@
                                     <input type="checkbox" class="epi" name="employedin" id="employedin" value="Not working" />
                                     Not working&nbsp;</label>
                                   <label>
-                                    <input type="checkbox" class="epi" name="employedin" id="employedin" value="Any" checked="checked" />
+                                    <input type="checkbox" class="epi" name="employedin" id="employedin" value="Any"  />
                                     Any</label>
                                 </div>
                               </div>
@@ -1229,7 +1286,7 @@
                                   </div>
                                   <div class="col-sm-2 col-md-2">
                                     <input name="button4" class="btn  btn-primary btn-sm" type="button" id="button4" onClick="javascript:addState()" value="Add" style="width:100%">
-                                    <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" onClick="javascript:deleteFromDestListS()" value="Remove" style="width:100%">
+                                    <!-- <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" onClick="javascript:deleteFromDestListS()" value="Remove" style="width:100%"> -->
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
                                     <select name="state_box" style="height:100px!important" multiple="multiple" id="state_box" class="form-control">
@@ -1569,7 +1626,7 @@
                               <div class="col-sm-9 col-md-9">
                                 <div class="controls_holder ">
                                   <label>
-                                    <input name="profile_with" type="radio" checked="checked" id="profile_with" value="photo">
+                                    <input name="profile_with" type="radio"  id="profile_with" value="photo">
                                     Photo &nbsp;</label>
                                   <label>
                                     <input name="profile_with" type="radio" id="profile_with" value="horoscope">
@@ -1598,6 +1655,60 @@
                     </div>
                   </div>
                 </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="mega-box-new">
+                    <p class="calibri-Bold-font f-22 color-31 t-transform-ue text-center ab-t1">Search
+                      <span class="color-d">Profile id </span>
+                    </p>
+                    <hr class="search-hr">
+                    <div class="row">
+
+                      <div class="col-md-12">
+
+
+
+                        <form action="#" method="post" name="form3" id="form3">
+
+                          <br>
+                          <div class="form-group">
+                            <div class="row">
+
+                              <div class="col-sm-12 col-md-12">
+
+
+                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
+                                <p style="text-align:left"> <small> search by: Profile Id
+                                  </small> </p>
+
+
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <div class="row">
+
+                              <div class="col-sm-9 col-md-9">
+                                <button class="btn btn-primary btn-block" name="Submit" type="submit" onclick="return checkid()">Search</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+
+                </div>
 
 
               </div>
@@ -1622,19 +1733,19 @@
 
 
                               <div class="controls_holder d-flex">
+                                <?php if ($this->session->userdata('gender') == 'Female') { ?>
 
-
-                                <div class="form-check ml-1 mb-2 mr-3">
-                                  <input class="form-check-input" required="" name="gender" type="radio" value="male" id="privacy1">
-                                  <label class="form-check-label" for="privacy1">
-                                    Groom </label>
-                                </div>
-                                <div class="form-check ml-1 mb-2">
-                                  <input class="form-check-input" required="" name="gender" type="radio" value="Female" id="privacy">
-                                  <label class="form-check-label" for="privacy">
-                                    Bride </label>
-                                </div>
-
+                                  <div class="form-check ml-1 mb-2 mr-3">
+                                    <input class="form-check-input" required="" name="gender" type="radio" value="male" id="privacy1">
+                                    <label class="form-check-label" for="privacy1">
+                                      Groom </label>
+                                  </div><?php } else { ?>
+                                  <div class="form-check ml-1 mb-2">
+                                    <input class="form-check-input" required="" name="gender" type="radio" value="Female" id="privacy">
+                                    <label class="form-check-label" for="privacy">
+                                      Bride </label>
+                                  </div>
+                                <?php } ?>
 
                               </div>
                             </div>
@@ -1717,7 +1828,7 @@
                               <select class="form-control" name="age_to" id="ageto">
                                 <option value="18">18</option>
                                 <option value="19">19</option>
-                                <option value="20" selected="selected">20</option>
+                                <option value="20" >20</option>
                                 <option value="21">21</option>
                                 <option value="22">22</option>
                                 <option value="23">23</option>
@@ -1737,7 +1848,7 @@
                                 <option value="37">37</option>
                                 <option value="38">38</option>
                                 <option value="39">39</option>
-                                <option value="40">40</option>
+                                <option value="40" selected="selected">40</option>
                                 <option value="41">41</option>
                                 <option value="42">42</option>
                                 <option value="43">43</option>
@@ -1802,7 +1913,7 @@
                             <div class="col-sm-9 col-md-9">
                               <div class="controls_holder ">
                                 <label>
-                                  <input name="profile_with" type="checkbox" checked="checked" id="phtoto" value="photo">
+                                  <input name="profile_with" type="checkbox" id="phtoto" value="photo">
                                   Photo &nbsp;</label>
                                 <label>
                                   <input name="profile_with" type="checkbox" id="chkhoro" value="horoscope">
@@ -1825,6 +1936,60 @@
                       </form>
                     </div>
                   </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                  <div class="mega-box-new">
+                    <p class="calibri-Bold-font f-22 color-31 t-transform-ue text-center ab-t1">Search
+                      <span class="color-d">Profile id </span>
+                    </p>
+                    <hr class="search-hr">
+                    <div class="row">
+
+                      <div class="col-md-12">
+
+
+
+                        <form action="#" method="post" name="form3" id="form3">
+
+                          <br>
+                          <div class="form-group">
+                            <div class="row">
+
+                              <div class="col-sm-12 col-md-12">
+
+
+                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
+                                <p style="text-align:left"> <small> search by: Profile Id
+                                  </small> </p>
+
+
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group">
+                            <div class="row">
+
+                              <div class="col-sm-9 col-md-9">
+                                <button class="btn btn-primary btn-block" name="Submit" type="submit" onclick="return checkid()">Search</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+
+
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+
                 </div>
 
 
@@ -1883,80 +2048,7 @@
 
 </section>
 
-<!-- <textarea name="" id="test" cols="30" rows="10"></textarea> -->
 
-<footer class="ftco-footer ftco-bg-dark ftco-section">
-  <div class="container"><br><br>
-    <div class="row mb-5">
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4" style="margin-top: 7px;">
-          <h5 style=" font-size: 20px;  color: #e15757; margin-bottom: 57px;">Soulmates Marraige</h5>
-          <p style="margin-top: -43px;">soulmatesmarraige.com is for people who are single, who are
-            married,
-            and anyone who wants to make new friends or help their friends meet new people.</p>
-          <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-
-            <li class=""><a href="#"><span class="icon-facebook"></span></a></li>
-
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4 ml-md-5">
-          <h2 class="ftco-heading-2">Useful Links</h2>
-          <ul class="list-unstyled">
-            <li><a href="index.html" class="py-2 d-block">Home</a></li>
-            <li><a href="search.html" class="py-2 d-block">Search</a></li>
-            <li><a href="membership.html" class="py-2 d-block">Membership</a></li>
-            <li><a href="privacy.html" class="py-2 d-block">Privacy Policy</a></li>
-
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Links</h2>
-          <ul class="list-unstyled">
-
-            <li><a href="#" class="py-2 d-block">Payment</a></li>
-            <li><a href="registration.html" class="py-2 d-block">Registration</a></li>
-            <li><a href="contact.html" class="py-2 d-block">Contact Us</a></li>
-
-            <li><a href="terms.html" class="py-2 d-block">Terms & Condition</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Address</h2>
-          <div class="block-23 mb-3">
-            <ul>
-              <li><a href="#"><span class="icon icon-map-marker"></span><span class="text">Registered
-                    Office: demo address</span></a></li>
-              <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91
-                    0123456789</span></a></li>
-              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">mail@soulmatesmarraige.com </span></a></li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 text-center">
-
-        <p>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;
-          <script>
-            document.write(new Date().getFullYear());
-          </script> All rights reserved
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
 
 
 <script src="assets/js/jquery.min.js"></script>
@@ -2038,7 +2130,7 @@
           o_data: o_data,
           state_data: state_data,
           city_data: city_data,
-          profile_with:profile_with
+          profile_with: profile_with
         },
         cache: false,
         success: function(result) {

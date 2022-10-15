@@ -21,7 +21,9 @@ class Searching extends CI_Controller
             $data['religion'] = $this->CountryModel->getReligion();
             $data['country'] = $this->CountryModel->getData();
             $this->load->view('nav');
+
             $this->load->view('search', $data);
+            $this->load->view('footer');
         } else {
             redirect(base_url() . "Login");
         }
@@ -29,7 +31,7 @@ class Searching extends CI_Controller
 
     public function view_profile()
     {
-        $id = $_POST['id'];
+        $id = $_GET['id'];
         $this->session->set_userdata("id", $id);
         $this->session->userdata("id");
         redirect(base_url() . "View_Profile");

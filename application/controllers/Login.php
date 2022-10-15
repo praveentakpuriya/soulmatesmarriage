@@ -26,6 +26,7 @@ class Login extends CI_Controller
             $_SESSION['username'] =  $data["data"][0]->email;
             $_SESSION['user_name'] =  $data["data"][0]->name;
             $_SESSION['user_id'] = $data["data"][0]->user_id;
+            $_SESSION['gender'] = $data["data"][0]->gender;
 
             ///creating session
             $session_data = array('user_data' => $username);

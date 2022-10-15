@@ -7,7 +7,7 @@ class SearchModel extends CI_Model
 {
     function quicksearch($data)
     {
-        $this->db->select('*,u.user_id as user_id,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
+        $this->db->select('*,u.user_id as u_id,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
 
         $this->db->from('user as u');
         $this->db->join('religion as r', 'u.religion_id = r.id', 'inner');
@@ -91,7 +91,7 @@ class SearchModel extends CI_Model
             // var_dump($caste);
         }
 
-        $this->db->select('*,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
+        $this->db->select('*,u.name as name,u.user_id as u_id,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
 
         $this->db->from('user as u');
         $this->db->join('religion as r', 'u.religion_id = r.id', 'inner');
@@ -134,7 +134,7 @@ class SearchModel extends CI_Model
 
         // var_dump($values);
         if (isset($data)) {
-            $this->db->select('*,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
+            $this->db->select('*,u.name as name,u.user_id as u_id,,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
 
             $this->db->from('user as u');
             $this->db->join('religion as r', 'u.religion_id = r.id', 'inner');
@@ -227,7 +227,7 @@ class SearchModel extends CI_Model
 
     function searchById($userid)
     {
-        $this->db->select('*,u.name as name,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
+        $this->db->select('*,u.name as name,u.user_id as u_id,r.name as religion_name,c.name as caste_name,s.name as state_name,city.name as city_name');
 
         $this->db->from('user as u');
         $this->db->join('religion as r', 'u.religion_id = r.id', 'inner');

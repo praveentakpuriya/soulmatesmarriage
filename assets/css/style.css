@@ -12992,3 +12992,15 @@ pricing {
     padding: 1px 5px;
     /* border-radius: 50%; */
 }
+
+.btn-primary {
+    background-image: linear-gradient(-224deg,#971b1f,#692454) !important;
+    border: none !important;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.hero-wrap
+{
+      background-position: center !important;
+}

@@ -53,15 +53,14 @@ class Registration extends CI_Controller
         if ($_POST['password'] == $_POST['re_password']) {
 
             if ($this->RegistrationModel->emailExist($this->input->post("email"))) {
-                
+
                 $uid = $this->fetch_last_userid();
-                if($uid){
-                $getNumber = str_replace("S", "", $uid);
-                $idincrease = $getNumber + 1;
-                $getString = str_pad($idincrease, 5, 0, STR_PAD_LEFT);
-                $id = "S" . $getString;
-                
-                }else{
+                if ($uid) {
+                    $getNumber = str_replace("S", "", $uid);
+                    $idincrease = $getNumber + 1;
+                    $getString = str_pad($idincrease, 5, 0, STR_PAD_LEFT);
+                    $id = "S" . $getString;
+                } else {
                     $id = "S00001";
                 }
                 $password = md5($this->input->post("password"));
@@ -94,9 +93,15 @@ class Registration extends CI_Controller
                     "nri" => $this->input->post("nri"),
                 );
 
+                $d_data = array(
+                    "user_id" => $id,
+                    "email" => $this->input->post("email"),
+                    "password" => $this->input->post("password"),
+                );
+
                 $this->RegistrationModel->insertUserData($userdata);
                 $msg = "Registration Successfull";
-                $this->session->set_flashdata('msg', $msg);
+                $this->session->set_flashdata('data', $d_data);
                 redirect(base_url() . "Login");
             } else {
                 $error = "Email already in use";

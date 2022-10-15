@@ -1,3 +1,14 @@
+<style>
+     .ftco-navbar-light {
+    background: #2a292900 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    height: 110px;
+  }
+</style>
 <div class="hero-wrap" style="background-image: url('assets/img/pexels-aksh-shaurya-12200847.jpg');">
     <div class="overlay"></div>
     <div class="container">
@@ -258,7 +269,7 @@
     <div class="container">
         <div class="row no-gutters">
 
-            <div class="col-md-7 p-md-5 img-fluid img img-2 d-flex justify-content-center align-items-center" style="background-image: url(assets/img/choose1.jpg);     border-radius: 8px;">
+            <div class="col-md-7 p-md-5 img-fluid img img-2 d-flex justify-content-center align-items-center" style="background-image: url(assets/img/bg_2.jpg);     border-radius: 8px;">
             </div>
             <div class="col-md-5 wrap-about py-md-5 ">
                 <div class="heading-section mb-5 pl-md-5" style="background-image: url('assets/img/blur.jpg'); background-size: cover; padding: 12px; position: relative; right: 215px; width: 693px;">
@@ -468,9 +479,28 @@
     </div>
 </section>
 
+<section class="mt-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="sectiondeib" style="background-image: linear-gradient(-224deg,#957600,#782143) !important;">
+                    <!-- <h4>Membership Benefits</h4> -->
+                    <p><i class="fa fa-check-square-o" aria-hidden="true"></i>We bring over 12 years of expertise in poineering the 
+Elite matchmaking service, and offer the most exclusive
+database of turly Elite matches for you!</p>
+                    <p><i class="fa fa-check-square-o" aria-hidden="true"></i> At Elite Matrimony, we help you find the perfect life 
+partner who matches your
+staure, aura, and sophistication in every sense of the word.</p>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
 
 
-<section class="mt-5">
+<!-- <section class="mt-5">
     <div class="fw container">
         <div class="row justify-content-center">
             <div class="col-md-12 heading-section text-center  mb-0">
@@ -525,4 +555,4 @@
 
     </div>
     <br><br>
-</section>
+</section> -->

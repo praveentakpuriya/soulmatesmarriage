@@ -54,6 +54,7 @@ class UpdateProfile extends CI_Controller
 
         $this->load->view('nav');
         $this->load->view('editprofile', $data);
+        $this->load->view('footer', $data);
     }else{
         redirect(base_url() . "Login");
     }

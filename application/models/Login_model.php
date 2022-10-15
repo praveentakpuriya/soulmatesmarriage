@@ -9,7 +9,7 @@ class login_model extends CI_Model
     {
 
 
-        $this->db->where('Password', $password);
+        $this->db->where('password', $password);
         $this->db->where('status', 1);
         $this->db->where('email', $username);
         $this->db->or_where('user_id', $username);
@@ -51,6 +51,7 @@ class login_model extends CI_Model
     {
 
         $this->db->where('email', $username);
+        $this->db->or_where('user_id', $username);
         $query = $this->db->get('user', array('email' => $username));
 
         return $query->result();
@@ -61,6 +62,12 @@ class login_model extends CI_Model
         $this->db->select("*,count(*) as no_of_interest");
         $this->db->where('interest_to', $user_id);
         $query = $this->db->get('interest');
+        // print_r($this->db->last_query());
+        return $query->result();
+    }
+    function fetch_contact_data()
+    {
+        $query = $this->db->get('contactus');
         // print_r($this->db->last_query());
         return $query->result();
     }
@@ -175,7 +182,8 @@ class login_model extends CI_Model
             return false;
         }
     }
-    function fill_professional_details($id){
+    function fill_professional_details($id)
+    {
         $this->db->where('user_id', $id);
         $query = $this->db->get('professional_details');
         if ($query->num_rows() == 1) {
@@ -185,7 +193,8 @@ class login_model extends CI_Model
             return false;
         }
     }
-    function fill_astrological_details($id){
+    function fill_astrological_details($id)
+    {
         $this->db->where('user_id', $id);
         $query = $this->db->get('astrological_details');
         if ($query->num_rows() == 1) {
@@ -195,7 +204,8 @@ class login_model extends CI_Model
             return false;
         }
     }
-    function fill_family_details($id){
+    function fill_family_details($id)
+    {
         $this->db->where('user_id', $id);
         $query = $this->db->get('family_details');
         if ($query->num_rows() == 1) {
@@ -205,7 +215,8 @@ class login_model extends CI_Model
             return false;
         }
     }
-    function fill_document_details($id){
+    function fill_document_details($id)
+    {
         $this->db->where('user_id', $id);
         $query = $this->db->get('documents');
         if ($query->num_rows() == 1) {
@@ -355,7 +366,8 @@ class login_model extends CI_Model
         }
         return $output;
     }
-    function get_interest_list_to($id){
+    function get_interest_list_to($id)
+    {
         $this->db->select("*,u.user_id as uid");
         $this->db->from('user as u');
         $this->db->join('interest as i', 'u.user_id = i.interest_from', 'inner');
@@ -527,7 +539,8 @@ class login_model extends CI_Model
         }
         return $output;
     }
-    function get_message_list_to($id){
+    function get_message_list_to($id)
+    {
         $this->db->select("*,u.user_id as uid");
         $this->db->from('user as u');
         $this->db->join('message as m', 'u.user_id = m.message_from', 'inner');
@@ -612,5 +625,4 @@ class login_model extends CI_Model
         }
         return $output;
     }
-
 }

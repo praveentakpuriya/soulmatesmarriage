@@ -1,3 +1,8 @@
+<style type="text/css">
+    .form-group label {
+    color: #121111 !important;
+</style>
+
 <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
     <div class="container">

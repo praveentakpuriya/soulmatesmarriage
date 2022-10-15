@@ -18,19 +18,19 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link active" href="Ad_User_Management"><span class="shape1"></span><span class="shape2"></span>
+                    <a href="Ad_User_Management" class="nav-link "><span class="shape1"></span><span class="shape2"></span>
                         <i class="fad fa-users-cog  sidemenu-icon menu-icon"></i>
                         <span class="sidemenu-label">User Management</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Ad_User_Membership"><span class="shape1"></span><span class="shape2"></span>
+                    <a href="Ad_User_Membership" class="nav-link"><span class="shape1"></span><span class="shape2"></span>
                         <i class="fas fa-user-shield  sidemenu-icon menu-icon"></i>
                         <span class="sidemenu-label">Membership</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="Ad_Contact_List" class="nav-link"><span class="shape1"></span><span class="shape2"></span>
+                    <a href="Ad_Contact_List" class="nav-link active"><span class="shape1"></span><span class="shape2"></span>
                         <i class="fas fa-phone-volume sidemenu-icon menu-icon"></i>
                         <span class="sidemenu-label">Conatact List</span>
                     </a>
@@ -77,13 +77,18 @@
                             <h6 class="main-notification-title">Admin</h6>
                             <p class="main-notification-text">admin@gmail.com</p>
                         </div>
-                        <!--  <a class="dropdown-item border-top" href="#">
+
+                        <!--   <a class="dropdown-item border-top" href="#">
                   <i class="fe fe-user"></i> My Profile
                 </a>  -->
                         <a class="dropdown-item border-top" href="Admin_Login/logout">
                             <i class="fe fe-power"></i> Log Out
                         </a>
 
+
+                        <!--  <li class="dropdown-item"  >
+                 <a href="login.html"> <i class="fe fe-power"></i> Log Out </a>
+                </li> -->
                     </div>
                 </div>
 
@@ -218,18 +223,21 @@
             </div>
         </div>
     </div>
+
+
+
     <div class="main-content side-content pt-0 mt-4">
         <div class="container-fluid">
             <div class="inner-body">
                 <div class="page-header">
                     <div>
-                        <h2 class="main-content-title tx-24 mg-b-5">Users List</h2>
+                        <h2 class="main-content-title tx-24 mg-b-5">Contact Us Data</h2>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
                                 <a href="dashboard.html">Home</a>
                             </li>
 
-                            <li class="breadcrumb-item active" aria-current="page">&nbsp;&nbsp;User Management</li>
+                            <li class="breadcrumb-item active" aria-current="page">&nbsp;&nbsp;Contact Us Data</li>
                         </ol>
                     </div>
 
@@ -237,19 +245,13 @@
 
                 </div>
 
-
-
                 <!-- row -->
                 <div class="row row-sm">
                     <div class="col-md-12 col-lg-12 col-xl-12">
                         <div class="card custom-card transcation-crypto">
                             <div class="card-header border-bottom-0">
-                                <div class="main-content-label">User Management</div>
-                                <button type="button" class="btn btn btn-success my-2 btn-icon-text">
-                                    All Active </button>
-                                <button type="button" class="btn btn-danger my-2 btn-icon-text">
-                                    All Deactivate
-                                </button>
+                                <div class="main-content-label">Contact Us Data</div>
+
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -257,14 +259,11 @@
                                         <thead>
                                             <tr>
                                                 <th class="wd-1">S.No</th>
-                                                <th>User ID</th>
-                                                <th>User Image</th>
+
                                                 <th>Full Name</th>
                                                 <th>Email Address</th>
                                                 <th>Mobile Number</th>
-                                                <th>Address</th>
-                                                <th>Gender</th>
-                                                <th>Action</th>
+                                                <th>Message</th>
 
                                             </tr>
                                         </thead>
@@ -273,26 +272,12 @@
                                             foreach ($data as $list) { ?>
                                                 <tr class="border-bottom">
                                                     <td><?= $i; ?></td>
-                                                    <td><?= $list->u_id; ?></td>
-                                                    <td><img src="<?php if (isset($list->main_photo)) echo base_url('Documents/document/' . $list->main_photo); ?>" class="avatar avatar-sm mr-2" alt=""></td>
+
                                                     <td><?= $list->name; ?></td>
                                                     <td><?= $list->email; ?></td>
                                                     <td><?= $list->number; ?></td>
-                                                    <td><?= $list->address; ?></td>
-                                                    <td><?= $list->gender; ?></td>
-                                                    <td>
+                                                    <td><?= $list->message; ?></td>
 
-                                                        <?php if ($list->status == '0') { ?>
-                                                            <button type="button" id="status<?php echo $list->u_id ?>" value="<?= $list->u_id; ?>" onclick="changeStatus('<?= $list->u_id; ?>')" style="padding: 7px 27px;" class="btn btn btn-success my-2 btn-icon-text">
-                                                                Active </button>
-                                                        <?php } else { ?>
-                                                            <button type="button" id="status<?php echo $list->u_id ?>" value="<?= $list->u_id; ?>" onclick="changeStatus('<?= $list->u_id; ?>')" class="btn btn-danger my-2 btn-icon-text">
-                                                                Deactivate
-                                                            </button>
-                                                        <?php } ?>
-
-
-                                                    </td>
                                                 </tr>
                                             <?php $i++;
                                             } ?>
@@ -313,25 +298,3 @@
             </div>
         </div>
     </div>
-    <script>
-        function changeStatus(id) {
-            // var id = document.getElementById("status").value;
-            // var t_id = "status";
-            // t_id = t_id + id;
-            $.ajax({
-                type: 'post',
-                url: 'Ad_User_Management/change_status',
-                data: {
-                    id: id,
-                },
-                async: false,
-                success: function(result) {
-                    window.location = "Ad_User_Management";
-                }
-            });
-        }
-
-        $(".main-profile-menu").click(function() {
-            $(".dropdown-menu").toggle();
-        });
-    </script>

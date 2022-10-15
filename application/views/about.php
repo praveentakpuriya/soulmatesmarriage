@@ -22,7 +22,8 @@
             <div class="row no-gutters">
 
                 <div class="col-md-7 p-md-5 img-fluid img img-2 d-flex justify-content-center align-items-center"
-                    style="background-image: url(assets/img/choose1.jpg);">
+                    style="    background-image: url('assets/img/123.jpg');
+   background-position: 100% 65%;">
                 </div>
                 <div class="col-md-5 wrap-about py-md-5 ">
                     <div class="heading-section mb-5 pl-md-5"

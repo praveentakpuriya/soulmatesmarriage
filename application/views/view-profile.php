@@ -164,7 +164,7 @@
                 </a>
                 <a href="#"></a>
 
-                <a href="#">
+                <a href="Print_profile">
                   <li><i class="icon icon-print"></i> Print Profile</li>
                 </a>
 

@@ -3,7 +3,7 @@
 
     <div class="row">
 
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-lg-4 col-sm-6">
         <div class="footer-widget about-widget">
           <h2>Quick Links</h2>
           <ul>
@@ -16,7 +16,7 @@
 
         </div>
       </div>
-      <div class="col-lg-2 col-sm-6">
+      <div class="col-lg-4 col-sm-6">
         <div class="footer-widget about-widget">
           <h2>Questions</h2>
           <ul>
@@ -29,7 +29,7 @@
 
         </div>
       </div>
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-lg-4 col-sm-6">
         <div class="footer-widget contact-widget">
           <h2>Contact Us</h2>
 
@@ -47,7 +47,7 @@
           </div>
           <div class="con-info">
             <span><i class="fas fa-map-marker-alt"></i></span>
-            <p> Registered Office: demo address
+            <p style="line-height: 21px;"> kalani nager near bank of baroda bank 452005 indore madhya pradesh
             </p>
           </div>
           <div class="con-info">
@@ -59,31 +59,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-sm-6">
-        <div class="footer-widget about-widget">
-          <h2>Get In Touch</h2>
-          <form>
-            <div class="form-group">
-              <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Your Name" id="ass_name" style="margin-bottom: 10px;">
-              </div>
-              <div class="col-md-12">
-                <input type="text" class="form-control" placeholder="Phone No" id="ass_mobile" style="margin-bottom: 10px;">
-              </div>
-              <div class="col-md-12">
-                <input type="email" class="form-control" placeholder="Email" id="ass_email" style="margin-bottom: 10px;">
-              </div>
-              <div class="col-md-12 text-center">
-                <button type="button" class="btn btn-submit" id="btnAssistance" style="background: #fffce4;
-                               padding: 4px 26px;
-                               border-radius: 10px;
-                               color: #851e33;">Submit</button>
-              </div>
-
-            </div>
-          </form>
-        </div>
-      </div>
+      
     </div>
   </div>
   <div class="social-links-warp">

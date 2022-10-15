@@ -92,3 +92,39 @@
     </div>
 </section>
 
+
+<!-- Modal -->
+<?php $data = $this->session->flashdata('data');
+if (isset($data)) { ?>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="    border: none;
+    border-radius: 20px;">
+
+                <div class="modal-body p-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="position: absolute;
+    right: 10px;
+    margin-top: 13px;"></button>
+                    <div class="sectiondeib" style="background-image: linear-gradient(-224deg,#957600,#782143) !important;">
+                        <!-- <h4>Membership Benefits</h4> -->
+
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Profile ID : <span><?= $data['user_id'] ?></span></p>
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Email Address : <span><?= $data['email'] ?></span></p>
+                        <p><i class="fa fa-check-square-o" aria-hidden="true"></i>Password : <span><?= $data['password'] ?></span></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#exampleModal').modal('show');
+    });
+</script>

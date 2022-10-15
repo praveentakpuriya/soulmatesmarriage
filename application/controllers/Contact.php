@@ -9,6 +9,7 @@ class Contact extends CI_Controller
         parent::__construct();
         $this->load->model('ContactModel');
         // $this->load->model('RegistrationModel');
+        $this->load->model('Login_model');
         // $this->load->library('encrypt');
 
     }
@@ -33,5 +34,16 @@ class Contact extends CI_Controller
         $msg = "Your data is shared with us successfully!!";
         $this->session->set_flashdata('msg', $msg);
         redirect(base_url() . "Contact");
+    }
+    public function showData()
+    {
+        if ($this->session->userdata('user_data')) {
+
+            $data['data'] = $this->Login_model->fetch_contact_data();
+            $this->load->view('admin/ad-nav');
+            $this->load->view('admin/contact_us', $data);
+            $this->load->view('admin/ad-footer');
+        } else
+            redirect(base_url() . "Admin_Login");
     }
 }

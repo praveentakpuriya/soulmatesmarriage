@@ -20,10 +20,10 @@
     margin-left: 0px;
   }
 
-  .form-group label {
+  /*.form-group label {
     color: #6b6b6b !important;
   }
-
+*/
   .slider-text h1 {
     font-size: 40px;
     color: #fff;
@@ -32,7 +32,7 @@
   }
 
   .slider-text {
-    height: 480px;
+    height: 410px;
   }
 
   .ftco-navbar-light {
@@ -79,7 +79,7 @@
   }
 
   .slider-text {
-    height: 480px;
+    height: 410px;
   }
 
 
@@ -152,12 +152,12 @@
           <li class="nav-item"><a href="<?php echo base_url('Contact') ?>" class="nav-link">Contact</a></li>
         </ul>
       </div>
-      <div style="position: relative; width: 208px;">
+      <div style="position: relative;">
         <?php if ($this->session->userdata('username') != '') {  ?>
-          <a href="<?php echo base_url('Login/logout') ?>" id="registration" class="button" style="margin-right: 10px;">Logout</a>
+          <a href="<?php echo base_url('Login/logout') ?>" id="registration" class="btn-primary btnCustom" style="margin-right: 10px;">Logout</a>
         <?php } else { ?>
-          <a href="<?php echo base_url('Registration') ?>" id="registration" class="button" style="margin-right: 10px;">Register</a>
-          <a href="<?php echo base_url('Login') ?>" id="registration" class="button">Login</a>
+          <a href="<?php echo base_url('Registration') ?>" id="registration" class="btn-primary btnCustom" style="margin-right: 10px;">Register</a>
+          <a href="<?php echo base_url('Login') ?>" id="registration" class="btn-primary btnCustom">Login</a>
         <?php } ?>
       </div>
 
