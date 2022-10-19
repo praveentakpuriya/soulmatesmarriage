@@ -29,7 +29,8 @@
 
                                             <figure class="effect-lexi">
 
-                                                <a href="<?php echo base_url("UpdateProfile") ?>"><img src="<?php if (isset($documents[0]->main_photo)) echo base_url('Documents/document/' . $documents[0]->main_photo);else echo 'assets/img/user.webp'; ?>" style="width: 100%;height: 300px;" alt="">
+                                                <a href="<?php echo base_url("UpdateProfile") ?>"><img src="<?php if (isset($documents[0]->main_photo)) echo base_url('Documents/document/' . $documents[0]->main_photo);
+                                                                                                            else echo 'assets/img/user.webp'; ?>" style="width: 100%;height: 300px;" alt="">
                                                 </a>
                                                 <figcaption>
                                                     <a href="<?php echo base_url("UpdateProfile") ?>">
@@ -144,7 +145,7 @@
                             <div id="icetab-content">
                                 <div class="tabcontent tab-active">
                                     <ul class="int_list">
-                                        <a  onclick="showInterest('<?= $data[0]->user_id ?>')">
+                                        <a onclick="showInterest('<?= $data[0]->user_id ?>')">
                                             <li><?php if (isset($interest[0]->no_of_interest)) echo $interest[0]->no_of_interest;
                                                 else echo '0'; ?> <br> Pending</li>
                                         </a>
@@ -161,7 +162,7 @@
                                 </div>
                                 <div class="tabcontent ">
                                     <ul class="int_list">
-                                        <a  onclick="showMessage('<?= $data[0]->user_id ?>')" >
+                                        <a onclick="showMessage('<?= $data[0]->user_id ?>')">
                                             <li><?php if (isset($message[0]->no_of_message)) echo $message[0]->no_of_message;
                                                 else echo '0'; ?> <br> Pending</li>
                                         </a>
@@ -178,7 +179,7 @@
                                 </div>
                                 <div class="tabcontent ">
                                     <ul class="int_list">
-                                        <a  onclick="showInterest_to('<?= $data[0]->user_id ?>')">
+                                        <a onclick="showInterest_to('<?= $data[0]->user_id ?>')">
                                             <li><?php if (isset($interest_to[0]->no_of_interest)) echo $interest_to[0]->no_of_interest;
                                                 else echo '0'; ?><br> Pending</li>
                                         </a>
@@ -212,21 +213,23 @@
                                 </div>
                                 <div class="tabcontent ">
                                     <ul class="int_list">
-                                        <a href="requestsent.php?mode=photo">
-                                            <li>0 <br> Sent Request</li>
+                                        <a onclick="show_photo_to('<?= $data[0]->user_id ?>')">
+                                            <li><?php if (isset($photo_request[0]->photo_request_from)) echo $photo_request[0]->photo_request_from;
+                                                else echo '0'; ?><br> Sent Request</li>
                                         </a>
-                                        <a href="requestreceived.php?mode=photo">
-                                            <li>0 <br> Received Request</li>
+                                        <a onclick="show_photo_from('<?= $data[0]->user_id ?>')">
+                                            <li><?php if (isset($photo_request_to[0]->photo_request_to)) echo $photo_request_to[0]->photo_request_to;
+                                                else echo '0'; ?><br> Received Request</li>
                                         </a>
 
                                     </ul>
                                 </div>
                                 <div class="tabcontent ">
                                     <ul class="int_list">
-                                        <a href="viewcontacts.php?byme">
+                                        <a onclick="contact_by_me('<?= $data[0]->user_id ?>')">
                                             <li>Contact Viewed By Me</li>
                                         </a>
-                                        <a href="#">
+                                        <a onclick="contact_of_me('<?= $data[0]->user_id ?>')">
                                             <li>Who Viewed My Contact</li>
                                         </a>
 
@@ -246,6 +249,7 @@
 <script>
     function showInterest(id) {
         // alert(id)
+        // window.location.reload(true);
         $.ajax({
             type: 'POST',
             url: "UserProfile/get_interest_list",
@@ -256,10 +260,13 @@
                 // alert("hey")
                 $("#interest_got").empty();
                 $("#interest_got").html(data1);
+
             }
         });
     }
-    function showInterest_to(id){
+
+    function showInterest_to(id) {
+        // window.location.reload(true);
         $.ajax({
             type: 'POST',
             url: "UserProfile/get_interest_list_to",
@@ -270,10 +277,13 @@
                 // alert("hey")
                 $("#interest_got").empty();
                 $("#interest_got").html(data1);
+
             }
         });
     }
+
     function showMessage(id) {
+        // window.location.reload(true);
         // alert(id)
         $.ajax({
             type: 'POST',
@@ -285,10 +295,45 @@
                 // alert("hey")
                 $("#interest_got").empty();
                 $("#interest_got").html(data1);
+
             }
         });
     }
-    function showMessage_to(id){
+
+    function contact_by_me(id) {
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/contact_by_me",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                // alert("hey")
+                $("#interest_got").empty();
+                $("#interest_got").html(data1);
+
+            }
+        });
+    }
+
+    function contact_of_me(id) {
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/contact_of_me",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                // alert("hey")
+                $("#interest_got").empty();
+                $("#interest_got").html(data1);
+
+            }
+        });
+    }
+
+    function showMessage_to(id) {
+        // window.location.reload(true);
         $.ajax({
             type: 'POST',
             url: "UserProfile/get_message_list_to",
@@ -299,6 +344,169 @@
                 // alert("hey")
                 $("#interest_got").empty();
                 $("#interest_got").html(data1);
+
+            }
+        });
+    }
+
+    function show_photo_from(id) {
+        // window.location.reload(true);
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/get_photo_from",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                // alert("hey")
+                $("#interest_got").empty();
+                $("#interest_got").html(data1);
+
+            }
+        });
+    }
+
+    function show_photo_to(id) {
+        // window.location.reload(true);
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/get_photo_to",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                // alert("hey")
+                $("#interest_got").empty();
+                $("#interest_got").html(data1);
+
+            }
+        });
+    }
+
+    function photo_request(id) {
+        // window.location.reload(true);
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/update_photo_request",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                if (data1 == "1") {
+                    alert("Approved")
+                } else {
+                    alert("Data not delete yet")
+                }
+                window.location.reload(true);
+
+            }
+        });
+    }
+
+    function delete_data1(id) {
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/delete_data1",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                if (data1 == "1") {
+                    alert("Data Deleted")
+                } else {
+                    alert("Data not delete yet")
+                }
+                window.location.reload(true);
+            }
+        });
+    }
+
+    function delete_data2(id) {
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/delete_data2",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                if (data1 == "1") {
+                    alert("Data Deleted")
+                } else {
+                    alert("Data not delete yet")
+                }
+                window.location.reload(true);
+            }
+        });
+    }
+
+    function delete_data3(id) {
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/delete_data3",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                if (data1 == "1") {
+                    alert("Data Deleted")
+                } else {
+                    alert("Data not delete yet")
+                }
+                window.location.reload(true);
+            }
+        });
+    }
+
+    function delete_data4(id) {
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/delete_data4",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                if (data1 == "1") {
+                    alert("Data Deleted")
+                } else {
+                    alert("Data not delete yet")
+                }
+                window.location.reload(true);
+            }
+        });
+    }
+
+    function delete_data5(id) {
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/delete_data5",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                if (data1 == "1") {
+                    alert("Data Deleted")
+                } else {
+                    alert("Data not delete yet")
+                }
+                window.location.reload(true);
+            }
+        });
+    }
+
+    function delete_data6(id) {
+        $.ajax({
+            type: 'POST',
+            url: "UserProfile/delete_data6",
+            data: {
+                id: id,
+            },
+            success: function(data1) {
+                if (data1 == "1") {
+                    alert("Data Deleted")
+                } else {
+                    alert("Data not delete yet")
+                }
+                window.location.reload(true);
             }
         });
     }

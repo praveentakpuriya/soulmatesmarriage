@@ -1,3 +1,9 @@
+<style>
+    .blurImg {
+        -webkit-filter: blur(4px);
+        filter: blur(4px);
+    }
+</style>
 <div class="hero-wrap" style="background-image: url('assets/img/bg_3.jpg');height: 300px;background-size: cover;background-position: bottom;">
 
     <div class="container">
@@ -28,8 +34,14 @@
                                 <div class="col-md-4 col-sm-4 col-xs-12">
 
                                     <a href="#">
-                                        <img src="<?php if (isset($list->main_photo)) echo base_url('Documents/document/' . $list->main_photo);
-                                                    else echo 'assets/img/user.webp'; ?>" class="img-responsive placeholder-img">
+                                        <?php if ($list->photo_privacy == 'No') { ?>
+                                            <img src="<?php if (isset($list->main_photo)) echo base_url('Documents/document/' . $list->main_photo);
+                                                        else echo 'assets/img/user.webp'; ?>" class="img-responsive placeholder-img">
+                                        <?php } else { ?>
+                                            <img src="<?php if (isset($list->main_photo)) echo base_url('Documents/document/' . $list->main_photo);
+                                                        else echo 'assets/img/user.webp'; ?>"  class=" blurImg img-responsive placeholder-img">
+                                        <?php } ?>
+
                                     </a>
 
                                 </div>
@@ -38,7 +50,7 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <p class="p-search OpenSans-Bold" style="margin-bottom:0px;">
                                                 <?php echo $list->name ?> </p>
-                                            <span class="p-search2"><i class="icon icon-user"></i>&nbsp;<a  target="_blank"><?php echo $list->u_id ?></a> &nbsp; |
+                                            <span class="p-search2"><i class="icon icon-user"></i>&nbsp;<a target="_blank"><?php echo $list->u_id ?></a> &nbsp; |
                                                 &nbsp;<?php if (isset($list->plan_type)) echo $list->plan_type;
                                                         else echo 'Free Member' ?></span>
                                         </div>

@@ -76,6 +76,11 @@ class EditDataModel extends CI_Model
             return false;
         }
     }
+    function protectPitcture($id, $data)
+    {
+        $this->db->where('user_id', $id);
+        return $this->db->update('user', $data);
+    }
 
     function updateFamilyDetails($data, $userid)
     {
@@ -87,7 +92,14 @@ class EditDataModel extends CI_Model
         }
     }
 
-    public function editPartnerP($data,$userid){
+    function updatePhotoRequest($data)
+    {
+        $this->db->insert("photo_request", $data);
+        return true;
+    }
+
+    public function editPartnerP($data, $userid)
+    {
         if ($this->check_user_data_present($userid, "partner_preference")) {
             $this->db->where('user_id', $userid);
             return $this->db->update('partner_preference', $data);
@@ -112,7 +124,7 @@ class EditDataModel extends CI_Model
         $this->db->select('religion.*,religion_preference.*');
         $this->db->from('religion');
         $this->db->join('religion_preference', 'religion.id = religion_preference.religion_id', 'inner');
-        $this->db->where('user_id',$userid);
+        $this->db->where('user_id', $userid);
         $query = $this->db->get();
         $output = '';
         foreach ($query->result() as $row) {
@@ -121,69 +133,71 @@ class EditDataModel extends CI_Model
         return $output;
     }
 
-    public function getCaste($userid){
+    public function getCaste($userid)
+    {
         $this->db->select('caste.*,caste_preference.*');
         $this->db->from('caste');
         $this->db->join('caste_preference', 'caste.id = caste_preference.caste_id', 'inner');
-        $this->db->where('user_id',$userid);
+        $this->db->where('user_id', $userid);
         $query = $this->db->get();
         $output = '';
         foreach ($query->result() as $row) {
             $output .= '<option value="' . $row->id . '">' . $row->name . ' </option>';
         }
         return $output;
-
     }
 
     function get_motherTonguePreference($userid)
     {
         $this->db->where('user_id', $userid);
-        
+
         $query = $this->db->get('mother_tongue_preference');
         $output = '';
-        
+
         foreach ($query->result() as $row) {
             $output .= '<option value="' . $row->id . '">' . $row->mother_tongue . ' </option>';
         }
         return $output;
     }
 
-    function get_Education_data($userid){
+    function get_Education_data($userid)
+    {
         $this->db->where('user_id', $userid);
-        
+
         $query = $this->db->get('education_preference');
         $output = '';
-        
+
         foreach ($query->result() as $row) {
             $output .= '<option value="' . $row->id . '">' . $row->education . ' </option>';
         }
         return $output;
     }
 
-    public function getOccupation($userid){
+    public function getOccupation($userid)
+    {
         $this->db->where('user_id', $userid);
-        
+
         $query = $this->db->get('occupation_preference');
         $output = '';
-        
+
         foreach ($query->result() as $row) {
             $output .= '<option value="' . $row->id . '">' . $row->occupation . ' </option>';
         }
         return $output;
     }
 
-    public function getRState($userid){
+    public function getRState($userid)
+    {
         $this->db->select('states.*,residing_state_preference.*');
         $this->db->from('states');
         $this->db->join('residing_state_preference', 'states.id = residing_state_preference.state_id', 'inner');
-        $this->db->where('user_id',$userid);
+        $this->db->where('user_id', $userid);
         $query = $this->db->get();
         $output = '';
         foreach ($query->result() as $row) {
             $output .= '<option value="' . $row->id . '">' . $row->name . ' </option>';
         }
         return $output;
-
     }
     function editProfessionalDetails($data, $userid)
     {

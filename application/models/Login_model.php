@@ -47,6 +47,19 @@ class login_model extends CI_Model
             $this->db->insert("membership", $data);
         }
     }
+    function update_photo_request($from, $to)
+    {
+        $this->db->where('id_from', $from);
+        $this->db->where('id_to', $to);
+        return $this->db->update('photo_request', array('photo_status' => "Approved"));
+    }
+    function check_photo_request($th, $to)
+    {
+        $this->db->where('id_from', $to);
+        $this->db->where('id_to', $th);
+        $query = $this->db->get('photo_request');
+        return $query->result();
+    }
     function get_user($username)
     {
 
@@ -84,6 +97,24 @@ class login_model extends CI_Model
         $this->db->select("*,count(*) as no_of_message");
         $this->db->where('message_to', $user_id);
         $query = $this->db->get('message');
+        // print_r($this->db->last_query());
+        return $query->result();
+    }
+    function photo_request_from($user_id)
+    {
+        $this->db->select("*,count(*) as photo_request_from");
+        $this->db->where('id_from', $user_id);
+        $this->db->where('photo_status', 0);
+        $query = $this->db->get('photo_request');
+        // print_r($this->db->last_query());
+        return $query->result();
+    }
+    function photo_request_to($user_id)
+    {
+        $this->db->select("*,count(*) as photo_request_to");
+        $this->db->where('id_to', $user_id);
+        $this->db->where('photo_status', 0);
+        $query = $this->db->get('photo_request');
         // print_r($this->db->last_query());
         return $query->result();
     }
@@ -244,6 +275,11 @@ class login_model extends CI_Model
         $query = $this->db->get('membership');
         return $query->result();
     }
+    public function get_o_preference($user_id){
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get('occupation_preference');
+        return $query->result();
+    }
 
     function update_membership_count($data, $userid)
     {
@@ -279,12 +315,34 @@ class login_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    function delete_data($d1, $d2)
+    {
+        $this->db->where('interest_from', $d1);
+        $this->db->where('interest_to', $d2);
+        return $this->db->delete('interest');
+    }
+    function delete_message($d1, $d2)
+    {
+        $this->db->where('message_from', $d1);
+        $this->db->where('message_to', $d2);
+        return $this->db->delete('message');
+    }
+    function delete_photo_r($d1, $d2)
+    {
+        $this->db->where('id_from', $d1);
+        $this->db->where('id_to', $d2);
+        return $this->db->delete('photo_request');
+    }
+    function upload_contact_view($view_of, $view_by)
+    {
+        $this->db->insert("contact_record", array('contact_view_by' => $view_by, 'contact_view_of' => $view_of));
+    }
 
     function get_interest_list($id)
     {
         $this->db->select("*,u.user_id as uid");
         $this->db->from('user as u');
-        $this->db->join('interest as i', 'u.user_id = i.interest_to', 'inner');
+        $this->db->join('interest as i', 'u.user_id = i.interest_from', 'inner');
         $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
         $this->db->where('interest_to', $id);
         // $this->db->order_by('name','ASC');
@@ -293,6 +351,7 @@ class login_model extends CI_Model
         // $output = '<option value="">Select Caste </option>';
         // var_dump($query->result());
         foreach ($query->result() as $row) {
+            $this->session->set_userdata("id", $row->uid);
             $output .= '<div class="col-md-12">
             <div class="hidbox">
                 <div class="row">
@@ -328,7 +387,7 @@ class login_model extends CI_Model
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3 col-sm-3">
-                                                        <p><a class="down" href="#">' . $row->name . ' (
+                                                        <p><a class="down" href="View_Profile">' . $row->name . ' (
                                                                 ' . $row->uid . ' ) </a></p>
                                                         <p>Age :' . $row->age . ' Years</p>
                                                         <p>Caste : ' . $row->sub_cast . '</p>
@@ -341,8 +400,174 @@ class login_model extends CI_Model
                                                     </div>
                                                     <div class="col-md-2 col-sm-2">
                                                         <input type="button" name="btnbutton"
-                                                            class="btn btn-primary" value="Delete">
+                                                            class="btn btn-danger" onclick="return delete_data1(\'' . $row->uid . '\')" value="Delete">
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="col-md-4 col-sm-4 pull-right">
+
+                                                <input type="hidden" id="txtpending" value="1">
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+        }
+        return $output;
+    }
+    function contact_of_me($id)
+    {
+        $this->db->select("*,u.user_id as uid");
+        $this->db->from('user as u');
+        $this->db->join('contact_record as i', 'u.user_id = i.contact_view_by', 'inner');
+        $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
+        $this->db->where('contact_view_of', $id);
+        // $this->db->order_by('name','ASC');
+        $query = $this->db->get();
+        $output = '';
+        // $output = '<option value="">Select Caste </option>';
+        // print_r($this->db->last_query());
+        // die();
+        foreach ($query->result() as $row) {
+            $this->session->set_userdata("id", $row->uid);
+            $output .= '<div class="col-md-12">
+            <div class="hidbox">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 ">
+                        <div class="tab-content border">
+                            <table width="100%" id="pending">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" height="25" class="acttop">
+                                            <span class="style13"
+                                                style="padding-left: 10px;font-size: 12px">
+                                                Pending </span><img src="<img src="Documents/document/' . $row->main_photo . '"
+                                                style="display: none;" id="loadpending">
+                                            <span class="style13"
+                                                style="float:right;font-size: 12px;margin-right: 10px;"
+                                                id="spnpending">1 Records Found</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td valign="top" id="loadpendingdata" style="width:100%">
+
+                                            <div class="col-md-12 col-sm-12" style="display:table;">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <div class="mem_img">
+                                                            <img src="">
+
+                                                            <span class="frame">Soulmates
+                                                                Marraige</span>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <p><a class="down" href="View_Profile">' . $row->name . ' (
+                                                                ' . $row->uid . ' ) </a></p>
+                                                        <p>Age :' . $row->age . ' Years</p>
+                                                       
+                                                    </div>        
+                                                    <div class="col-md-3 col-sm-3">
+                                                        
+                                                        <p>Caste : ' . $row->sub_cast . '</p>
+                                                        <p>Location : ' . $row->address . '</p>
+                                                    </div>                                                    
+                                                   
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="col-md-4 col-sm-4 pull-right">
+
+                                                <input type="hidden" id="txtpending" value="1">
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+        }
+        return $output;
+    }
+    function contact_by_me($id)
+    {
+        $this->db->select("*,u.user_id as uid");
+        $this->db->from('user as u');
+        $this->db->join('contact_record as i', 'u.user_id = i.contact_view_of', 'inner');
+        $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
+        $this->db->where('contact_view_by', $id);
+        $this->db->order_by('i.date', 'DESC');
+        $query = $this->db->get();
+        $output = '';
+        // $output = '<option value="">Select Caste </option>';
+        // var_dump($query->result());
+        foreach ($query->result() as $row) {
+            $this->session->set_userdata("id", $row->uid);
+            $output .= '<div class="col-md-12">
+            <div class="hidbox">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 ">
+                        <div class="tab-content border">
+                            <table width="100%" id="pending">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" height="25" class="acttop">
+                                            <span class="style13"
+                                                style="padding-left: 10px;font-size: 12px">
+                                                Pending </span><img src="<img src="Documents/document/' . $row->main_photo . '"
+                                                style="display: none;" id="loadpending">
+                                            <span class="style13"
+                                                style="float:right;font-size: 12px;margin-right: 10px;"
+                                                id="spnpending">1 Records Found</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td valign="top" id="loadpendingdata" style="width:100%">
+
+                                            <div class="col-md-12 col-sm-12" style="display:table;">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <div class="mem_img">
+                                                            <img src="">
+
+                                                            <span class="frame">Soulmates
+                                                                Marraige</span>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <p><a class="down" href="View_Profile">' . $row->name . ' (
+                                                                ' . $row->uid . ' ) </a></p>
+                                                        <p>Age :' . $row->age . ' Years</p>
+                                                       
+                                                    </div>        
+                                                    <div class="col-md-3 col-sm-3">
+                                                        
+                                                        <p>Caste : ' . $row->sub_cast . '</p>
+                                                        <p>Location : ' . $row->address . '</p>
+                                                    </div>          
                                                 </div>
                                             </div>
                                             <hr>
@@ -370,15 +595,17 @@ class login_model extends CI_Model
     {
         $this->db->select("*,u.user_id as uid");
         $this->db->from('user as u');
-        $this->db->join('interest as i', 'u.user_id = i.interest_from', 'inner');
+        $this->db->join('interest as i', 'u.user_id = i.interest_to', 'inner');
         $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
         $this->db->where('interest_from', $id);
         // $this->db->order_by('name','ASC');
+        $this->db->order_by('i.date', 'DESC');
         $query = $this->db->get();
         $output = '';
         // $output = '<option value="">Select Caste </option>';
         // var_dump($query->result());
         foreach ($query->result() as $row) {
+            $this->session->set_userdata("id", $row->uid);
             $output .= '<div class="col-md-12">
             <div class="hidbox">
                 <div class="row">
@@ -414,7 +641,7 @@ class login_model extends CI_Model
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3 col-sm-3">
-                                                        <p><a class="down" href="#">' . $row->name . ' (
+                                                        <p><a class="down" href="View_Profile">' . $row->name . ' (
                                                                 ' . $row->uid . ' ) </a></p>
                                                         <p>Age :' . $row->age . ' Years</p>
                                                         <p>Caste : ' . $row->sub_cast . '</p>
@@ -427,7 +654,7 @@ class login_model extends CI_Model
                                                     </div>
                                                     <div class="col-md-2 col-sm-2">
                                                         <input type="button" name="btnbutton"
-                                                            class="btn btn-primary" value="Delete">
+                                                            class="btn btn-danger" onclick="return delete_data2(\'' . $row->uid . '\')" value="Delete">
                                                     </div>
                                                 </div>
                                             </div>
@@ -457,7 +684,7 @@ class login_model extends CI_Model
     {
         $this->db->select("*,u.user_id as uid");
         $this->db->from('user as u');
-        $this->db->join('message as m', 'u.user_id = m.message_to', 'inner');
+        $this->db->join('message as m', 'u.user_id = m.message_from', 'inner');
         $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
         $this->db->where('message_to', $id);
         // $this->db->order_by('name','ASC');
@@ -466,6 +693,7 @@ class login_model extends CI_Model
         // $output = '<option value="">Select Caste </option>';
         // var_dump($query->result());
         foreach ($query->result() as $row) {
+            $this->session->set_userdata("id", $row->uid);
             $output .= '<div class="col-md-12">
             <div class="hidbox">
                 <div class="row">
@@ -501,7 +729,7 @@ class login_model extends CI_Model
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3 col-sm-3">
-                                                        <p><a class="down" href="#">' . $row->name . ' (
+                                                        <p><a class="down" href="View_Profile">' . $row->name . ' (
                                                                 ' . $row->uid . ' ) </a></p>
                                                         <p>Age :' . $row->age . ' Years</p>
                                                         <p>Caste : ' . $row->sub_cast . '</p>
@@ -514,7 +742,7 @@ class login_model extends CI_Model
                                                     </div>
                                                     <div class="col-md-2 col-sm-2">
                                                         <input type="button" name="btnbutton"
-                                                            class="btn btn-primary" value="Delete">
+                                                            class="btn btn-danger" onclick="return delete_data3(\'' . $row->uid . '\')" value="Delete">
                                                     </div>
                                                 </div>
                                             </div>
@@ -543,7 +771,7 @@ class login_model extends CI_Model
     {
         $this->db->select("*,u.user_id as uid");
         $this->db->from('user as u');
-        $this->db->join('message as m', 'u.user_id = m.message_from', 'inner');
+        $this->db->join('message as m', 'u.user_id = m.message_to', 'inner');
         $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
         $this->db->where('message_from', $id);
         // $this->db->order_by('name','ASC');
@@ -552,6 +780,7 @@ class login_model extends CI_Model
         // $output = '<option value="">Select Caste </option>';
         // var_dump($query->result());
         foreach ($query->result() as $row) {
+            $this->session->set_userdata("id", $row->uid);
             $output .= '<div class="col-md-12">
             <div class="hidbox">
                 <div class="row">
@@ -587,7 +816,7 @@ class login_model extends CI_Model
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3 col-sm-3">
-                                                        <p><a class="down" href="#">' . $row->name . ' (
+                                                        <p><a class="down" href="View_Profile">' . $row->name . ' (
                                                                 ' . $row->uid . ' ) </a></p>
                                                         <p>Age :' . $row->age . ' Years</p>
                                                         <p>Caste : ' . $row->sub_cast . '</p>
@@ -600,7 +829,185 @@ class login_model extends CI_Model
                                                     </div>
                                                     <div class="col-md-2 col-sm-2">
                                                         <input type="button" name="btnbutton"
-                                                            class="btn btn-primary" value="Delete">
+                                                            class="btn btn-danger" onclick="return delete_data4(\'' . $row->uid . '\')" value="Delete">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="col-md-4 col-sm-4 pull-right">
+
+                                                <input type="hidden" id="txtpending" value="1">
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+        }
+        return $output;
+    }
+
+    function get_photo_from($id)
+    {
+        $this->db->select("*,u.user_id as uid");
+        $this->db->from('user as u');
+        $this->db->join('photo_request as m', 'u.user_id = m.id_from', 'inner');
+        $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
+        $this->db->where('id_to', $id);
+        $this->db->where('photo_status', 0);
+        // $this->db->order_by('name','ASC');
+        $query = $this->db->get();
+        $output = '';
+        // $output = '<option value="">Select Caste </option>';
+        // var_dump($query->result());
+        foreach ($query->result() as $row) {
+            $this->session->set_userdata("id", $row->uid);
+            $output .= '<div class="col-md-12">
+            <div class="hidbox">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 ">
+                        <div class="tab-content border">
+                            <table width="100%" id="pending">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" height="25" class="acttop">
+                                            <span class="style13"
+                                                style="padding-left: 10px;font-size: 12px">
+                                                Pending </span><img src="<img src="Documents/document/' . $row->main_photo . '"
+                                                style="display: none;" id="loadpending">
+                                            <span class="style13"
+                                                style="float:right;font-size: 12px;margin-right: 10px;"
+                                                id="spnpending">1 Records Found</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td valign="top" id="loadpendingdata" style="width:100%">
+
+                                            <div class="col-md-12 col-sm-12" style="display:table;">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <div class="mem_img">
+                                                            <img src="">
+
+                                                            <span class="frame">Soulmates
+                                                                Marraige</span>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <p><a class="down" href="View_Profile">' . $row->name . ' (
+                                                                ' . $row->uid . ' ) </a></p>
+                                                        <p>Age :' . $row->age . ' Years</p>
+                                                        <p>Caste : ' . $row->sub_cast . '</p>
+                                                        <p>Location : ' . $row->address . '</p>
+                                                    </div>                                                    
+                                                    <div class="col-md-2 col-sm-2">
+                                                        <input type="button" name="btnbutton"
+                                                            class="btn btn-success" onclick="return photo_request(\'' . $row->uid . '\')" value="Approve">
+                                                    </div>
+                                                    <div class="col-md-2 col-sm-2">
+                                                        <input type="button" name="btnbutton"
+                                                            class="btn btn-danger" onclick="return delete_data5(\'' . $row->uid . '\')" value="Delete">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="col-md-4 col-sm-4 pull-right">
+
+                                                <input type="hidden" id="txtpending" value="1">
+                                            </div>
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>';
+        }
+        return $output;
+    }
+    function get_photo_to($id)
+    {
+        $this->db->select("*,u.user_id as uid");
+        $this->db->from('user as u');
+        $this->db->join('photo_request as m', 'u.user_id = m.id_to', 'inner');
+        $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
+        // $this->db->join('photo_request as p', 'u.user_id = d.id_from', 'left');
+        $this->db->where('id_from', $id);
+        $this->db->where('photo_status', 0);
+
+        // $this->db->order_by('name','ASC');
+        $query = $this->db->get();
+        $output = '';
+        // $output = '<option value="">Select Caste </option>';
+        // var_dump($query->result());
+        foreach ($query->result() as $row) {
+            $this->session->set_userdata("id", $row->uid);
+            $output .= '<div class="col-md-12">
+            <div class="hidbox">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 ">
+                        <div class="tab-content border">
+                            <table width="100%" id="pending">
+                                <tbody>
+                                    <tr>
+                                        <td valign="top" height="25" class="acttop">
+                                            <span class="style13"
+                                                style="padding-left: 10px;font-size: 12px">
+                                                Pending </span><img src="<img src="Documents/document/' . $row->main_photo . '"
+                                                style="display: none;" id="loadpending">
+                                            <span class="style13"
+                                                style="float:right;font-size: 12px;margin-right: 10px;"
+                                                id="spnpending">1 Records Found</span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td valign="top" id="loadpendingdata" style="width:100%">
+
+                                            <div class="col-md-12 col-sm-12" style="display:table;">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <div class="mem_img">
+                                                            <img src="">
+
+                                                            <span class="frame">Soulmates
+                                                                Marraige</span>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3">
+                                                        <p><a class="down" href="View_Profile">' . $row->name . ' (
+                                                                ' . $row->uid . ' ) </a></p>
+                                                        <p>Age :' . $row->age . ' Years</p>
+                                                        <p>Caste : ' . $row->sub_cast . '</p>
+                                                        <p>Location : ' . $row->address . '</p>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-2 col-sm-2">
+                                                        <input type="button" name="btnbutton"
+                                                            class="btn btn-danger" onclick="return delete_data6(\'' . $row->uid . '\')" value="Delete">
+                                                    </div>
+                                                    <div class="col-md-2 col-sm-2">
+                                                        <input type="button" name="btnbutton"
+                                                            class="btn btn-success" onclick="" value="' . $row->photo_status . '">
                                                     </div>
                                                 </div>
                                             </div>

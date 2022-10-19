@@ -245,8 +245,6 @@
                                                     <input type="text" name="sub_cast" class="form-control" id="subcuste" placeholder="">
                                                     <label for="subcuste">Sub Caste</label>
                                                 </div>
-
-
                                             </div>
 
                                             <div class="col-lg-10 d-flex">
@@ -563,6 +561,7 @@
         });
     });
 </script>
+
 
 <script src="<?php echo base_url('assets/js/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/js/jquery-migrate-3.0.1.min.js') ?>"></script>

@@ -89,11 +89,12 @@
                   <div class="bbox" style="">
                     <div class="single-staff">
                       <div class="sraff-inner" style="height: 300px;">
-                        <img src="<?php if (isset($documents[0]->main_photo)) echo base_url('Documents/document/' . $documents[0]->main_photo);else echo 'assets/img/user.webp'; ?>" style="width: 100%;height: -webkit-fill-available;" alt="">
+                        <img src="<?php if (isset($documents[0]->main_photo)) echo base_url('Documents/document/' . $documents[0]->main_photo);
+                                  else echo 'assets/img/user.webp'; ?>" style="width: 100%;height: -webkit-fill-available;" alt="">
 
                         <div class="staff-title plus"> <span class="plus"></span>
                           <h4>
-                            <a class="popup-with-zoom-anim btn btn-danger " onclick=" alert('Please Upload Photos First')">Protect
+                            <a class="popup-with-zoom-anim btn btn-danger " onclick="protectPicture('<?= $data[0]->user_id ?>')">Protect
                               Photo</a>
                           </h4>
                           <h6></h6>
@@ -3839,44 +3840,12 @@
 
 
 
-    <script type="text/javascript">
-      //  $(document).ready(function() {
-      //   $("#basic-form").validate();
-      // });
-      $(document).ready(function() {
-        $('#country-dropdown').on('change', function() {
-          var country_id = this.value;
-          // alert(country_id);
-          $.ajax({
-            url: "<?php echo base_url()  ?>Registration/fetch_state",
-            type: "POST",
-            data: {
-              country_id: country_id
-            },
-            cache: false,
-            success: function(result) {
-              $("#state-dropdown").html(result);
-              // $('#city-dropdown').html('<option value="">Select State First</option>'); 
-            }
-          });
-        });
-      });
-      $('#state-dropdown').on('change', function() {
-        var state_id = this.value;
-        $.ajax({
-          url: "<?php echo base_url()  ?>Registration/fetch_city",
-          type: "POST",
-          data: {
-            state_id: state_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#city-dropdown").html(result);
-          }
-        });
-      });
-
-      $('#country-dropdown1').on('change', function() {
+  <script type="text/javascript">
+    //  $(document).ready(function() {
+    //   $("#basic-form").validate();
+    // });
+    $(document).ready(function() {
+      $('#country-dropdown').on('change', function() {
         var country_id = this.value;
         // alert(country_id);
         $.ajax({
@@ -3887,312 +3856,361 @@
           },
           cache: false,
           success: function(result) {
-            $("#state-dropdown1").html(result);
+            $("#state-dropdown").html(result);
             // $('#city-dropdown').html('<option value="">Select State First</option>'); 
           }
         });
       });
+    });
+    $('#state-dropdown').on('change', function() {
+      var state_id = this.value;
+      $.ajax({
+        url: "<?php echo base_url()  ?>Registration/fetch_city",
+        type: "POST",
+        data: {
+          state_id: state_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#city-dropdown").html(result);
+        }
+      });
+    });
+
+    $('#country-dropdown1').on('change', function() {
+      var country_id = this.value;
+      // alert(country_id);
+      $.ajax({
+        url: "<?php echo base_url()  ?>Registration/fetch_state",
+        type: "POST",
+        data: {
+          country_id: country_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#state-dropdown1").html(result);
+          // $('#city-dropdown').html('<option value="">Select State First</option>'); 
+        }
+      });
+    });
 
 
 
-      $('#religion-dropdown').on('change', function() {
-        var religion_id = this.value;
-        // alert(religion_id);
-        $.ajax({
-          url: "<?php echo base_url()  ?>Registration/fetch_caste",
-          type: "POST",
-          data: {
-            religion_id: religion_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#caste-dropdown").html(result);
-          }
-        });
+    $('#religion-dropdown').on('change', function() {
+      var religion_id = this.value;
+      // alert(religion_id);
+      $.ajax({
+        url: "<?php echo base_url()  ?>Registration/fetch_caste",
+        type: "POST",
+        data: {
+          religion_id: religion_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#caste-dropdown").html(result);
+        }
+      });
+    });
+
+    $('#religion-dropdown1').on('change', function() {
+      var religion_id = this.value;
+      // alert(religion_id);
+      $.ajax({
+        url: "<?php echo base_url()  ?>Registration/fetch_caste",
+        type: "POST",
+        data: {
+          religion_id: religion_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#caste-dropdown1").html(result);
+        }
+      });
+    });
+
+
+
+    function addMotherTongue() {
+      var mother_tongue = document.getElementById("mother_t").value;
+      // alert(mother_t)
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/addMotherTonguePreference",
+        type: "POST",
+        data: {
+          mother_tongue: mother_tongue
+        },
+        cache: false,
+        success: function(result) {
+          $("#mother_tongue_dropdown").html(result);
+        }
+      });
+    }
+
+    function addReligion() {
+      var religion_id = document.getElementById("religion-dropdown1").value;
+      // alert(mother_t)
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/addReligionPreference",
+        type: "POST",
+        data: {
+          religion_id: religion_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#religion_data").html(result);
+        }
+      });
+    }
+
+    function addCaste() {
+      var caste_id = document.getElementById("caste-dropdown1").value;
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/addCastePreference",
+        type: "POST",
+        data: {
+          caste_id: caste_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#caste_data").html(result);
+        }
+      });
+    }
+
+    function addEducation() {
+      var education = document.getElementById("education-dropdown").value;
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/addEducationPreference",
+        type: "POST",
+        data: {
+          education: education
+        },
+        cache: false,
+        success: function(result) {
+          $("#education_data").html(result);
+        }
       });
 
-      $('#religion-dropdown1').on('change', function() {
-        var religion_id = this.value;
-        // alert(religion_id);
-        $.ajax({
-          url: "<?php echo base_url()  ?>Registration/fetch_caste",
-          type: "POST",
-          data: {
-            religion_id: religion_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#caste-dropdown1").html(result);
-          }
-        });
+    }
+
+    function addOccupation() {
+      var occupation = document.getElementById("occupation-dropdown").value;
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/addOccupationP",
+        type: "POST",
+        data: {
+          occupation: occupation
+        },
+        cache: false,
+        success: function(result) {
+          $("#occupation_data").html(result);
+        }
       });
+    }
 
-
-
-      function addMotherTongue() {
-        var mother_tongue = document.getElementById("mother_t").value;
-        // alert(mother_t)
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/addMotherTonguePreference",
-          type: "POST",
-          data: {
-            mother_tongue: mother_tongue
-          },
-          cache: false,
-          success: function(result) {
-            $("#mother_tongue_dropdown").html(result);
-          }
-        });
-      }
-
-      function addReligion() {
-        var religion_id = document.getElementById("religion-dropdown1").value;
-        // alert(mother_t)
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/addReligionPreference",
-          type: "POST",
-          data: {
-            religion_id: religion_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#religion_data").html(result);
-          }
-        });
-      }
-
-      function addCaste() {
-        var caste_id = document.getElementById("caste-dropdown1").value;
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/addCastePreference",
-          type: "POST",
-          data: {
-            caste_id: caste_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#caste_data").html(result);
-          }
-        });
-      }
-
-      function addEducation() {
-        var education = document.getElementById("education-dropdown").value;
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/addEducationPreference",
-          type: "POST",
-          data: {
-            education: education
-          },
-          cache: false,
-          success: function(result) {
-            $("#education_data").html(result);
-          }
-        });
-
-      }
-
-      function addOccupation() {
-        var occupation = document.getElementById("occupation-dropdown").value;
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/addOccupationP",
-          type: "POST",
-          data: {
-            occupation: occupation
-          },
-          cache: false,
-          success: function(result) {
-            $("#occupation_data").html(result);
-          }
-        });
-      }
-
-      function addRState() {
-        var state_id = document.getElementById("state-dropdown1").value;
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/addRState",
-          type: "POST",
-          data: {
-            state_id: state_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#state_data").html(result);
-          }
-        });
-      }
-
-      function deleteRState() {
-        var state_id = document.getElementById("state_data").value;
-        // alert(mother_tongue)
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/deleteRState",
-          type: "POST",
-          data: {
-            state_id: state_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#state_data").html(result);
-          }
-        });
-      }
-
-      $(document).ready(function() {
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/getRState",
-          type: "GET",
-          cache: false,
-          success: function(result) {
-            $("#state_data").html(result);
-          }
-        });
+    function addRState() {
+      var state_id = document.getElementById("state-dropdown1").value;
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/addRState",
+        type: "POST",
+        data: {
+          state_id: state_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#state_data").html(result);
+        }
       });
+    }
 
-      $(document).ready(function() {
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/getOccupationP",
-          type: "GET",
-          cache: false,
-          success: function(result) {
-            $("#occupation_data").html(result);
-          }
-        });
+    function deleteRState() {
+      var state_id = document.getElementById("state_data").value;
+      // alert(mother_tongue)
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/deleteRState",
+        type: "POST",
+        data: {
+          state_id: state_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#state_data").html(result);
+        }
       });
-      $(document).ready(function() {
-        var msg = document.getElementById("msg").value;
-        alert("Profile Updated!!")
+    }
+
+    $(document).ready(function() {
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/getRState",
+        type: "GET",
+        cache: false,
+        success: function(result) {
+          $("#state_data").html(result);
+        }
       });
+    });
 
-      $(document).ready(function() {
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/getEducationP",
-          type: "GET",
-          cache: false,
-          success: function(result) {
-            $("#education_data").html(result);
-          }
-        });
+    $(document).ready(function() {
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/getOccupationP",
+        type: "GET",
+        cache: false,
+        success: function(result) {
+          $("#occupation_data").html(result);
+        }
       });
+    });
+    $(document).ready(function() {
+      var msg = document.getElementById("msg").value;
+      alert("Profile Updated!!")
+    });
 
-      $(document).ready(function() {
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/fetchCastePreference",
-          type: "GET",
-          cache: false,
-          success: function(result) {
-            $("#caste_data").html(result);
-          }
-        });
+    $(document).ready(function() {
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/getEducationP",
+        type: "GET",
+        cache: false,
+        success: function(result) {
+          $("#education_data").html(result);
+        }
       });
+    });
 
-      $(document).ready(function() {
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/fetchMotherT",
-          type: "GET",
-          cache: false,
-          success: function(result) {
-            $("#mother_tongue_dropdown").html(result);
-          }
-        });
+    $(document).ready(function() {
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/fetchCastePreference",
+        type: "GET",
+        cache: false,
+        success: function(result) {
+          $("#caste_data").html(result);
+        }
       });
+    });
 
-      $(document).ready(function() {
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/fetchReligion",
-          type: "GET",
-          cache: false,
-          success: function(result) {
-            $("#religion_data").html(result);
-          }
-        });
+    $(document).ready(function() {
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/fetchMotherT",
+        type: "GET",
+        cache: false,
+        success: function(result) {
+          $("#mother_tongue_dropdown").html(result);
+        }
       });
+    });
+
+    $(document).ready(function() {
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/fetchReligion",
+        type: "GET",
+        cache: false,
+        success: function(result) {
+          $("#religion_data").html(result);
+        }
+      });
+    });
 
 
-      function deleteMotherTongue() {
-        var mother_tongue = document.getElementById("mother_tongue_dropdown").value;
-        // alert(mother_tongue)
+    function deleteMotherTongue() {
+      var mother_tongue = document.getElementById("mother_tongue_dropdown").value;
+      // alert(mother_tongue)
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/deleteMotherTongue",
+        type: "POST",
+        data: {
+          mother_tongue: mother_tongue
+        },
+        cache: false,
+        success: function(result) {
+          $("#mother_tongue_dropdown").html(result);
+        }
+      });
+    }
+
+    function deleteOccupation() {
+      var occupation = document.getElementById("occupation_data").value;
+      // alert(mother_tongue)
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/deleteOccupationP",
+        type: "POST",
+        data: {
+          occupation: occupation
+        },
+        cache: false,
+        success: function(result) {
+          $("#occupation_data").html(result);
+        }
+      });
+    }
+
+    function deleteEducation() {
+      var education = document.getElementById("education_data").value;
+      // alert(mother_tongue)
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/deleteEducationP",
+        type: "POST",
+        data: {
+          education: education
+        },
+        cache: false,
+        success: function(result) {
+          $("#education_data").html(result);
+        }
+      });
+    }
+
+
+    function deleteReligion() {
+      var religion_id = document.getElementById("religion_data").value;
+      // alert(mother_tongue)
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/deleteReligionPreference",
+        type: "POST",
+        data: {
+          religion_id: religion_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#religion_data").html(result);
+        }
+      });
+    }
+
+    function deleteCaste() {
+      var caste_id = document.getElementById("caste_data").value;
+      // alert(mother_tongue)
+      $.ajax({
+        url: "<?php echo base_url()  ?>UpdateProfile/deleteCastePreference",
+        type: "POST",
+        data: {
+          caste_id: caste_id
+        },
+        cache: false,
+        success: function(result) {
+          $("#caste_data").html(result);
+        }
+      });
+    }
+
+    function protectPicture(id) {
+      var ll = confirm("Are you really want to protect your photo?");      
+      if (ll) {        
         $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/deleteMotherTongue",
+          url: "<?php echo base_url()  ?>UpdateProfile/protectPitcture",
           type: "POST",
           data: {
-            mother_tongue: mother_tongue
+            id: id
           },
           cache: false,
           success: function(result) {
-            $("#mother_tongue_dropdown").html(result);
+            alert("Your profile is now protected!! and someone can only see your profile after your approval.")
           }
         });
       }
-
-      function deleteOccupation() {
-        var occupation = document.getElementById("occupation_data").value;
-        // alert(mother_tongue)
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/deleteOccupationP",
-          type: "POST",
-          data: {
-            occupation: occupation
-          },
-          cache: false,
-          success: function(result) {
-            $("#occupation_data").html(result);
-          }
-        });
-      }
-
-      function deleteEducation() {
-        var education = document.getElementById("education_data").value;
-        // alert(mother_tongue)
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/deleteEducationP",
-          type: "POST",
-          data: {
-            education: education
-          },
-          cache: false,
-          success: function(result) {
-            $("#education_data").html(result);
-          }
-        });
-      }
-
-
-      function deleteReligion() {
-        var religion_id = document.getElementById("religion_data").value;
-        // alert(mother_tongue)
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/deleteReligionPreference",
-          type: "POST",
-          data: {
-            religion_id: religion_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#religion_data").html(result);
-          }
-        });
-      }
-
-      function deleteCaste() {
-        var caste_id = document.getElementById("caste_data").value;
-        // alert(mother_tongue)
-        $.ajax({
-          url: "<?php echo base_url()  ?>UpdateProfile/deleteCastePreference",
-          type: "POST",
-          data: {
-            caste_id: caste_id
-          },
-          cache: false,
-          success: function(result) {
-            $("#caste_data").html(result);
-          }
-        });
-      }
-    </script>
+    }
+  </script>
 
 
 
-    </body>
+  </body>
 
-    </html>
+  </html>

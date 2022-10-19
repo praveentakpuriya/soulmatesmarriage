@@ -989,7 +989,7 @@
                                   </div>
                                   <div class="col-sm-2 col-md-2">
                                     <input name="button3" class="btn  btn-primary btn-sm" type="button" onclick="addCaste()" id="button3" value="Add" style="width:100%">
-                                    <input name="button33" class="btn  btn-primary btn-sm" type="button" id="button33" value="Remove" style="width:100%">
+                                    <!-- <input name="button33" class="btn  btn-primary btn-sm" type="button" id="button33" value="Remove" style="width:100%"> -->
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
                                     <select name="caste_box" style="height:100px!important" multiple="multiple" id="caste_box" class="form-control">
@@ -1311,7 +1311,7 @@
                                   </div>
                                   <div class="col-sm-2 col-md-2">
                                     <input name="button4" class="btn  btn-primary btn-sm" type="button" onclick="addCity()" id="button4" value="Add" style="width:100%">
-                                    <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" value="Remove" style="width:100%">
+                                    <!-- <input name="button44" class="btn  btn-primary btn-sm" type="button" id="button44" value="Remove" style="width:100%"> -->
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
                                     <select name="city_box" style="height:100px!important" multiple="multiple" id="city_box" class="form-control">

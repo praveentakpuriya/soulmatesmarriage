@@ -30,15 +30,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="Ad_Contact_List" class="nav-link active"><span class="shape1"></span><span class="shape2"></span>
+                    <a href="Ad_Contact_List" class="nav-link "><span class="shape1"></span><span class="shape2"></span>
                         <i class="fas fa-phone-volume sidemenu-icon menu-icon"></i>
                         <span class="sidemenu-label">Conatact List</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Contact/showData"><span class="shape1"></span><span class="shape2"></span>
-                        <i class="fad fa-users-cog  sidemenu-icon menu-icon"></i>
-                        <span class="sidemenu-label">Contact Us Data</span>
+                    <a href="Ad_contact_us" class="nav-link active"><span class="shape1"></span><span class="shape2"></span>
+                        <i class="fas fa-phone-volume sidemenu-icon menu-icon"></i>
+                        <span class="sidemenu-label">Conatact List</span>
                     </a>
                 </li>
                 <li class="nav-item">

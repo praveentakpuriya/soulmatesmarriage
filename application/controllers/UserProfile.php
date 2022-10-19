@@ -29,11 +29,11 @@ class UserProfile extends CI_Controller
             $profile2 = $this->Login_model->fill_astrological_details($data['data'][0]->user_id);
             $profile3 = $this->Login_model->fill_family_details($data['data'][0]->user_id);
             $profile4 = $this->Login_model->fill_document_details($data['data'][0]->user_id);
-            if($profile1 == true) $count = $count+1;
-            if($profile2 == true) $count = $count+1;
-            if($profile3 == true) $count = $count+1;
-            if($profile4 == true) $count = $count+1;
-            $profile_per = ($count*100)/5;
+            if ($profile1 == true) $count = $count + 1;
+            if ($profile2 == true) $count = $count + 1;
+            if ($profile3 == true) $count = $count + 1;
+            if ($profile4 == true) $count = $count + 1;
+            $profile_per = ($count * 100) / 5;
             $data['profile_per'] = $profile_per;
 
 
@@ -46,6 +46,8 @@ class UserProfile extends CI_Controller
             $data['interest_to'] = $this->Login_model->get_interest_to($data['data'][0]->user_id);
             $data['message'] = $this->Login_model->get_message($data['data'][0]->user_id);
             $data['message_to'] = $this->Login_model->get_message_to($data['data'][0]->user_id);
+            $data['photo_request'] = $this->Login_model->photo_request_from($data['data'][0]->user_id);
+            $data['photo_request_to'] = $this->Login_model->photo_request_to($data['data'][0]->user_id);
             // var_dump($data['interest']);
             // die();
             $data['documents'] = $this->EditDataModel->fetchDocuments($data["data"][0]->user_id);
@@ -56,6 +58,7 @@ class UserProfile extends CI_Controller
             redirect(base_url() . "Admin_Login");
         }
     }
+
 
     public function get_interest_list()
     {
@@ -76,5 +79,76 @@ class UserProfile extends CI_Controller
     {
         $id = $_POST['id'];
         echo $this->Login_model->get_message_list_to($id);
+    }
+
+    public function get_photo_from()
+    {
+        $id = $_POST['id'];
+        echo $this->Login_model->get_photo_from($id);
+    }
+    public function get_photo_to()
+    {
+        $id = $_POST['id'];
+        echo $this->Login_model->get_photo_to($id);
+    }
+    public function contact_by_me()
+    {
+        $from = $_POST['id'];
+        // $to = $this->session->userdata('user_id');
+        echo $this->Login_model->contact_by_me($from);
+    }
+    public function contact_of_me()
+    {
+        $from = $_POST['id'];
+        // $to = $this->session->userdata('user_id');
+        echo $this->Login_model->contact_of_me($from);
+    }
+    public function update_photo_request()
+    {
+        $from = $_POST['id'];
+        $to = $this->session->userdata('user_id');
+        // // $to = $_POST['uid'];
+        // $userdata = array(
+        //     'id_from' => $from,
+        //     'id_to' => $to
+        // );
+        echo $this->Login_model->update_photo_request($from, $to);
+    }
+    public function delete_data1()
+    {
+        $from = $_POST['id'];
+        $to = $to = $this->session->userdata('user_id');
+        echo $this->Login_model->delete_data($from, $to);
+    }
+    public function delete_data2()
+    {
+        $from = $_POST['id'];
+        $to = $to = $this->session->userdata('user_id');
+        echo $this->Login_model->delete_data($to, $from);
+    }
+    public function delete_data3()
+    {
+        $from = $_POST['id'];
+        $to = $to = $this->session->userdata('user_id');
+        echo $this->Login_model->delete_message($from, $to);
+    }
+    public function delete_data4()
+    {
+        $from = $_POST['id'];
+        $to = $to = $this->session->userdata('user_id');
+        echo $this->Login_model->delete_message($to, $from);
+    }
+    public function delete_data5()
+    {
+        $from = $_POST['id'];
+        $to = $to = $this->session->userdata('user_id');
+        echo $this->Login_model->delete_photo_r($from, $to);
+    }
+
+    public function delete_data6()
+    {
+        $from = $_POST['id'];
+        $to = $to = $this->session->userdata('user_id');
+        echo $this->Login_model->delete_photo_r($to, $from);
     }
 }

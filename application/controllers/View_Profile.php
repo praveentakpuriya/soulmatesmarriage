@@ -29,6 +29,7 @@ class View_Profile extends CI_Controller
             $data['mt_preference'] = $this->Login_model->get_mt_preference($id);
             $data['membership'] = $this->Login_model->get_count_left($user_id);
             // $data['o_preference'] = $this->Login_model->get_o_preference($id);
+            $data['photo_request'] = $this->Login_model->check_photo_request($id, $user_id);
 
             if (isset($data["data"][0]->citizenship)) {
                 $citi_id = $data["data"][0]->citizenship;
@@ -68,7 +69,7 @@ class View_Profile extends CI_Controller
                 );
                 // var_dump($contact_left);
                 $this->Login_model->update_membership_count($contact_left, $user_id);
-
+                $this->Login_model->upload_contact_view($id, $user_id);
 
                 $data = $this->Login_model->get_user_by_id($user_id);
                 echo "<table width='100%'>
@@ -85,7 +86,7 @@ class View_Profile extends CI_Controller
                 </tr>
                       </table>
                 ";
-            }else{
+            } else {
                 echo "<p>Upgrade your membership to view phone/email of " . $id . " (and other members)</p>";
             }
         } else {

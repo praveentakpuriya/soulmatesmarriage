@@ -17,47 +17,47 @@ class UpdateProfile extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('user_data')) {
-        $username = $this->session->userdata('username');
-        $data['data'] = $this->Login_model->get_user($username);
+            $username = $this->session->userdata('username');
+            $data['data'] = $this->Login_model->get_user($username);
 
-        $data['religion'] = $this->CountryModel->getReligion();
-        // country list
-        $data['country'] = $this->CountryModel->getData();
+            $data['religion'] = $this->CountryModel->getReligion();
+            // country list
+            $data['country'] = $this->CountryModel->getData();
 
-        $data['country_name'] = $this->CountryModel->getCountryById($data["data"][0]->country_id);
-        $data['state'] = $this->CountryModel->getStateById($data["data"][0]->state_id);
-        $data['city'] = $this->CountryModel->getCityById($data["data"][0]->city_id);
+            $data['country_name'] = $this->CountryModel->getCountryById($data["data"][0]->country_id);
+            $data['state'] = $this->CountryModel->getStateById($data["data"][0]->state_id);
+            $data['city'] = $this->CountryModel->getCityById($data["data"][0]->city_id);
 
-        $data['caste'] = $this->CountryModel->getCasteById(
-            $data["data"][0]->caste_id
-        );
-        // var_dump($data['country_name']);
-        // die();
+            $data['caste'] = $this->CountryModel->getCasteById(
+                $data["data"][0]->caste_id
+            );
+            // var_dump($data['country_name']);
+            // die();
 
-        //family data
-        $data['family'] = $this->EditDataModel->fetchFamilyDetails($data["data"][0]->user_id);
+            //family data
+            $data['family'] = $this->EditDataModel->fetchFamilyDetails($data["data"][0]->user_id);
 
-        // Professional Details
-        $data['professional'] = $this->EditDataModel->fetchProfessionalDetails($data["data"][0]->user_id);
+            // Professional Details
+            $data['professional'] = $this->EditDataModel->fetchProfessionalDetails($data["data"][0]->user_id);
 
-        //astrological Details
-        $data['astrological'] = $this->EditDataModel->fetchAstrologicalDetails($data["data"][0]->user_id);
+            //astrological Details
+            $data['astrological'] = $this->EditDataModel->fetchAstrologicalDetails($data["data"][0]->user_id);
 
-        //reference details
-        $data['reference'] = $this->EditDataModel->fetchReferenceDetails($data["data"][0]->user_id);
-        // var_dump($data['reference']);
-        // die();
-        $data['preference'] = $this->EditDataModel->fetchPartnerPreference($data["data"][0]->user_id);
+            //reference details
+            $data['reference'] = $this->EditDataModel->fetchReferenceDetails($data["data"][0]->user_id);
+            // var_dump($data['reference']);
+            // die();
+            $data['preference'] = $this->EditDataModel->fetchPartnerPreference($data["data"][0]->user_id);
 
-        //profile photo
-        $data['documents'] = $this->EditDataModel->fetchDocuments($data["data"][0]->user_id);
+            //profile photo
+            $data['documents'] = $this->EditDataModel->fetchDocuments($data["data"][0]->user_id);
 
-        $this->load->view('nav');
-        $this->load->view('editprofile', $data);
-        $this->load->view('footer', $data);
-    }else{
-        redirect(base_url() . "Login");
-    }
+            $this->load->view('nav');
+            $this->load->view('editprofile', $data);
+            $this->load->view('footer', $data);
+        } else {
+            redirect(base_url() . "Login");
+        }
     }
 
     public function editpersonaldetails()
@@ -159,7 +159,8 @@ class UpdateProfile extends CI_Controller
         redirect(base_url() . "UpdateProfile");
     }
 
-    public function editPartnerP(){
+    public function editPartnerP()
+    {
         $userid = $this->session->userdata('user_id');
         $userdata = array(
             "user_id" => $userid,
@@ -178,7 +179,7 @@ class UpdateProfile extends CI_Controller
             "annual_income_max" => $this->input->post("annual_income_max"),
             "citizenship" => $this->input->post("citizenship"),
             "country_living" => $this->input->post("country_living"),
-            "residing_status" => $this->input->post("residing_status"),            
+            "residing_status" => $this->input->post("residing_status"),
 
         );
         // echo '<pre>';
@@ -315,7 +316,28 @@ class UpdateProfile extends CI_Controller
         redirect(base_url() . "UpdateProfile");
     }
 
-    public function addMotherTonguePreference(){
+    public function protectPitcture()
+    {
+        $id = $_POST['id'];
+        $userdata = array(
+            'photo_privacy' => 'Yes',
+        );
+        echo $this->EditDataModel->protectPitcture($id, $userdata);
+    }
+    public function photoRequest()
+    {
+        $from = $this->session->userdata('user_id');
+        $to = $_POST['uid'];
+        $userdata = array(
+            'id_from' => $from,
+            'id_to' => $to
+        );
+        $result = $this->EditDataModel->updatePhotoRequest($userdata);
+        echo $result;
+    }
+
+    public function addMotherTonguePreference()
+    {
         $userid = $this->session->userdata('user_id');
         $mother_tongue = $this->input->post("mother_tongue");
         $userdata = array(
@@ -324,7 +346,7 @@ class UpdateProfile extends CI_Controller
         );
         // var_dump($userdata);
         // die();
-        $this->EditDataModel->updateItem($userdata,'mother_tongue_preference');
+        $this->EditDataModel->updateItem($userdata, 'mother_tongue_preference');
 
         echo $this->EditDataModel->get_motherTonguePreference($userid);
 
@@ -332,7 +354,8 @@ class UpdateProfile extends CI_Controller
         // die();
     }
 
-    public function addEducationPreference(){
+    public function addEducationPreference()
+    {
         $userid = $this->session->userdata('user_id');
         $education = $this->input->post("education");
         $userdata = array(
@@ -341,12 +364,13 @@ class UpdateProfile extends CI_Controller
         );
         // var_dump($userdata);
         // die();
-        $this->EditDataModel->updateItem($userdata,'education_preference');
+        $this->EditDataModel->updateItem($userdata, 'education_preference');
 
         echo $this->EditDataModel->get_Education_data($userid);
     }
 
-    public function addReligionPreference(){
+    public function addReligionPreference()
+    {
         $userid = $this->session->userdata('user_id');
         $religion_id = $this->input->post("religion_id");
         $userdata = array(
@@ -355,123 +379,137 @@ class UpdateProfile extends CI_Controller
         );
         // var_dump($userdata);
         // die();
-        $this->EditDataModel->updateItem($userdata,'religion_preference');
+        $this->EditDataModel->updateItem($userdata, 'religion_preference');
 
         echo $this->EditDataModel->getReligion($userid);
-
     }
 
-    public function addCastePreference(){
+    public function addCastePreference()
+    {
         $userid = $this->session->userdata('user_id');
         $caste_id = $this->input->post("caste_id");
         $userdata = array(
             'user_id' => $userid,
             'caste_id' => $caste_id
         );
-        
-        $this->EditDataModel->updateItem($userdata,'caste_preference');
+
+        $this->EditDataModel->updateItem($userdata, 'caste_preference');
 
         echo $this->EditDataModel->getCaste($userid);
     }
 
-    public function addOccupationP(){
+    public function addOccupationP()
+    {
         $userid = $this->session->userdata('user_id');
         $occupation = $this->input->post("occupation");
         $userdata = array(
             'user_id' => $userid,
             'occupation' => $occupation
         );
-        
-        $this->EditDataModel->updateItem($userdata,'occupation_preference');
+
+        $this->EditDataModel->updateItem($userdata, 'occupation_preference');
 
         echo $this->EditDataModel->getOccupation($userid);
     }
 
-    public function addRState(){
+    public function addRState()
+    {
         $userid = $this->session->userdata('user_id');
         $state_id = $this->input->post("state_id");
         $userdata = array(
             'user_id' => $userid,
             'state_id' => $state_id
         );
-        
-        $this->EditDataModel->updateItem($userdata,'residing_state_preference');
+
+        $this->EditDataModel->updateItem($userdata, 'residing_state_preference');
 
         echo $this->EditDataModel->getRState($userid);
     }
 
-    public function deleteRState(){
+    public function deleteRState()
+    {
         $userid = $this->session->userdata('user_id');
         $state_id = $this->input->post("state_id");
-        $this->EditDataModel->deleteItem($userid,$state_id,'residing_state_preference');
+        $this->EditDataModel->deleteItem($userid, $state_id, 'residing_state_preference');
 
         echo $this->EditDataModel->getRState($userid);
     }
 
-    public function getRState(){
+    public function getRState()
+    {
         $userid = $this->session->userdata('user_id');
         echo $this->EditDataModel->getRState($userid);
     }
 
-    public function deleteOccupationP(){
+    public function deleteOccupationP()
+    {
         $userid = $this->session->userdata('user_id');
         $occupation = $this->input->post("occupation");
-        $this->EditDataModel->deleteItem($userid,$occupation,'occupation_preference');
+        $this->EditDataModel->deleteItem($userid, $occupation, 'occupation_preference');
 
         echo $this->EditDataModel->getOccupation($userid);
     }
 
-    public function getOccupationP(){
+    public function getOccupationP()
+    {
         $userid = $this->session->userdata('user_id');
         echo $this->EditDataModel->getOccupation($userid);
     }
 
-    public function deleteMotherTongue(){
+    public function deleteMotherTongue()
+    {
         $userid = $this->session->userdata('user_id');
         $mother_tongue = $this->input->post("mother_tongue");
-        $this->EditDataModel->deleteItem($userid,$mother_tongue,'mother_tongue_preference');
+        $this->EditDataModel->deleteItem($userid, $mother_tongue, 'mother_tongue_preference');
 
         echo $this->EditDataModel->get_motherTonguePreference($userid);
     }
 
-    public function deleteReligionPreference(){
+    public function deleteReligionPreference()
+    {
         $userid = $this->session->userdata('user_id');
         $religion_id = $this->input->post("religion_id");
-        $this->EditDataModel->deleteItem($userid,$religion_id,'religion_preference');
+        $this->EditDataModel->deleteItem($userid, $religion_id, 'religion_preference');
 
         echo $this->EditDataModel->getReligion($userid);
     }
 
-    public function deleteCastePreference(){
+    public function deleteCastePreference()
+    {
         $userid = $this->session->userdata('user_id');
         $caste_id = $this->input->post("caste_id");
-        $this->EditDataModel->deleteItem($userid,$caste_id,'caste_preference');
+        $this->EditDataModel->deleteItem($userid, $caste_id, 'caste_preference');
         echo $this->EditDataModel->getCaste($userid);
     }
 
-    public function deleteEducationP(){
+    public function deleteEducationP()
+    {
         $userid = $this->session->userdata('user_id');
         $education = $this->input->post("education");
-        $this->EditDataModel->deleteItem($userid,$education,'education_preference');
+        $this->EditDataModel->deleteItem($userid, $education, 'education_preference');
         echo $this->EditDataModel->get_Education_data($userid);
     }
 
-    public function fetchMotherT(){
+    public function fetchMotherT()
+    {
         $userid = $this->session->userdata('user_id');
         echo $this->EditDataModel->get_motherTonguePreference($userid);
     }
 
-    public function fetchReligion(){
+    public function fetchReligion()
+    {
         $userid = $this->session->userdata('user_id');
         echo $this->EditDataModel->getReligion($userid);
     }
 
-    public function getEducationP(){
+    public function getEducationP()
+    {
         $userid = $this->session->userdata('user_id');
         echo $this->EditDataModel->get_Education_data($userid);
     }
 
-    public function fetchCastePreference(){
+    public function fetchCastePreference()
+    {
         $userid = $this->session->userdata('user_id');
         echo $this->EditDataModel->getCaste($userid);
     }
