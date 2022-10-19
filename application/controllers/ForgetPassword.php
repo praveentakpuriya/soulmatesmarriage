@@ -58,8 +58,8 @@ class ForgetPassword extends CI_Controller
           $message_data['messege'] = 'Problem encountered while sending messege.';
           $message_data['thing'] = 'Email';
 
-          $msg = "Problem encountered while sending messege.";
-          $this->session->set_flashdata('msg', $msg);
+          $error = "Email is not registered with us";
+          $this->session->set_flashdata('error', $error);
           redirect(base_url() . "ForgetPassword");
         }
       }

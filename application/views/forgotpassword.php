@@ -34,6 +34,12 @@
                                             <p><?php echo $messege; ?>!!</p>
                                         </div>
                                     <?php } ?>
+                                    <?php $error = $this->session->flashdata('error');
+                                    if ($error) { ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <p><?php echo $error; ?>!!</p>
+                                        </div>
+                                    <?php } ?>
 
                                     <h4 class="titlelg text-center mb-4">Forget Password</h4>
                                     <!-- <p class="mb-4">Please login below to contact and message members.</p> -->
