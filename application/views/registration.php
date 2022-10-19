@@ -80,7 +80,7 @@
                                                 <div class="form-check w-30">
                                                     <input class="form-check-input" value="female" type="radio" name="gender" id="flexRadioDefault2">
                                                     <label class="form-check-label" for="flexRadioDefault2">
-                                                        Female
+                                                        female
                                                     </label>
                                                 </div>
                                             </div>

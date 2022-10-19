@@ -117,7 +117,7 @@
 
                               <div class="controls_holder d-flex">
 
-                                <?php if ($this->session->userdata('gender') == 'Female') { ?>
+                                <?php if ($this->session->userdata('gender') == 'female') { ?>
                                   <div class="form-check ml-1 mb-2 mr-3">
                                     <input class="form-check-input" required="" name="gender" type="radio" value="male" id="groom">
                                     <label class="form-check-label" for="groom">
@@ -473,12 +473,12 @@
                               </div>
                               <div class="col-sm-9 col-md-9 ">
                                 <div class="controls_holder">
-                                  <?php if ($this->session->userdata('gender') == 'Female') { ?>
+                                  <?php if ($this->session->userdata('gender') == 'female') { ?>
                                     <label>
                                       <input name="gender" type="radio" id="gender" value="Male"  />
                                       Groom &nbsp; </label><?php } else { ?>
                                     <label>
-                                      <input name="gender" type="radio" id="gender" value="Female" />
+                                      <input name="gender" type="radio" id="gender" value="female" />
                                       Bride </label><?php } ?>
                                 </div>
 
@@ -1733,7 +1733,7 @@
 
 
                               <div class="controls_holder d-flex">
-                                <?php if ($this->session->userdata('gender') == 'Female') { ?>
+                                <?php if ($this->session->userdata('gender') == 'female') { ?>
 
                                   <div class="form-check ml-1 mb-2 mr-3">
                                     <input class="form-check-input" required="" name="gender" type="radio" value="male" id="privacy1">
@@ -1741,7 +1741,7 @@
                                       Groom </label>
                                   </div><?php } else { ?>
                                   <div class="form-check ml-1 mb-2">
-                                    <input class="form-check-input" required="" name="gender" type="radio" value="Female" id="privacy">
+                                    <input class="form-check-input" required="" name="gender" type="radio" value="female" id="privacy">
                                     <label class="form-check-label" for="privacy">
                                       Bride </label>
                                   </div>

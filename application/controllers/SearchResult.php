@@ -18,7 +18,7 @@ class SearchResult extends CI_Controller
     {
        
         $data['data'] = $this->session->userdata('dataArr');
-        $this->session->unset_userdata("dataArr");
+        // $this->session->unset_userdata("dataArr");
        
         $this->load->view('nav');
         $this->load->view('searchresult', $data);

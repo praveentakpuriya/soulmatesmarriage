@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2022 at 07:40 AM
+-- Generation Time: Oct 19, 2022 at 10:22 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -48749,6 +48749,27 @@ INSERT INTO `contactus` (`id`, `name`, `number`, `email`, `message`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `contact_record`
+--
+
+CREATE TABLE `contact_record` (
+  `id` int(11) NOT NULL,
+  `contact_view_by` varchar(250) DEFAULT NULL,
+  `contact_view_of` varchar(250) DEFAULT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact_record`
+--
+
+INSERT INTO `contact_record` (`id`, `contact_view_by`, `contact_view_of`, `date`) VALUES
+(1, 'S00001', 'S435256', '2022-10-15'),
+(2, 'S00001', 'S435258', '2022-10-19');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `countries`
 --
 
@@ -49037,9 +49058,7 @@ CREATE TABLE `documents` (
 --
 
 INSERT INTO `documents` (`id`, `user_id`, `cert1`, `cert2`, `cert3`, `id_proof`, `add_proof`, `main_photo`, `pic1`, `pic2`, `pic3`, `pic4`) VALUES
-(1, '', NULL, NULL, NULL, '6fb35513ef2f3a45bfabdb7d9b4265d0.pdf', NULL, NULL, NULL, NULL, NULL, NULL),
-(2, '', NULL, NULL, NULL, NULL, NULL, '90377c04b6d4befeddf9655797c9c396.jpeg', NULL, NULL, NULL, NULL),
-(3, 'S00001', NULL, NULL, NULL, NULL, NULL, 'b6c2df460a78f0e441925aebd533abc9.jpeg', NULL, NULL, NULL, NULL);
+(1, 'S00001', NULL, NULL, NULL, NULL, NULL, 'bd022dd1fb533cc6ae3c5dec3db09ac3.jpeg', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -49101,23 +49120,9 @@ CREATE TABLE `interest` (
   `id` int(11) NOT NULL,
   `interest_from` varchar(250) NOT NULL,
   `interest_to` varchar(250) NOT NULL,
-  `interest` text DEFAULT NULL
+  `interest` text DEFAULT NULL,
+  `date` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `interest`
---
-
-INSERT INTO `interest` (`id`, `interest_from`, `interest_to`, `interest`) VALUES
-(1, 'S00001', 'S00002', 'I am searching for person like you. Please send me your contact details.'),
-(2, 'S00001', 'S00002', 'I am searching for person like you. Please send me your contact details.'),
-(3, 'S00001', 'S00002', 'I am searching for person like you. Please send me your contact details.'),
-(4, 'S00001', 'S00002', 'You are very special for me. I want to know more about you. Please contact me at the earliest.'),
-(5, 'S00001', 'S00002', 'I am searching for person like you. Please send me your contact details.'),
-(6, 'S00001', 'S00002', 'I am searching for person like you. Please send me your contact details.'),
-(7, 'S00001', 'S00002', 'I am searching for person like you. Please send me your contact details.'),
-(8, 'S00001', 'S00002', 'I have viewed your profile details and found your profile to be a good match. Please contact me to proceed further.'),
-(9, 'S00001', 'S00002', 'You are very special for me. I want to know more about you. Please contact me at the earliest.');
 
 -- --------------------------------------------------------
 
@@ -49141,7 +49146,8 @@ CREATE TABLE `membership` (
 --
 
 INSERT INTO `membership` (`id`, `user_id`, `message_left`, `interest_left`, `duration_left`, `contact_left`, `plan_type`, `date`) VALUES
-(1, 'S00001', '44', '44', '180', '6', 'Classic Gold', '2022-10-09');
+(1, 'S00001', '100', '100', '365', '148', 'Classic Diamond', '2022-10-09'),
+(2, 'S00002', '99', '96', '365', '150', 'Classic Diamond', '2022-10-10');
 
 -- --------------------------------------------------------
 
@@ -49153,22 +49159,9 @@ CREATE TABLE `message` (
   `id` int(11) NOT NULL,
   `message_from` varchar(250) NOT NULL,
   `message_to` varchar(250) NOT NULL,
-  `message` text DEFAULT NULL
+  `message` text DEFAULT NULL,
+  `date` date DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `message`
---
-
-INSERT INTO `message` (`id`, `message_from`, `message_to`, `message`) VALUES
-(1, 'S00001', 'S00002', 'Hey, How are you?'),
-(2, 'S00001', 'S00002', 'Hey buddy I\'m here.'),
-(3, 'S00001', 'S00002', 'hey'),
-(4, 'S00001', 'S00002', 'hello'),
-(5, 'S00001', 'S00002', 'hey next level to me.'),
-(6, 'S00001', 'S00002', 'hey next level to me.'),
-(7, 'S00001', 'S00002', 'dfsdf'),
-(8, 'S00001', 'S00002', 'dfsf');
 
 -- --------------------------------------------------------
 
@@ -49243,7 +49236,27 @@ CREATE TABLE `partner_preference` (
 --
 
 INSERT INTO `partner_preference` (`id`, `user_id`, `age_from`, `age_to`, `marital_status`, `have_children`, `height_from`, `height_to`, `physical_status`, `horoscope_match`, `manglik`, `eating_habit`, `employed_in`, `annual_income_min`, `annual_income_max`, `citizenship`, `country_living`, `residing_status`) VALUES
-(1, 'S00001', '19', '37', 'Divorced', 'No', '3ft.5in-105cm', '3ft.9in-115cm', 'Normal', 'Required', 'No', 'Vegetarian', 'Business', '0', '0', '21', '17', NULL);
+(1, 'S00001', '19', '37', 'Divorced', 'No', '3ft.5in-105cm', '3ft.9in-115cm', 'Normal', 'Required', 'No', 'Vegetarian', 'Business', '50', '0100', '21', '17', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `photo_request`
+--
+
+CREATE TABLE `photo_request` (
+  `id` int(11) NOT NULL,
+  `id_from` varchar(250) DEFAULT NULL,
+  `id_to` varchar(250) DEFAULT NULL,
+  `photo_status` varchar(250) DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `photo_request`
+--
+
+INSERT INTO `photo_request` (`id`, `id_from`, `id_to`, `photo_status`) VALUES
+(7, 'S435258', 'S00001', 'Approved');
 
 -- --------------------------------------------------------
 
@@ -53545,18 +53558,23 @@ CREATE TABLE `user` (
   `weight` varchar(200) DEFAULT NULL,
   `bio` int(250) DEFAULT NULL,
   `role` int(11) DEFAULT 0,
-  `status` int(11) DEFAULT 1
+  `status` int(11) DEFAULT 1,
+  `profile_privacy` varchar(250) DEFAULT 'No',
+  `message_privacy` varchar(250) DEFAULT 'No',
+  `photo_privacy` varchar(250) DEFAULT 'No'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `user_id`, `email`, `password`, `name`, `gender`, `height`, `dob`, `age`, `mother_tongue`, `religion_id`, `caste_id`, `cast_barrier`, `sub_cast`, `marital_status`, `no_of_children`, `relationship`, `country_id`, `state_id`, `city_id`, `address`, `residency_status`, `number`, `country_code`, `std`, `phone`, `citizenship`, `nri`, `date`, `manglik`, `physical_status`, `food_preference`, `complexion`, `body_type`, `blood_group`, `weight`, `bio`, `role`, `status`) VALUES
-(1, 'S00001', 'abc@gmail.com', '202cb962ac59075b964b07152d234b70', 'Praveen takpuriya', 'Female', '0', '1998-07-15', 24, 'Bihari', 1, 3, 0, 'jatav', 'never married', 'None', '', 83, 25, 56, '322 shivkanth ', 'Work Permit', '7999778298', '91', '4753', '854845', '', 'No', '2022-09-15 12:59:51', 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 1),
-(2, 'S00002', 'praveen@gmail.com', '202cb962ac59075b964b07152d234b70', 'praveen', 'male', '4ft.7in-14', '2022-09-08', 25, 'Assamese', 5, 518, 1, 'fdsf', 'never married', '2', 'Living with me', 1, 42, 10, 'dfs', NULL, '7897987987', NULL, '', '', 'Bahrain', 'Yes', '2022-09-15 13:02:38', 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0),
-(3, 'S435255', 'adminsoulmates@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Admin', '', '', NULL, 0, '', 0, 0, 0, '', '', '', '', 0, 0, 0, '', NULL, '', NULL, NULL, NULL, '', NULL, '2022-10-04 11:46:19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1),
-(4, 'S435256', 'ldsf@gmail.com', '202cb962ac59075b964b07152d234b70', 'praveenldf@gmail.com', 'male', '3ft.9in-115cm', '1998-01-29', 24, 'Bengali', 13, 647, 1, 'jatab', 'never married', '1', 'Living with me', 101, 21, 2074, 'dfsf', NULL, '56565664', NULL, NULL, NULL, '11', 'Yes', '2022-10-08 13:25:14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0);
+INSERT INTO `user` (`id`, `user_id`, `email`, `password`, `name`, `gender`, `height`, `dob`, `age`, `mother_tongue`, `religion_id`, `caste_id`, `cast_barrier`, `sub_cast`, `marital_status`, `no_of_children`, `relationship`, `country_id`, `state_id`, `city_id`, `address`, `residency_status`, `number`, `country_code`, `std`, `phone`, `citizenship`, `nri`, `date`, `manglik`, `physical_status`, `food_preference`, `complexion`, `body_type`, `blood_group`, `weight`, `bio`, `role`, `status`, `profile_privacy`, `message_privacy`, `photo_privacy`) VALUES
+(1, 'S00001', 'abc@gmail.com', '202cb962ac59075b964b07152d234b70', 'Praveen takpuriya', 'male', '0', '1998-07-15', 24, 'Bihari', 1, 3, 0, 'jatav', 'never married', 'None', '', 83, 25, 56, '322 shivkanth ', 'Work Permit', '7999778298', '91', '4753', '854845', '', 'No', '2022-09-15 12:59:51', 'Yes', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 1, 'Yes', 'Yes', 'Yes'),
+(2, 'S00002', 'praveen@gmail.com', '202cb962ac59075b964b07152d234b70', 'praveen', 'male', '4ft.7in-14', '2022-09-08', 25, 'Assamese', 5, 518, 1, 'fdsf', 'never married', '2', 'Living with me', 1, 42, 10, 'dfs', NULL, '7897987987', NULL, '', '', 'Bahrain', 'Yes', '2022-09-15 13:02:38', 'No', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1, 'No', 'No', 'No'),
+(3, 'S435255', 'adminsoulmates@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'Admin', '', '', NULL, 0, '', 0, 0, 0, '', '', '', '', 0, 0, 0, '', NULL, '', NULL, NULL, NULL, '', NULL, '2022-10-04 11:46:19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 'No', 'No', 'No'),
+(4, 'S435256', 'ldsf@gmail.com', '202cb962ac59075b964b07152d234b70', 'praveenldf@gmail.com', 'female', '3ft.9in-115cm', '1998-01-29', 24, 'Bengali', 13, 647, 1, 'jatab', 'never married', '1', 'Living with me', 101, 21, 2074, 'dfsf', NULL, '56565664', NULL, NULL, NULL, '11', 'Yes', '2022-10-08 13:25:14', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 'No', 'No', 'No'),
+(5, 'S435257', 'fdslkjdf@gmail.com', '202cb962ac59075b964b07152d234b70', 'dfs', 'male', '4ft.2in-127cm', '1997-01-21', 25, 'Dogri', 1, 12, 1, 'dsf', 'never married', '3', 'Living with me', 13, 259, 6566, 'fds', NULL, '4564654', NULL, NULL, NULL, '4', 'Yes', '2022-10-16 00:02:16', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1, 'No', 'No', 'No'),
+(6, 'S435258', 'fsdfdsdf@gmail.com', '202cb962ac59075b964b07152d234b70', 'fsdjlk', 'female', '3ft.5in-105cm', '2333-03-23', 25, 'Arabic', 11, 636, NULL, '', 'divorced', '1', 'Not living with me', 1, 42, 5909, 'fds', NULL, '4564654', NULL, NULL, NULL, '2', 'Not', '2022-10-16 00:03:46', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 1, 'No', 'No', 'No');
 
 --
 -- Indexes for dumped tables
@@ -53590,6 +53608,12 @@ ALTER TABLE `cities`
 -- Indexes for table `contactus`
 --
 ALTER TABLE `contactus`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact_record`
+--
+ALTER TABLE `contact_record`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -53651,6 +53675,12 @@ ALTER TABLE `occupation_preference`
 -- Indexes for table `partner_preference`
 --
 ALTER TABLE `partner_preference`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `photo_request`
+--
+ALTER TABLE `photo_request`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -53737,6 +53767,12 @@ ALTER TABLE `contactus`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `contact_record`
+--
+ALTER TABLE `contact_record`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
@@ -53746,7 +53782,7 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `education_preference`
@@ -53764,19 +53800,19 @@ ALTER TABLE `family_details`
 -- AUTO_INCREMENT for table `interest`
 --
 ALTER TABLE `interest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `membership`
 --
 ALTER TABLE `membership`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mother_tongue_preference`
@@ -53795,6 +53831,12 @@ ALTER TABLE `occupation_preference`
 --
 ALTER TABLE `partner_preference`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `photo_request`
+--
+ALTER TABLE `photo_request`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `plan`
@@ -53842,7 +53884,7 @@ ALTER TABLE `states`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -54,7 +54,7 @@
                                             <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                                             <select name="sex" class="form-control" style="#">
                                                 <option class="active" disabled>Looking For </option>
-                                                <option value="Female" selected="true">Bride</option>
+                                                <option value="female" selected="true">Bride</option>
                                                 <option value="Male">Groom</option>
 
                                             </select>

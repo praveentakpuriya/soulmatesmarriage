@@ -512,7 +512,7 @@
                                   <div class="controls_holder ">
                                     <label style="text-align:left;padding-bottom:20px"><input name="gender" type="radio" value="Male" <?php if ($data[0]->gender != "female") echo "checked"; ?> id="male" />Male
                                       &nbsp;
-                                      <input name="gender" type="radio" value="Female" <?php if ($data[0]->gender != "male") echo "checked"; ?> id="female" />Female</label>
+                                      <input name="gender" type="radio" value="female" <?php if ($data[0]->gender != "male") echo "checked"; ?> id="female" />female</label>
                                   </div>
                                 </div>
                               </div>

@@ -30,6 +30,8 @@ class View_Profile extends CI_Controller
             $data['membership'] = $this->Login_model->get_count_left($user_id);
             // $data['o_preference'] = $this->Login_model->get_o_preference($id);
             $data['photo_request'] = $this->Login_model->check_photo_request($id, $user_id);
+            // var_dump($data['photo_request']);
+            // die();
 
             if (isset($data["data"][0]->citizenship)) {
                 $citi_id = $data["data"][0]->citizenship;

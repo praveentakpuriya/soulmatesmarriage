@@ -92,10 +92,12 @@
                         <img id="photo" onclick="show_image('photo','no','<?= $data[0]->u_id ?>')" src="<?php if (isset($data[0]->main_photo)) echo base_url('Documents/document/' . $data[0]->main_photo);
                                                                                                         else echo 'assets/img/user.webp'; ?>">
                         <?php } else {
-                        if ($photo_request[0]->photo_status == "Approved") {
+                        if (isset($photo_request[0]->photo_status)) {
+                          if ($photo_request[0]->photo_status == 'Approved') {
                         ?><img id="photo" onclick="show_image('photo','no','<?= $data[0]->u_id ?>')" src="<?php if (isset($data[0]->main_photo)) echo base_url('Documents/document/' . $data[0]->main_photo);
                                                                                                           else echo 'assets/img/user.webp'; ?>">
-                        <?php } else { ?>
+                          <?php }
+                        } else { ?>
                           <img id="photo" class="blurImg" onclick="show_image('photo','<?= $data[0]->photo_privacy ?>','<?= $data[0]->u_id ?>')" src="<?php if (isset($data[0]->main_photo)) echo base_url('Documents/document/' . $data[0]->main_photo);
                                                                                                                                                       else echo 'assets/img/user.webp'; ?>">
                       <?php }

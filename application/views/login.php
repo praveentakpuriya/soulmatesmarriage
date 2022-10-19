@@ -60,7 +60,7 @@
 
                                         <div class="col-md-12">
                                             <p class="forgot">
-                                                <a class="txt2" href="#"><span>Forgot Password ?</span></a>
+                                                <a class="txt2" href="ForgetPassword"><span>Forgot Password ?</span></a>
                                                 Not a member yet, <a href="<?php echo base_url("Registration") ?>"><span style="color: #ca5b61; font-weight: 600;">register
                                                         here!</span></a>
                                             </p>

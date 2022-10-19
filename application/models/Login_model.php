@@ -57,6 +57,7 @@ class login_model extends CI_Model
     {
         $this->db->where('id_from', $to);
         $this->db->where('id_to', $th);
+        // $this->db->where('photo_status', 'pending');
         $query = $this->db->get('photo_request');
         return $query->result();
     }
@@ -104,7 +105,7 @@ class login_model extends CI_Model
     {
         $this->db->select("*,count(*) as photo_request_from");
         $this->db->where('id_from', $user_id);
-        $this->db->where('photo_status', 0);
+        // $this->db->where('photo_status', "pending");
         $query = $this->db->get('photo_request');
         // print_r($this->db->last_query());
         return $query->result();
@@ -113,7 +114,7 @@ class login_model extends CI_Model
     {
         $this->db->select("*,count(*) as photo_request_to");
         $this->db->where('id_to', $user_id);
-        $this->db->where('photo_status', 0);
+        $this->db->where('photo_status', "pending");
         $query = $this->db->get('photo_request');
         // print_r($this->db->last_query());
         return $query->result();
@@ -862,7 +863,7 @@ class login_model extends CI_Model
         $this->db->join('photo_request as m', 'u.user_id = m.id_from', 'inner');
         $this->db->join('documents as d', 'u.user_id = d.user_id', 'left');
         $this->db->where('id_to', $id);
-        $this->db->where('photo_status', 0);
+        $this->db->where('photo_status', "pending");
         // $this->db->order_by('name','ASC');
         $query = $this->db->get();
         $output = '';
