@@ -10,6 +10,8 @@ class UpdateProfile extends CI_Controller
         $this->load->model('Login_model');
         $this->load->model('CountryModel');
         $this->load->model('EditDataModel');
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation', 'image_lib');
         // $this->load->library('encrypt');
 
     }
@@ -204,6 +206,19 @@ class UpdateProfile extends CI_Controller
         $this->upload->do_upload('horoscope_file');  // input name which have to upload 
         $horoscope_file = $this->upload->data();
 
+        // $watermarkconfig = array();
+        // $watermarkconfig['image_library'] = 'gd2';
+        // $watermarkconfig['source_image'] = $horoscope_file['path'];
+        // $watermarkconfig['wm_text'] = 'Soulmates';
+        // $watermarkconfig['wm_type'] = 'text';
+        // $watermarkconfig['wm_hor_alignment'] = 'L';
+        // $watermarkconfig['wm_shadow_color'] = 'red';
+        // $watermarkconfig['wm_font_size'] = '15';
+
+        // $this->load->library('image_lib', $watermarkconfig);
+        // $this->image_lib->initialize($watermarkconfig);
+        // $this->image_lib->watermark();
+
         $userid = $this->session->userdata('user_id');
         $userdata = array(
             "user_id" => $userid,
@@ -288,22 +303,58 @@ class UpdateProfile extends CI_Controller
         $config['allowed_types'] = 'jpg|jpeg|bmp|png|pdf';  //type of images allowed        //Max Size
         $config['encrypt_name'] = TRUE;   // For unique image name at a time
 
-        $config['wm_text'] = "Soulmates";
-        $config['wm_type'] = "text";
-        $config['wm_font_path'] = "./system/fonts/texb.ttf";
-        $config['wm_font_size'] = 25;
-        $config['wm_vrt_alignment'] = "middel";
-        $config['wm_font_color'] = "ffffff";
-        $config['wm_hor_alignment'] = "center";
+        // $config['wm_text'] = "Soulmates";
+        // $config['wm_type'] = "text";
+        // $config['wm_font_path'] = "./system/fonts/texb.ttf";
+        // $config['wm_font_size'] = 25;
+        // $config['wm_vrt_alignment'] = "middel";
+        // $config['wm_font_color'] = "ffffff";
+        // $config['wm_hor_alignment'] = "center";
 
 
         $this->load->library('upload', $config);  //File Uploading library
         $this->upload->do_upload('document');  // input name which have to upload 
         $document = $this->upload->data();
+
+        // echo '<pre>';
         // var_dump($document);
-        //     die();
+        // echo '</pre>';
+        // die();
+
+        $imgConfig = array();
+
+        $imgConfig['image_library']   = 'GD2';
+
+        $imgConfig['source_image']    = $document['full_path'];
+
+        $imgConfig['wm_text']         = 'Soulmates';
+
+        $imgConfig['wm_type']         = 'text';
+         
+        // $imgConfig['wm_font_path'] = "./system/fonts/texb.ttf";
+
+        $imgConfig['wm_font_size'] = '24';
+
+        $imgConfig['wm_font_color'] = "ff3333";
+
+        // $imgConfig['wm_shadow_color'] = "ff3333";
+
+        $imgConfig['wm_hor_alignment'] = "center";
+
+        // $imgConfig['wm_shadow_color'] = "middel";
+
+       
+
+        $this->load->library('image_lib', $imgConfig);
+
+        $this->image_lib->initialize($imgConfig);
+
+        $this->image_lib->watermark();
 
         $file_name = $this->input->post("document_name");
+        if ($file_name == 0) {
+            $file_name = 'main_photo';
+        }
 
         $userid = $this->session->userdata('user_id');
         $userdata = array(

@@ -154,7 +154,7 @@
                                             Photo Type<span class="text-danger">*</span></label>
                                         </div>
                                         <div class="col-sm-7 col-md-7">
-                                          <select name="document_name" id="ddlphototype" class="required form-control combo">
+                                          <select name="document_name" id="ddlphototype" require class="form-control combo">
                                             <option value="0">--- Select
                                               Photo Type ---</option>
                                             <option value="main_photo">Main
@@ -3470,7 +3470,7 @@
                                         Type<span class="text-danger">*</span></label>
                                     </div>
                                     <div class="col-sm-9 col-md-9">
-                                      <select name="document_name" id="ddlphototype1" class="required form-control combo">
+                                      <select name="document_name" id="ddlphototype1" required='true' class="required form-control combo">
                                         <option value="">--- Select Document
                                           Type ---</option>
                                         <option value="cert1">

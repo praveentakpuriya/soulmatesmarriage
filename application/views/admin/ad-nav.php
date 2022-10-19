@@ -83,7 +83,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="Contact/showData"><span class="shape1"></span><span class="shape2"></span>
+          <a class="nav-link" href="Ad_contact_us"><span class="shape1"></span><span class="shape2"></span>
             <i class="fad fa-users-cog  sidemenu-icon menu-icon"></i>
             <span class="sidemenu-label">Contact Us Data</span>
           </a>
