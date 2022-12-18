@@ -405,23 +405,14 @@
                     <div class="row">
 
                       <div class="col-md-12">
-
-
-
-                        <form action="#" method="post" name="form3" id="form3">
-
+                      <form method="post" name="form3" action="Searching/searchById" method="post" id="form3">
                           <br>
                           <div class="form-group">
                             <div class="row">
-
                               <div class="col-sm-12 col-md-12">
-
-
-                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
+                                <input type="text" name="id" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
                                 <p style="text-align:left"> <small> search by: Profile Id
                                   </small> </p>
-
-
                               </div>
                             </div>
                           </div>
@@ -962,7 +953,7 @@
                                   <div class="col-sm-2 col-md-2">
                                     <input type="hidden" name="x" id="rest1">
                                     <input name="button2" class="btn  btn-primary btn-sm" type="button" id="button2" onClick="javascript:addReligion()" value="Add" style="width:100%">
-                                    <!-- <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onClick="javascript:deleteReligion()" value="Remove" style="width:100%"> -->
+                                    <input name="button22" class="btn  btn-primary btn-sm" type="button" id="button22" onClick="javascript:deleteReligion()" value="Remove" style="width:100%">
                                   </div>
                                   <div class="col-sm-5 col-md-5 no-padding">
                                     <select name="religion_box" style="height:100px!important" multiple="multiple" id="religion_box" class="form-control">
@@ -1667,7 +1658,7 @@
 
 
 
-                        <form action="#" method="post" name="form3" id="form3">
+                      <form method="post" name="form3" action="Searching/searchById" method="post" id="form3">
 
                           <br>
                           <div class="form-group">
@@ -1676,7 +1667,7 @@
                               <div class="col-sm-12 col-md-12">
 
 
-                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
+                                <input type="text" name="id" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
                                 <p style="text-align:left"> <small> search by: Profile Id
                                   </small> </p>
 
@@ -1949,7 +1940,7 @@
 
 
 
-                        <form action="#" method="post" name="form3" id="form3">
+                      <form method="post" name="form3" action="Searching/searchById" method="post" id="form3">
 
                           <br>
                           <div class="form-group">
@@ -1958,7 +1949,7 @@
                               <div class="col-sm-12 col-md-12">
 
 
-                                <input type="text" name="txtLoginId" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
+                                <input type="text" name="id" id="txtLoginId2" tabindex="40" class="form-control" placeholder=" e.g : SM100001" accesskey="13">
                                 <p style="text-align:left"> <small> search by: Profile Id
                                   </small> </p>
 
@@ -2295,7 +2286,8 @@
     else
       box.insertBefore(li, pos)
   }
-
+ 
+  var rel_obj = {};
   function addReligion() {
     let m_t = document.getElementById('religion-dropdown1').value;
     let religion_name = null
@@ -2311,7 +2303,8 @@
         religion_name = response;
       }
     });
-    r_data.push(m_t);
+    
+    rel_obj[religion_name] =m_t;
     let box = document.getElementById('religion_box');
     let li = document.createElement('option');
     li.textContent = religion_name;
@@ -2320,6 +2313,22 @@
       box.append(li)
     else
       box.insertBefore(li, pos)
+  }
+
+  function deleteReligion(){
+    let data = document.getElementById('religion_box');
+    let xx  = data.options[data.selectedIndex].value;
+
+    delete rel_obj.xx;
+    for (var key of Object.keys(rel_obj)) {
+        console.log(key + " => " + rel_obj[key] + "</br>")
+    }
+    // let index  = religion_data.indexOf(xx)
+    // religion_data.slice(index,index);
+
+
+    // console.log(religion_data);
+    // alert(data);
   }
 
   function addCaste() {

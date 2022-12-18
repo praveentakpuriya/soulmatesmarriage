@@ -154,22 +154,16 @@
                                             Photo Type<span class="text-danger">*</span></label>
                                         </div>
                                         <div class="col-sm-7 col-md-7">
-                                          <select name="document_name" id="ddlphototype" require class="form-control combo">
-                                            <option value="0">--- Select
-                                              Photo Type ---</option>
-                                            <option value="main_photo">Main
-                                              Photo</option>
-                                            <option value="pic1">Photo 1
-                                            </option>
-                                            <option value="pic2">Photo 2
-                                            </option>
-                                            <option value="pic3">Photo 3
-                                            </option>
-                                            <option value="pic4">Photo 4
-                                            </option>
-                                          </select>
-                                          <span class="err_msg" id="errddlphototype"></span>
-                                        </div>
+                                                    <select name="document_name" id="ddlphototype" required='true' class="required form-control combo">
+                                                        <option value="none">--- Select Photo Type ---</option>
+                                                        <option value="mainphoto" >Main Photo</option>
+                                                        <option value="photo1" >Photo 1</option>
+                                                        <option value="photo2" >Photo 2</option>
+                                                        <option value="photo3" >Photo 3</option>
+                                                        <option value="photo4" >Photo 4</option>
+                                                    </select>
+                                                    <span class="err_msg" id="errddlphototype"></span>
+                                                </div>
                                       </div>
                                     </div>
                                     <div class="form-group">

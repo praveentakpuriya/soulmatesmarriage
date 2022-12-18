@@ -111,9 +111,12 @@ class SearchModel extends CI_Model
         if ($data['keyword'] != '') {
 
             if (isset($caste[0]->id)) $this->db->where('u.caste_id', $caste[0]->id);
-            if (isset($religion[0]->id)) $this->db->where('u.religion_id', $religion[0]->id);
-            if (isset($city[0]->id)) $this->db->where('u.city_id', $city[0]->id);
+            else if (isset($religion[0]->id)) $this->db->where('u.religion_id', $religion[0]->id);
+            else if (isset($city[0]->id)) $this->db->where('u.city_id', $city[0]->id);
+            else $this->db->where('u.name', $key);
+
             $this->db->or_where('profession.education_details', $data['keyword']);
+            $this->db->or_where('profession.education', $data['keyword']);
         }
         if ($data['profile_with'] == 'photo') {
             $this->db->where('d.main_photo is not null', null, false);

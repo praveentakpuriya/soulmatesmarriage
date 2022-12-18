@@ -352,11 +352,12 @@ class UpdateProfile extends CI_Controller
         $this->image_lib->watermark();
 
         $file_name = $this->input->post("document_name");
-        if ($file_name == 0) {
+        if ($file_name == 'none') {
             $file_name = 'main_photo';
         }
 
         $userid = $this->session->userdata('user_id');
+       
         $userdata = array(
             'user_id' => $userid,
             $file_name => $document['file_name'],

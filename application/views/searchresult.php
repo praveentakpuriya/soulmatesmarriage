@@ -50,7 +50,7 @@
                                         <div class="col-md-12 col-sm-12 col-xs-12">
                                             <p class="p-search OpenSans-Bold" style="margin-bottom:0px;">
                                                 <?php echo $list->name ?> </p>
-                                            <span class="p-search2"><i class="icon icon-user"></i>&nbsp;<a target="_blank"><?php echo $list->u_id ?></a> &nbsp; |
+                                            <span class="p-search2"><i class="icon icon-user"></i>&nbsp;<a href="Searching/view_profile?id=<?= $list->u_id ?>" target="_blank"><?php echo $list->u_id ?></a> &nbsp; |
                                                 &nbsp;<?php if (isset($list->plan_type)) echo $list->plan_type;
                                                         else echo 'Free Member' ?></span>
                                         </div>
